@@ -579,16 +579,52 @@ Dreams By HARRY
     background-position:center;
 }
 
-/* Mobile */
-
+/* Mobile Responsive */
 @media(max-width:768px){
 
-    .title-bg{
-        font-size:38px;
-        padding:0px 15px;
-        border-radius:14px;
+    body{
+        overflow-x:hidden;
     }
 
+    .title-bg{
+        width:100%;
+        font-size:38px;
+        line-height:1.4;
+        padding:20px 15px;
+        border-radius:14px;
+        text-align:center;
+    }
+
+    .hero{
+        padding:40px 20px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .navbar{
+        padding:15px;
+        flex-wrap:wrap;
+    }
+
+    .nav-links{
+        gap:12px;
+        font-size:14px;
+    }
+
+    .benefit-container{
+        grid-template-columns:1fr;
+    }
+
+    .floating-contact{
+        width:65px;
+        height:65px;
+        bottom:20px;
+        right:20px;
+    }
+
+}
 }
 
 </style>
