@@ -544,6 +544,7 @@ Dreams By HARRY
     font-weight:900;
     line-height:1.15;
     margin-bottom:25px;
+
 }
 
 .title-bg{
@@ -586,27 +587,31 @@ Dreams By HARRY
         overflow-x:hidden;
     }
 
-    .title-bg{
-        width:100%;
-        font-size:38px;
-        line-height:1.4;
-        padding:20px 15px;
-        border-radius:14px;
-        text-align:center;
-    }
+ @media(max-width:768px){
 
     .hero{
-        padding:40px 20px;
+        padding-top:160px;
+    }
+
+    .title-bg{
+        font-size:32px;
+        line-height:1.5;
+    }
+
+}
+
+    .hero{
+        padding-top:140px;
     }
 
     .hero-content{
         width:100%;
     }
 
-    .navbar{
-        padding:15px;
-        flex-wrap:wrap;
-    }
+ .navbar{
+    position:fixed;
+    top:0;
+}
 
     .nav-links{
         gap:12px;
