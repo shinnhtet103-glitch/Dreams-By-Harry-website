@@ -1,0 +1,5007 @@
+<!DOCTYPE html>
+
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dreams By Harry4</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Noto Sans Myanmar',sans-serif;
+background:#e9f502;
+color:white;
+overflow-x:hidden;
+}
+
+/* ANIMATED BACKGROUND */
+
+.bg-animation{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15), transparent 25%),
+radial-gradient(circle at 80% 20%, rgba(0,140,255,0.18), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(255,0,200,0.12), transparent 30%),
+linear-gradient(135deg,#07111f,#0d1b2a,#111827);
+animation:bgmove 12s ease infinite;
+background-size:200% 200%;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:800;
+
+    background:linear-gradient(to right,#00e5ff,#00ff95);
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:15px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00e5ff;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px 80px;
+position:relative;
+}
+
+.hero-container{
+max-width:1200px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-text h1{
+font-size:62px;
+line-height:1.2;
+margin-bottom:25px;
+font-weight:900;
+}
+
+.gradient-text{
+    background:linear-gradient(to right,#00e5ff,#00ff95);
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:2;
+color:#d5d5d5;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 32px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.4s;
+display:inline-block;
+}
+
+.primary-btn{
+background:linear-gradient(45deg,#00e5ff,#0077ff);
+color:white;
+box-shadow:0 0 30px rgba(0,229,255,0.35);
+}
+
+.primary-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 40px rgba(0,229,255,0.7);
+}
+
+.secondary-btn{
+border:1px solid rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.05);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+.secondary-btn:hover{
+background:rgba(255,255,255,0.12);
+transform:translateY(-5px);
+}
+
+/* HERO CARD */
+
+.hero-card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(16px);
+border-radius:35px;
+padding:35px;
+position:relative;
+overflow:hidden;
+box-shadow:0 0 40px rgba(0,0,0,0.3);
+}
+
+.hero-card::before{
+content:'';
+position:absolute;
+width:300px;
+height:300px;
+background:rgba(0,229,255,0.12);
+border-radius:50%;
+top:-120px;
+right:-120px;
+filter:blur(10px);
+}
+
+.stat-box{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+margin-top:20px;
+}
+
+.stat{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:25px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+}
+
+.stat:hover{
+transform:translateY(-6px);
+background:rgba(255,255,255,0.08);
+}
+
+.stat h2{
+font-size:34px;
+margin-bottom:8px;
+color:#00e5ff;
+}
+
+/* SECTION */
+
+section{
+padding:90px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:44px;
+margin-bottom:18px;
+font-weight:800;
+}
+
+.section-sub{
+text-align:center;
+max-width:800px;
+margin:auto;
+color:#cfcfcf;
+line-height:2;
+margin-bottom:60px;
+}
+
+.divider{
+width:120px;
+height:5px;
+margin:18px auto 30px;
+border-radius:50px;
+background:linear-gradient(to right,#00e5ff,#00ff95);
+}
+
+/* PROGRAMS */
+
+.program-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.program-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(14px);
+padding:35px;
+border-radius:30px;
+transition:0.5s;
+position:relative;
+overflow:hidden;
+}
+
+.program-card::before{
+content:'';
+position:absolute;
+width:180px;
+height:180px;
+background:rgba(0,229,255,0.08);
+border-radius:50%;
+top:-80px;
+right:-80px;
+}
+
+.program-card:hover{
+transform:translateY(-12px);
+border-color:rgba(0,229,255,0.35);
+}
+
+.program-icon{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.program-card h3{
+font-size:28px;
+margin-bottom:18px;
+}
+
+.program-card p{
+line-height:2;
+color:#d0d0d0;
+margin-bottom:25px;
+}
+
+/* FAQ */
+
+.faq-container{
+max-width:1000px;
+margin:auto;
+}
+
+.faq-item{
+margin-bottom:22px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+overflow:hidden;
+transition:0.3s;
+backdrop-filter:blur(10px);
+}
+
+.faq-question{
+width:100%;
+padding:24px;
+background:none;
+border:none;
+color:white;
+font-size:18px;
+font-family:'Noto Sans Myanmar',sans-serif;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+text-align:left;
+}
+
+.faq-question span{
+font-size:28px;
+transition:0.3s;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.5s ease;
+}
+
+.faq-answer-content{
+padding:0 24px 24px;
+line-height:2;
+color:#d9d9d9;
+}
+
+.faq-item.active .faq-answer{
+max-height:400px;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+
+/* CTA */
+
+.cta{
+max-width:1100px;
+margin:auto;
+padding:70px 40px;
+border-radius:40px;
+background:linear-gradient(135deg,rgba(0,229,255,0.12),rgba(0,255,149,0.08));
+border:1px solid rgba(255,255,255,0.1);
+text-align:center;
+backdrop-filter:blur(18px);
+}
+
+.cta h2{
+font-size:48px;
+margin-bottom:25px;
+}
+
+.cta p{
+line-height:2;
+color:#d5d5d5;
+margin-bottom:35px;
+}
+
+/* FLOAT BUTTON */
+
+.telegram-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+z-index:9999;
+}
+
+.telegram-btn a{
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:linear-gradient(45deg,#00e5ff,#0088cc);
+color:white;
+font-size:32px;
+text-decoration:none;
+box-shadow:0 0 30px rgba(0,229,255,0.5);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(0,229,255,0.5);}
+70%{box-shadow:0 0 0 18px rgba(0,229,255,0);}
+100%{box-shadow:0 0 0 0 rgba(0,229,255,0);}
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 20px;
+text-align:center;
+color:#bfbfbf;
+border-top:1px solid rgba(255,255,255,0.08);
+margin-top:60px;
+}
+
+/* SCROLL EFFECT */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.container{
+    padding:0 15px;
+    gap:20px;
+}
+
+.card{
+    width:100%;
+    height:400px;
+}
+
+.hero-container{
+    grid-template-columns:1fr;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+.title-bg{
+    font-size:34px;
+    padding:10px 16px;
+}
+
+.content h2{
+    font-size:30px;
+}
+
+.stat h2{
+    font-size:36px;
+}
+
+.stat p{
+    font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- NAV -->
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">
+Dreams By HARRY 
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#programs">Programs</a>
+<a href="#faq">Q&A</a>
+<a href="#contact">Enroll</a>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div class="hero-text fade">
+
+<h1 class="hero-title">
+    <span class="title-line">
+        ထိုင်းတက္ကသိုလ်
+    </span>
+
+    <span class="title-line glow">
+        တက်ရင်း အလုပ်လုပ်မယ်
+    </span>
+
+    
+       <p class="highlight-text"> Study + Work + Future Career Opportunity
+    </p>
+</h1>
+<style>
+
+.hero-title{
+    font-family:'Poppins',sans-serif;
+    font-weight:900;
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.title-bg{
+    display:inline-block;
+
+    font-size:72px;
+    font-weight:900;
+    color:#ffffff;
+
+    padding:0px 15px;
+    margin-bottom:12px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+    url('campus.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+    text-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+.second{
+    background:
+    linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+    url('students.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .title-bg{
+        font-size:38px;
+        padding:0px 15px;
+        border-radius:14px;
+    }
+
+}
+
+</style>
+
+<p>
+မင်္ဂလာပါခင်ဗျာ
+Dreams By HARRY  🤍
+မှနွေးထွေးစွာကြိုဆိုပါတယ် <br><br>
+
+
+ထိုင်းမှာ တက္ကသိုလ် တက်ရင်း အလုပ်လုပ်ချင်တဲ့
+ညီလေး/ညီမလေးတွေအတွက်
+University Enrollment + Internship + Visa + Work System
+Q&A အချက်အလက်များကို
+စုစည်းပေးထားပါတယ် ✨
+</p>
+
+<div class="hero-buttons">
+<a href="https://t.me/dreambyharry" class="btn primary-btn">
+Enroll Now
+</a>
+
+
+<a href="#faq" class="btn secondary-btn">
+View Q&A
+</a></div>
+
+</div>
+
+<!-- STUDENT BENEFITS -->
+
+<div class="hero-card benefit-card-bg fade">
+
+    <div class="benefit-overlay"></div>
+
+    <div class="benefit-content">
+
+        <h2 class="benefit-title">
+            🎓 Student Benefits
+        </h2>
+
+        <div class="stat-box">
+
+            <div class="stat">
+                <h2>12K+</h2>
+                <p>Internship Salary</p>
+            </div>
+
+            <div class="stat">
+                <h2>ED+</h2>
+                <p>Legal Visa System<br>4 Years</p>
+            </div>
+
+            <div class="stat">
+                <h2>3-6</h2>
+                <p>Months Programs</p>
+            </div>
+
+            <div class="stat">
+                <h2>1 Day</h2>
+                <p>Weekly Campus</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- PROGRAMS -->
+
+<section id="programs">
+
+<h5 class="section-title fade">
+    Available Programs
+</h5>
+
+<div class="divider"></div>
+
+<p class="section-sub fade">
+အခြားပြင်ပ ဝင်ခွင့် စာမေးပွဲ ဖြေဆိုစရာမလိုတော့ပဲ ( ဥပမာ- GED, IELTS, TOFEL, IGCSE, Duolingo,Others entrance;… အစရှိတာတွေ ဖြေဆိုစရာ မလိုတော့ပဲ)
+Bachelor Degree - 4 နှစ် ဝန်းကျင် ကို ထိုင်းနိုင်ငံမှာ အလုပ်လုပ်ရင်း ဆက်လက်တတ်ရောက်နိုင်
+ဖို့အတွက် အရင်ဆုံးတတ်ရောက်ပေးရမည့် Foundation Program / Pathways Program တို့ကို Campus တတ်မယ်ဆိုရင် 
+ရန်ကုန်မှာရှိတာမို့ / ရန်ကုန်လာတတ်ပေးရပါမယ် - ထိုင်းရောက်နေရင်တော့ Online Class ရှိပါမယ် 
+Video Class ဖြစ်တာကြောင့် မိမိအားတဲ့အချိန် ဖွင့်သင်ကြားယုံပါဗျာ့
+</p>
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* SECTION */
+
+#programs{
+    padding:70px 18px;
+    background:
+    radial-gradient(circle at top left,#163b74 0%,#07111f 45%,#020611 100%);
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+}
+
+/* TITLE */
+
+.section-title{
+    text-align:center;
+    font-size:clamp(32px,6vw,52px);
+    font-weight:800;
+    color:#fff;
+    margin-bottom:15px;
+    line-height:1.2;
+}
+
+.divider{
+    width:95px;
+    height:5px;
+    margin:0 auto 22px;
+    border-radius:100px;
+    background:linear-gradient(to right,#1d8fff,#63b3ff);
+}
+
+.section-sub{
+    text-align:center;
+    color:rgba(255,255,255,0.78);
+    line-height:1.9;
+    max-width:900px;
+    margin:0 auto 50px;
+    font-size:15px;
+    padding:0 10px;
+}
+
+/* CARD CONTAINER */
+
+.program-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* CARD */
+
+.program-card{
+    position:relative;
+    width:100%;
+    min-height:520px;
+
+    border-radius:28px;
+    overflow:hidden;
+
+    display:flex;
+    align-items:flex-end;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.45);
+
+    transition:0.4s ease;
+}
+
+/* CLEAN OVERLAY */
+
+.program-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,0.82) 8%,
+    rgba(0,0,0,0.38) 45%,
+    rgba(0,0,0,0.08) 100%
+    );
+
+    z-index:1;
+}
+
+/* REMOVE BLACK SHADOW CIRCLE */
+
+.program-card::after{
+    display:none;
+    content:none;
+}
+
+/* HOVER */
+
+.program-card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 22px 55px rgba(0,0,0,0.55);
+
+    filter:brightness(1.05);
+}
+
+/* CONTENT */
+
+.program-content{
+    position:relative;
+    z-index:5;
+    padding:32px;
+    width:100%;
+}
+
+/* TAG */
+
+.program-tag{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(8px);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    letter-spacing:1px;
+}
+
+/* TITLE */
+
+.program-content h2{
+    font-size:clamp(30px,5vw,46px);
+    line-height:1.12;
+    font-weight:800;
+    margin-bottom:18px;
+    color:#fff;
+
+    text-shadow:
+    0 3px 10px rgba(0,0,0,0.55);
+}
+
+.program-content p{
+    color:#fff;
+
+    line-height:1.8;
+    font-size:15px;
+    margin-bottom:28px;
+
+    background:rgba(0,0,0,0.4);
+    padding:10px 14px;
+    border-radius:10px;
+}
+.program-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+
+    padding:18px 28px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #3aa0ff,
+    #1f5fff
+    );
+
+    color:#fff;
+
+    font-size:18px;
+    font-weight:700;
+
+    letter-spacing:0.5px;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 12px 35px rgba(45,140,255,0.35);
+
+    border:1px solid rgba(255,255,255,0.12);
+}
+/* BUTTON HOVER */
+
+.program-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+    linear-gradient(135deg,#45a2ff,#356bff);
+
+    box-shadow:
+    0 15px 40px rgba(45,140,255,0.55);
+}
+
+
+
+/* BACKGROUND IMAGES */
+
+.foundation-card{
+    background-image:url("images/ssss-2.jpg");
+}
+
+.pathway-card{
+    background-image:url("images/ssss-3.jpg");
+}
+
+.study-card{
+    background-image:url("images/ssss-1.jpg");
+}
+
+/* MODAL */
+
+.program-modal{
+    display:none;
+    position:fixed;
+    z-index:99999;
+    inset:0;
+
+    overflow:auto;
+
+    background:rgba(0,0,0,0.75);
+
+    backdrop-filter:blur(8px);
+
+    padding:20px;
+}
+
+/* MODAL BOX */
+
+.program-box{
+    background:#fff;
+
+    width:100%;
+    max-width:760px;
+
+    margin:40px auto;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    animation:popup 0.35s ease;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* MODAL TEXT */
+
+.program-box h2{
+    color:#0a3d91;
+    margin-bottom:15px;
+    font-size:32px;
+}
+
+.program-box h3{
+    margin-top:24px;
+    margin-bottom:12px;
+
+    color:#222;
+    font-size:22px;
+}
+
+.program-box p,
+.program-box li{
+    color:#444;
+    line-height:1.9;
+    font-size:16px;
+}
+
+.program-box ul{
+    padding-left:22px;
+}
+
+/* CLOSE */
+
+.close-modal{
+    float:right;
+
+    font-size:34px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:#888;
+
+    transition:0.3s;
+}
+
+.close-modal:hover{
+    color:red;
+}
+
+.highlight-text{
+    margin-top:25px;
+
+    padding:14px 18px;
+
+    border-left:4px solid #2d8cff;
+
+    background:rgba(45,140,255,0.08);
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    border-radius:12px;
+
+    line-height:1.7;
+}
+
+/* POPUP */
+
+@keyframes popup{
+    from{
+        transform:scale(0.85);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    #programs{
+        padding:60px 14px;
+    }
+
+    .section-sub{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .program-container{
+        gap:22px;
+    }
+
+    .program-card{
+    position:relative;
+    width:100%;
+    min-height:520px;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:flex-end;
+
+    overflow:hidden;
+}
+
+    .program-content{
+        padding:24px;
+    }
+
+    .program-content h2{
+        font-size:34px;
+    }
+
+    .program-content p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .program-btn{
+        padding:16px 20px;
+        font-size:17px;
+    }
+
+    .program-box{
+        padding:25px;
+        border-radius:20px;
+    }
+
+    .program-box h2{
+        font-size:28px;
+    }
+
+}
+
+/* SMALL PHONE */
+
+@media(max-width:480px){
+
+    .program-card{
+        min-height:440px;
+    }
+
+    .program-content h2{
+        font-size:30px;
+    }
+
+    .program-tag{
+        font-size:11px;
+        padding:9px 15px;
+    }
+
+    .program-btn{
+        font-size:16px;
+    }
+
+}
+/* REMOVE BLACK CIRCLES */
+
+.program-card::before,
+.program-card::after{
+    display:none !important;
+}
+
+/* CLEAN CARD */
+
+.program-card{
+    background-blend-mode:normal !important;
+    filter:none !important;
+}
+
+/* REMOVE ANY EXTRA SHADOW ELEMENT */
+
+.program-card *{
+    mix-blend-mode:normal !important;
+}
+/* CAMPUS LIFE CARD */
+
+.campus-life-card{
+    position:relative;
+
+    max-width:1200px;
+    min-height:420px;
+
+    margin:45px auto 0;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.55)),
+    url('campus-life.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.4);
+
+    transition:0.4s ease;
+}
+
+/* HOVER */
+
+.campus-life-card:hover{
+    transform:translateY(-8px);
+}
+
+/* OVERLAY */
+
+.campus-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(24,119,242,0.18),
+    rgba(0,0,0,0.4)
+    );
+
+    z-index:1;
+}
+
+/* CONTENT */
+
+.campus-content{
+    position:relative;
+    z-index:5;
+
+    padding:40px 25px;
+
+    max-width:760px;
+}
+
+/* TAG */
+
+.campus-tag{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* TITLE */
+
+.campus-content h2{
+    font-size:clamp(34px,6vw,60px);
+
+    font-weight:900;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,0.35);
+}
+
+/* TEXT */
+
+.campus-content p{
+    color:#f1f1f1;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.campus-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #1877f2,
+    #0d5fe9
+    );
+
+    color:#fff;
+
+    font-size:17px;
+    font-weight:700;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 12px 35px rgba(24,119,242,0.35);
+}
+
+/* BUTTON HOVER */
+
+.campus-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 45px rgba(24,119,242,0.5);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.campus-life-card{
+    min-height:380px;
+    border-radius:24px;
+}
+
+.campus-content{
+    padding:30px 20px;
+}
+
+.campus-content p{
+    font-size:14px;
+    line-height:1.8;
+}
+
+.campus-btn{
+    width:100%;
+    padding:16px 20px;
+}
+
+}
+</style>
+<div class="program-container">
+
+    <!-- CARD 1 -->
+
+    <div class="program-card foundation-card">
+
+        <div class="program-content">
+
+           
+            <h2>
+                Foundation<br>
+                Program
+            </h2>
+
+            <p>
+                စနစ်ဟောင်း ကိုးတန်းအောင် / GED / G11 အောင်ကျောင်းသားများအတွက်
+                6 Months University Preparation Program
+            </p>
+
+            <a href="javascript:void(0)" class="program-btn" onclick="openProgramModal()">
+                About Program
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="program-card pathway-card">
+
+        <div class="program-content">
+
+            
+
+            <h2>
+                Pathway<br>
+                Program
+            </h2>
+
+            <p>
+                G12 & Bachelor Degree Holders များအတွက်
+                3 Months University Pathway Program
+            </p>
+
+            <a href="javascript:void(0)" class="program-btn" onclick="openPathwayModal()">
+                About Program
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+
+    <div class="program-card study-card">
+
+        <div class="program-content">
+
+            
+
+            <h2>
+                Study &<br>
+                Work
+            </h2>
+
+            <p>
+                Thailand မှာ တက္ကသိုလ်တတ်ရင်း
+                Internship & Work Opportunities
+            </p>
+
+            <a href="javascript:void(0)" class="program-btn" onclick="openStudyWorkModal()">
+                Learn More
+            </a>
+
+        </div>
+  
+
+</div>
+
+    </div>
+
+</div>
+
+
+<!-- FOUNDATION MODAL -->
+
+<div id="programModal" class="program-modal">
+
+<div class="program-box">
+
+<span class="close-modal" onclick="closeProgramModal()">&times;</span>
+
+<h2>Thonburi University 🎓</h2>
+
+<p>
+ဘန်ကောက်မှာ အလုပ်လုပ်ရင်း Bachelor degree တတ်ရောက်ဖို့ အတွက်
+</p>
+
+<h3>📌 Admission Requirements</h3>
+
+<ul>
+<li>စနစ်ဟောင်း 10တန်းအောင် ,စနစ်ဟောင်း 9တန်းအောင်/ GED / စနစ်သစ် G11အောင်  </li>
+<li>6 Months Foundation Program</li>
+</ul>
+
+<h3>📚 Subjects Included</h3>
+
+<ul>
+<li>Business Management</li>
+<li>Computer</li>
+<li>Thai Language</li>
+<li>English Language</li>
+<li>Mathematics</li>
+<li>Physics</li>
+<li>Chemistry</li>
+<li>Biology</li>
+<p>အစရှိတဲ့ဘာသာရပ်တွေကိုသင်ရပါမယ်ခင်ဗျ ( ပါမောက္ခဆရာ ဆရာမများနှင့် သင်ကြားရမှာဖြစ်ပါတယ်ခင်ဗျာ့)
+( Campus တတ်မယ်ဆိုရင် ရန်ကုန်မှာရှိတာမို / ရန်ကုန်လာတတ်ပေးရပါမယ် - ထိုင်းရောက်နေရင်တော့ Online class ရှိပါမယ် video  class 
+ဖြစ်တာကြောင့် မိမိ အားတဲ့ အချိန် ဖွင့် သင်ကြားယုံပါဗျာ့)</p> 
+</li>
+</ul>
+
+<h3>💰 Program Fees</h3>
+
+<p><strong>Total Fees - 39,500 THB<br>
+အဲ့အတွက်ကိုလည်းမင်မင်တိုခွဲသွင်းလိုရအောင်စီစဉ်ထားပေးပါတယ်ခင်ဗျ <br>
+ကျောင်းစစအပ်ချင်း ဘတ် 10000<br>
+ကျောင်းစတက်တဲ့နေ့မှာ ဘတ် 10000<br>
+နောက်ထပ် ဘတ် 19500 ကိုတော့ ၊ကျန်နှစ်လခွဲသွင်းလိုရပါတယ်ခင်ဗျ။     </strong></p>
+
+<p class="highlight-text">
+Foundation Program ပြီးဆုံးပါက Bangkok တွင်
+ကျောင်းတက်ရင်း အလုပ်လုပ်နိုင်ရန်
+ကျောင်းဘက်မှ အစအဆုံး ကူညီစီစဉ်ပေးသွားမှာဖြစ်ပါတယ်။
+</p>
+
+</div>
+
+</div>
+
+<!-- PATHWAY MODAL -->
+
+<div id="pathwayModal" class="program-modal">
+
+<div class="program-box">
+
+<span class="close-modal" onclick="closePathwayModal()">&times;</span>
+
+
+<h2>Thonburi University 🎓</h2>
+<p>
+ဘန်ကောက်မှာ အလုပ်လုပ်ရင်း Bachelor degree တတ်ရောက်ဖို့ အတွက်
+</p>
+<h3>📌 Admission Requirements</h3>
+
+<ul>
+<li> စနစ်သစ် G-12 အောင် နှင့် Any Bachelor degreeဘွဲ့ရ </li>
+<li>3 Months University Pathway Program</li>
+</ul>
+
+
+<h3>📚 Subjects Included</h3>
+<ul>
+<li>Business Management</li>
+<li>Basic Computer</li>
+<li>Thai Language</li>
+<li>English Language</li>
+<li>Bio Science</li>
+</ul>
+<p>Campus တတ်မယ်ဆိုရင် ရန်ကုန်မှာရှိတာမို 
+    / ရန်ကုန်လာတတ်ပေးရပါမယ် - ထိုင်းရောက်နေရင်တော့ Online class ရှိပါမယ် video class
+     ဖြစ်တာကြောင့် မိမိ အားတဲ့ အချိန် ဖွင့် သင်ကြားယုံပါဗျာ့</p>
+
+</p>
+
+<h4>💰 Program Fees</h4>
+
+<p><strong>Total Fees - 29,500 THB<br>
+    အဲ့အတွက်ကိုလည်းမင်မင်တိုခွဲသွင်းလိုရအောင်စီစဉ်ထားပေးပါတယ်ခင်ဗျ <br>
+ကျောင်းစစအပ်ချင်း ဘတ် 10000<br>
+ကျောင်းစတက်တဲ့နေ့မှာ ဘတ် 10000<br>
+နောက်ထပ် ဘတ် 9500ကိုတော့ ၊ကျန်လခွဲသွင်းလိုရပါတယ်ခင်ဗျ။
+</strong></p>
+<p class="highlight-text">
+Foundation Program ပြီးဆုံးပါက Bangkok တွင်
+ကျောင်းတက်ရင်း အလုပ်လုပ်နိုင်ရန်
+ကျောင်းဘက်မှ အစအဆုံး ကူညီစီစဉ်ပေးသွားမှာဖြစ်ပါတယ်။
+
+</p>
+
+</div>
+
+</div>
+
+<!-- STUDY WORK MODAL -->
+
+<div id="studyWorkModal" class="program-modal">
+
+<div class="program-box">
+
+<span class="close-modal" onclick="closeStudyWorkModal()">&times;</span>
+
+<h2>Study & Work Program</h2>
+
+<p>
+University Internship + Bachelor Degree Program
+</p>
+
+<h3>Bangkok မှာ Full time internship လုပ်ရင်း တက္ကသိုလ်
+တတ်လိုရပါပြီ…💼</h3>
+<P> အဝေးသင်တစ်ပါတ်တစ်ရက်ကျောင်းတတ်ပြီး Internship ဆင်းတဲ့အခါ </P>
+<ul>
+<li> မိမိ ကျောင်းလခကို ကိုယ်တိုင်ရှာနိုင်ခြင်း</li>
+<li>တစ်နှစ်မှာ semester နှစ်ခုရှိပြီး semester 
+တစ်ခုလျှင် - ၃၄၀၀၀ ဘတ်သာကျသင့်ခြင်း</li>
+<li>Semester မပြီးမချင်း ကျောင်းလခ ခွဲသွင်းလို ရ
+ခြင်း</li>
+<li> တက္ကသိုလ် အဆောင် အခန်းငှါးခ တစ်လလျှင် -ဘတ်ငါးရာဝန်းကျင်သာ ကျသင့်ခြင်း 
+
+</li>
+<li>First Year -Second semester မှစUniversityဘက်မှ Royal Thai Immigration အသိမှတ်ပြု Internship letter ထုတ်ပေးခြင်း 
+</li>
+<li>University Education Visa ( ED plus + re entry permit ) ရရှိခြင်း</li>
+<li>Bachelor Degree လေးနှစ်ပြီးလို ကျောင်းပြီးတဲ့အခါ Master ဆက်တတ်ဖို သော်လည်းကောင်း White Collar Job လျှောက်ဖိုအတွက် လည်ကောင်း တစ်နှစ် Visa free ထပ်ရခြင်း
+
+</li>
+<li> အလုပ်သင် စဝင်တဲ့အခါ -အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကစရပါတယ်နေစားငြိမ်း တာမျိုးOT / Bonus / Tip Money အစရှိသဖြင့်အက်လို တွဲရပါတယ်သုံးလ တစ်ခါ လစာ တိုးပါတယ် 
+</li>
+<li>Thai - English 50/50 program ဖြစ်တာကြောင့် လေးနှစ်ပြီးလို Bachelor Degree ရတဲ့အခါ Thai လို တစ်ခု English လို တစ်ခု ရရှိခြင်း
+</li>
+<li> ကျောင်းပြီးတဲ့အခါ အဆိုပါ ဘွဲအားထိုင်းနိုင်ငံမှာ ပြန်လည်အသုံးချနိုင်သလို Third county မှာလဲ ပြန်အသုံးပြုနိုင်ခြင်း</li>
+<li>ထိုင်းဘာသာစကားကိုလဲ လုပ်ငန်းခွင်ဝင်နိုင်အောင်ထိ First semester မှာတစ်ခါထဲ Train ပေးခြင်း</li>
+<li>ဘဏ်အကောင့်၊ ယဉ်မောင်းလိုင်စင် ၊ ကျမ်းမာရေးအာမခံ အစရှိသည်များကို အလွယ်တကူလျှောက်ထားနိုင်ခြင်း</li>
+<li>Passport Type ( PV , PE ) သုံးလိုရခြင်း</li>
+<Li>  Visa အပြင်အခြား လိုအပ်သည့် Documents များအား တက္ကသိုလ် ဘက်မှာ အပြည့် အဝထောက်ပံ့ပေးခြင်း
+</Li>
+</ul>
+
+<h3>အလုပ် ရရှိပုံ (၃)မျိုး </h3>
+<p class="highlight-text">
+တက္ကသိုလ် ပထမနှစ်ရဲ့ second semester ရောက်ပြီ ဆိုတာနဲ့ မင်မင်တို Thonburi University မှ Internship letter များကို ကျောင်းသားတိုင်း ရရှိမှာ ဖြစ်ပါတယ်
+
+အဆို စာတမ်းများ ကို အသုံးပြု ပြီး အင်တာဗျူး များ စတင် ဖြေဆို ရမှာ ဖြစ်ပါတယ်
+
+ပထမနည်း အနေနဲ့ Thonburi University နဲ့ MOU ထိုးထားတဲ့ လုပ်ငန်းများမှ HR များ ပိုင်ရှင်များ က တက္ကသိုလ်ကို တိုက်ရိုက် အင်တာ ဗျူး လာပြီး ဖြေဆို အောင်မြင်သူများကို အလုပ်ခန့်အပ်ပေးပါတယ်
+
+ဒုတိယ နည်း အနေနဲ့ မင်မင် တို MRVT College ကနေ လွှတ်တဲ့ မြန်မာ ကျောင်းသား အယောက် ၂၀၀ နီးနီးရှိတာ ဖြစ်ပြီးတော့ အဆိုပါ စီနီယာများ လက်ရှိ လုပ်ကိုင်နေကြတဲ့ အလုပ်များက လူခေါ်ရင်လဲ ဂျူနီယာများကို ဦးစားပေးခေါ်ပေးခြင်းဖြင့်လဲ အလုပ်ရရှိ ပါတယ်
+
+တတိယ နည်း အနေနဲ့ကတော့ ကိုယ်နဲ့ ကိုက်ညီမယ် ထင်တဲ့ ဝါသနာပါတဲ့ အလုပ်ကို internship letter နဲ့ ကိုယ်တိုင် walk in ဝင်လျှောက်ခြင်း အားဖြင့်လဲ အများဆုံး အလုပ်ရတဲ့ နည်းအဖြစ် အလုပ်ရရှိပါတယ် ခင်ဗျာ့
+
+မိမိ ဘက်ကတော့ ထိုင်း /တရုတ် / အင်္ဂလိပ် / အစရှိတဲ့ ဘာသာစကား တခုခုကို ကျွမ်းကျင်ပိုင်နိုင်အောင် ကြိုးစား ထားရမှာပဲ ဖြစ်ပါတယ် အထူးသဖြင့် ထိုင်း နဲ့ အင်္ဂလိပ်ပါ ဗျာ့ 🤍
+</p>
+
+
+</div>
+
+</div>
+
+<script>
+
+/* FOUNDATION */
+
+function openProgramModal(){
+    document.getElementById("programModal").style.display="block";
+}
+
+function closeProgramModal(){
+    document.getElementById("programModal").style.display="none";
+}
+
+/* PATHWAY */
+
+function openPathwayModal(){
+    document.getElementById("pathwayModal").style.display="block";
+}
+
+function closePathwayModal(){
+    document.getElementById("pathwayModal").style.display="none";
+}
+
+/* STUDY WORK */
+
+function openStudyWorkModal(){
+    document.getElementById("studyWorkModal").style.display="block";
+}
+
+function closeStudyWorkModal(){
+    document.getElementById("studyWorkModal").style.display="none";
+}
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+window.onclick=function(event){
+
+    const modals=[
+        document.getElementById("programModal"),
+        document.getElementById("pathwayModal"),
+        document.getElementById("studyWorkModal")
+    ];
+
+    modals.forEach(function(modal){
+
+        if(event.target==modal){
+            modal.style.display="none";
+        }
+
+    });
+
+}
+
+</script>
+
+</section>
+
+<style>
+    /* CAMPUS LIFE CARD */
+
+.campus-life-card{
+    position:relative;
+
+    max-width:1200px;
+    min-height:420px;
+
+    margin:45px auto 90px;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.55)),
+    url('ssss-5.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.4);
+
+    transition:0.4s ease;
+}
+
+/* HOVER */
+
+.campus-life-card:hover{
+    transform:translateY(-8px);
+}
+
+/* OVERLAY */
+
+.campus-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(24,119,242,0.18),
+    rgba(0,0,0,0.4)
+    );
+
+    z-index:1;
+}
+
+/* CONTENT */
+
+.campus-content{
+    position:relative;
+    z-index:5;
+
+    padding:40px 25px;
+
+    max-width:760px;
+}
+
+/* TAG */
+
+.campus-tag{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* TITLE */
+
+.campus-content h2{
+    font-size:clamp(34px,6vw,60px);
+
+    font-weight:900;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,0.35);
+}
+
+/* TEXT */
+
+.campus-content p{
+    color:#f1f1f1;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.campus-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #1877f2,
+    #0d5fe9
+    );
+
+    color:#fff;
+
+    font-size:17px;
+    font-weight:700;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 12px 35px rgba(24,119,242,0.35);
+}
+
+/* BUTTON HOVER */
+
+.campus-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 45px rgba(24,119,242,0.5);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.campus-life-card{
+    min-height:380px;
+    border-radius:24px;
+}
+
+.campus-content{
+    padding:30px 20px;
+}
+
+.campus-content p{
+    font-size:14px;
+    line-height:1.8;
+}
+
+.campus-btn{
+    width:100%;
+    padding:16px 20px;
+}
+
+}
+</style>
+<!-- CAMPUS LIFE CARD -->
+
+<div class="campus-life-card fade">
+
+    <div class="campus-overlay"></div>
+
+    <div class="campus-content">
+
+        
+
+        <h2> 
+            TRU Campus Life
+        </h2>
+
+        <p>
+            Thailand Student Life, University Environment,
+            Internship Activities & Campus Experience
+            ကို Facebook Page မှာ ကြည့်ရှုနိုင်ပါတယ် 
+        </p>
+
+        <a href="https://www.facebook.com/share/1BKnBbg8s7/?mibextid=wwXIfr"
+           target="_blank"
+           class="campus-btn">
+
+        View Facebook Page
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* YOUR CSS HERE */
+
+</style>
+
+<style>
+
+/* =========================
+   MODERN GLASS STYLE FAQ
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:
+    linear-gradient(135deg,#071120,#0f172a,#111827);
+
+    font-family:Arial,sans-serif;
+    min-height:100vh;
+    padding:20px;
+    color:#fff;
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 15px;
+
+}
+
+/* SEARCH BAR */
+
+.search-box{
+
+    position:sticky;
+    top:10px;
+    z-index:100;
+
+    width:100%;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 20px;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:22px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+
+}
+
+/* ICON */
+
+.search-box i{
+
+    color:#b7c2de;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
+}
+
+/* INPUT */
+
+#searchInput{
+
+    width:100%;
+
+    padding:18px 0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+/* PLACEHOLDER */
+
+#searchInput::placeholder{
+
+    color:#b7c2de;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .search-box{
+
+        padding:0 16px;
+
+        border-radius:18px;
+
+    }
+
+    #searchInput{
+
+        font-size:15px;
+
+        padding:16px 0;
+
+    }
+
+    .search-box i{
+
+        font-size:16px;
+
+    }
+
+}
+#searchInput{
+
+    width:100%;
+
+    padding:18px 0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+#searchInput::placeholder{
+
+    color:#b7c2de;
+
+}
+
+/* =========================
+   RESULT
+========================= */
+
+#resultCount{
+
+    margin-top:14px;
+
+    text-align:center;
+
+    color:#d0daf3;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   FAQ LIST
+========================= */
+
+#faqGrid{
+
+    margin-top:25px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+/* =========================
+   CARD
+========================= */
+
+.faq-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    padding:22px;
+
+    background:
+    rgba(255,255,255,0.06);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s ease;
+
+    animation:show .45s ease;
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+    rgba(255,255,255,0.2);
+
+}
+
+.faq-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border-radius:50%;
+
+    top:-60px;
+    right:-60px;
+
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+.question{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    line-height:1.6;
+
+    margin-bottom:14px;
+
+    position:relative;
+    z-index:2;
+
+}
+
+/* =========================
+   ANSWER
+========================= */
+
+.answer{
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    color:#d7def7;
+
+    position:relative;
+    z-index:2;
+
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+#emptyState{
+
+    display:none;
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#a7b4d9;
+
+    font-size:15px;
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes show{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    body{
+        padding:14px;
+    }
+
+    #searchInput{
+
+        padding:16px 18px;
+
+        font-size:15px;
+
+        border-radius:20px;
+
+    }
+
+    .faq-card{
+
+        padding:18px;
+
+        border-radius:20px;
+
+    }
+
+    .question{
+        font-size:16px;
+    }
+
+    .answer{
+        font-size:14px;
+    }
+
+}
+
+</style>
+
+<div class="search-box">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Thailand University Program..."
+    >
+
+</div>
+
+<div id="resultCount">
+   Search Study & Work Programs in Thailand 
+</div>
+    <div id="faqGrid"></div>
+
+    <div id="emptyState">
+        No matching result found.
+    </div>
+    
+
+</div>
+
+<script>
+
+/* =========================
+   FAQ DATA
+========================= */
+
+const faqData = [
+
+
+{
+    question:"University Foundation Program ဆိုတာဘာလဲ?",
+    answer:"GED / G11 / အဟောင်းစနစ် ၉တန်း၊ ၁၀တန်းပြီးသူများအတွက် University တက်နိုင်ရန် ပြင်ဆင်ပေးတဲ့ Program ပါ 😊"
+},
+{ 
+    question:"University Foundation Program ဘာ ဘာသာရပ်တွေသင်မှာလဲ?",
+    answer:" တက္ကသိုလ်စာတွေ အေးဆေးလိုက်နိုင်ဖို့ Business,Computer,Thai Language,English Language,Mathematics,Biology,Physics,Chemistry  နဲ့ သိပ္ပံဘာသာရပ်တွေကို ပါမောက္ခဆရာကြီးတွေကိုယ်တိုင် သေချာအခြေခံကစ သင်ပေးမှာပါ 😊"
+},
+{
+    question:"University Foundation Program ဘယ်လောက်ကြာလဲ?",
+    answer:"၆လကြာပါတယ်ခင်ဗျာ 😊"    
+    
+},
+{
+    question:" ထိုင်းရောက်နေရင် တက်လို့ရလား?",
+    answer:"ရတာပေါ့! ရန်ကုန်မှာဆို Campus တက်ရမှာဖြစ်ပြီး၊ ထိုင်းရောက်နေရင်တော့ အလုပ်မပျက်စေမယ့် Online Video Class ရှိပါတယ်။ ကိုယ်အားတဲ့အချိန် ဖွင့်သင်ရုံပဲမို့ အရမ်းအဆင်ပြေတယ်နော်😊"
+},
+{
+    question:"စာနားမလည်ရင် ဘယ်လိုလုပ်ရမလဲ?",
+    answer:"စိတ်မပူပါနဲ့ စာနားမလည်တာရှိရင် ကျောင်းရဲ့ Academic HR ကို Request လုပ်ပြီး သင်ကြားရေးဆရာမတွေနဲ့ Zoom Meeting သီးသန့်လုပ်ပြီး စိတ်ကြိုက်မေးလို့ ရပါတယ်ဗျာ 😊"
+},
+{  
+    question:"သင်တန်းကြေး ခွဲသွင်းလို့ရလား?",
+    answer:"အပြီးအစီး ဘတ် ၃၉,၅၀၀ ကျသင့်မှာ ဖြစ်ပြီး (၄) ကြိမ် ခွဲသွင်းလို့ရအောင် စီစဉ်ပေးထားပါတယ်!ကျောင်းစအပ်ချင်း ၁၀,၀၀၀ ဘတ်အတန်းစတက်ရက် ၁၀,၀၀၀ ဘတ်(၁)လပြည့်ရင်၁၀,၀၀၀ ဘတ် (၂)လပြည့်ရင် ၉,၅၀၀ဘတ်ဆိုပြီး အေးဆေးသွင်းလို့ရပါတယ်ခင်ဗျာ😊"
+ },
+{
+    question:"University Foundation Program ပြီးရင် ဘာတွေတက်လို့ရလဲ?",
+    answer:"University Foundation Program ပြီးရင် Thailand မှာရှိတဲ့ University တွေကို တက်လို့ရပါတယ် 😊"
+},
+{
+    question:"University Foundation Program ပြီးရင် ဘာ Major တွေတက်လို့ရလဲ?",
+    answer:"IT, Engineering, Business, Digital Marketing, Accounting Major များရှိပါတယ် 😊"
+},
+
+{
+    question:"University Foundation Program ပြီးရင် တက္ကသိုလ် တက်ဖို့ဘယ်လောက်ကြာလဲ?",
+    answer:"Program ပေါ်မူတည်ပြီး ၁နှစ်မှ ၂နှစ်ကြာပါတအဆိုပါ  foundation 6 လ ပြီးရင် ဘန်ကောက်မှာ တက္ကသိုလ်တတ်ဖို့ ၁လပိုင်း ၃လပိုင်း ၆လပိုင်း၉ လပိုင်းအစရှိတဲ့ intake တွေထဲက အနီးဆုံး Intake ကို တန်းပြီးတက္ကသိုလ်ဆက်တတ်လို့ရပါပြီ 😊"
+},
+{  question:"ED Plus Visa ရလား?",
+    answer:"ရတာပေါ့  Thonburi University မှာ တက်ရင် အလန်းဆုံးဖြစ်တဲ့ University ED Plus Visa with Re-entry Permitကို အပြည့်အဝ ရရှိမှာဖြစ်ပါတယ်ဗျာ။ "
+},
+{    question:"University ED Plus Visa ရရင် ဘာအကျိုးရှိလဲ?",
+    answer:"University ED Plus Visa ရရင် Thailand ထဲကနေ ထွက်ပြီး ပြန်ဝင်လို့ရအောင် လုပ်ထားတဲ့ Re-entry Permit ကိုလည်း ရရှိမှာဖြစ်ပါတယ်"},
+{    question:"ED Plus Visa က ရိုးရိုး ED Visa နဲ့ ဘာကွာလို့လဲ?",
+    answer:"အရမ်းကွာတာပေါ့  အဓိက အလန်းဆုံးအချက်က Bachelor Degree ၄ နှစ် ပြီးလို့ ကျောင်းပြီးသွားတဲ့အခါ ထိုင်းနိုင်ငံမှာ White Collar Job (ရုံးလုပ်ငန်းခွင်ကောင်းကောင်း) လျှောက်ဖို့ ဒါမှမဟုတ် Master (မဟာဘွဲ့) ဆက်တက်ဖို့အတွက် ဗီဇာသက်တမ်း (၁) နှစ်လုံးလုံး ‘Visa Free အလကား ထပ်တိုးပေးတာ ဖြစ်ပါတယ်။ ကျောင်းပြီးပြီးချင်း ဗီဇာကိစ္စ ခေါင်းခဲစရာမလိုဘဲ အလုပ်ရှာဖို့ အချိန်အပြည့်အဝရတာပေါ့။😊"
+},
+{
+    question:"ဗီဇာသက်တမ်းတိုးတာတွေ၊ စာရွက်စာတမ်းတွေက အရှုပ်အထွေးကြီးဆိုတော့ စိုးရိမ်လို့ဗျာ?",
+    answer:"လုံးဝစိတ်ပူစရာမလိုပါဘူး။ Visa Extension (ဗီဇာသက်တမ်းတိုးခြင်း) အတွက် စာရွက်စာတမ်း အရှုပ်အထွေး မှန်သမျှကို ကျောင်းဘက်ကနေ အသေးစိတ် အစအဆုံး တာဝန်ယူ ဆောင်ရွက်ပေးပါတယ်။ မြန်မာနိုင်ငံကနေ စထွက်ကတည်းက ရန်ကုန်သံရုံးမှာ ၃ လ ဗီဇာရအောင် လုပ်ပေးမယ်၊ ထိုင်းရောက်ရင် ၃ လ ပြည့်ခါနီးမှာ ၆ လ၊ အဲဒီကနေတစ်ဆင့် သက်တမ်းတွေကို ကျောင်းကပဲ အကုန်လုပ်ပေးမှာမို့ ညီလေးတို့က စာသင်ဖို့နဲ့ အလုပ်လုပ်ဖို့ပဲ အာရုံစိုက်ရုံပါပဲ😊"
+},
+{    question:"မြန်မာပြည် ခဏပြန်ချင်ရင်ရော ဗီဇာပျက်သွားမလား?",
+    answer:"မပျက်ပါဘူးဗျာ။ Re-entry Permit ကိစ္စတွေကိုပါ ကျောင်းက ဝန်ဆောင်မှုပေးထားတာမို့ ပြည်ပခရီးသွားတာပဲဖြစ်ဖြစ်၊ မိဘတွေကို ကန်တော့ဖို့ မြန်မာပြည် ခဏပြန်တာပဲဖြစ်ဖြစ် စိတ်အေးချမ်းသာစွာနဲ့ သွားလာနိုင်ပါတယ်ခင်ဗျာ 😊"
+},
+{    question:"ထိုင်းမှာ ရောက်နှင့်နေပြီးသားသူတွေရော ဒီဗီဇာ ပြောင်းလို့ရလား?",
+    answer:"ထိုင်းမှာ ရောက်နေပြီးသား (Pink Card ကိုင်ထားသူ၊ CI ရှိသူ၊ ၁၀ နှစ်ဘတ် ရှိသူ ဒါမှမဟုတ် Long Term Visa အမျိုးမျိုး ရှိသူ) တရားဝင်အထောက်အထား တိုင်းနဲ့ကျောင်းတက်လို့ရအောင်ကျောင်းဘက်က အပြည့်အဝ တာဝန်ယူပေးပါတယ်ဗျာ အကယ်၍ University Visa ပြောင်းချင်တယ် ဆိုရင်တော့ ရန်ကုန်ကထိုင်းသံရုံးမှာ စီစဉ်ရပါမယ်"
+},
+{    question:"ကျောင်းတက်ရင်း တရားဝင် အလုပ်လုပ်လို့ရော ရလား?",
+    answer:"ဒါကတော့ တို့ကျောင်းရဲ့ အားသာချက်ပဲ! 1st Year - 2nd Semester ကစပြီး ကျောင်းကနေ Royal Thai Immigration အသိအမှတ်ပြု 'Internship Letter' (အလုပ်သင်ထောက်ခံစာ) ထုတ်ပေးမှာမို့ တစ်ပတ် ၁ ရက်ပဲ ကျောင်းတက်ပြီး ကျန်တဲ့ရက်မှာ လစာ အနည်းဆုံး ၁၂,၀၀၀ မှ ၁၅,၀၀၀ ဘတ် ထိရမယ့် Paid Internship ကို တရားဝင် စိတ်အေးလက်အေး လုပ်လို့ရပါတယ်"
+},
+{    question:"Internship Letter ရရင် ဘယ်လိုအလုပ်တွေ လုပ်လို့ရလဲ?",
+    answer:"Office Job, Hotel, Restaurant, Cafe, Customer Service, Factory Office, Elderly Care အစရှိတဲ့ အလုပ်တွေကို Internship Letter နဲ့ လျှောက်လို့ရပါတယ် 😊"
+},
+{    question:"Internship Letter ရရင် White Collar Job လုပ်လို့ရလား?",
+    answer:"White Collar Job (ရုံးလုပ်ငန်းခွင်ကောင်းကောင်း) လျှောက်ဖို့အတွက် Internship Letter ရရှိတာက အဓိက အချက်တစ်ခုပါပဲ။ Internship Letter ရရှိပြီးနောက်မှာတော့ Company တွေကို တက်ကြွစွာ လျှောက်လို့ရပါတယ် 😊"
+},
+{    question:"Paid Internship ရရင် ဘာအကျိုးရှိလဲ?",
+    answer:"Paid Internship ရရင် လစာအနည်းဆုံး ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ထိရမယ့် အလုပ်တွေကို တရားဝင်လုပ်လို့ရပါတယ်။ ကျောင်းတက်ရင်း ဝင်ငွေ ရရှိတာက အထူးအကျိုးရှိပါတယ် 😊"
+},
+{    question:"Paid Internship ရရင် White Collar Job လုပ်လို့ရလား?",
+    answer:"Paid Internship ရရင် White Collar Job (ရုံးလုပ်ငန်းခွင်ကောင်းကောင်း) လျှောက်ဖို့အတွက် အဓိက အချက်တစ်ခုပါပဲ။ Paid Internship ရရှိပြီးနောက်မှာတော့ Company တွေကို တက်ကြွစွာ လျှောက်လို့ရပါတယ် 😊"
+},
+{
+    question:"Major တွေဘာရှိလဲ?",
+    answer:"IT, Engineering, Business, Digital Marketing, Accounting Major များရှိပါတယ် 😊"
+},
+{    question:"Internship / Part-time အလုပ်လုပ်လို့ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊 Internship / Part-time အခွင့်အရေးများရှိပါတယ် ✨"
+},
+{    question:"ကျောင်းသားအများစုက ဘယ် Major တွေကို အတက်များကြလဲ?",
+    answer:"    အစ်ကိုတို့ကျောင်းမှာ ကျောင်းသားအများစုက Digital Marketing နဲ့ Digital Business Computer ကို အဓိက ရွေးချယ်ပြီး တက်ကြတယ်✨"
+},
+{    question:"ဘာလို့Digital Marketing နဲ့ Digital Business Computer  အဲဒီနှစ်ခုကို ပိုတက်ကြတာလဲဟင်?",
+    answer:"အဓိက အကြောင်းရင်းကတော့ အလုပ်တစ်ဖက်နဲ့ စာလိုက်နိုင်ဖို့အတွက် Digital ပိုင်းလေးတွေက စာလုပ်ရတာ ပိုလွယ်ကူလို့ပါပဲ။ ကျောင်းမှာလည်း သေချာပြင်ဆင်ထားတဲ့ Computer ခန်းတွေနဲ့ လက်တွေ့သင်ကြားပေးတာ ဖြစ်လို့ စာအုပ်ကြီးအတိုင်း ကျက်နေရတာမျိုး မဟုတ်ဘဲ အလုပ်ခွင်ထဲက လက်တွေ့လိုအပ်ချက်တွေနဲ့ အကိုက်ညီဆုံး ဖြစ်နေလို့ပေါ့"
+},
+{    question:"ဘယ် Major က အလုပ်အကိုင်ကောင်းလဲ?",
+    answer:"IT, Business, Engineering Major များ demand မြင့်ပါတယ် ✨"
+},
+{    question:"ကျောင်းလခကရော ဘယ်လောက်ရှိလဲ ? မေဂျာအလိုက် အရမ်းကွာမလား",
+    answer:"ဒါကတော့ တို့ကျောင်းရဲ့ အမိုက်ဆုံးအချက်ပဲ။ တစ်နှစ်ကို Semester (၂) ခုရှိပြီး တစ်ခုကို ၃၄၀၀၀ ဘတ်ပဲ ကျသင့်ပါတယ်။ တစ်နှစ်လုံးစာမှ (၆၈,၀၀၀) ဘတ်ပဲရှိတာပါ။ ပိုပြီး အဆင်ပြေတာက Semester မပြီးမချင်း ကျောင်းလခကို အရစ်ကျ ခွဲသွင်းလို့ရအောင် စီစဉ်ပေးထားတာမို့ ငွေရေးကြေးရေးအတွက် လုံးဝ ခေါင်းခဲစရာမလိုတော့ဘူးပေါ့✨"
+},
+{    question:"ဒီမေဂျာတွေ တက်ရင် ကျောင်းတက်ရင်း အလုပ်လုပ်လို့ရတာ တကယ်ပဲလား?",
+    answer:"တကယ်ပါဗျာ! ပထမဆုံး Semester (၄ လခန့်) မှာတော့ တစ်ပတ် ၅ ရက် ကျောင်းတက်ပြီး အခြေခံ Train ပေးမှာဖြစ်ပေမယ့်၊ First Year - Second Semester ကစလို့ တစ်ပတ်မှာ ၁ ရက်ပဲ ကျောင်းတက်ရတော့မှာပါ။ ကျန်တဲ့ရက်တွေမှာ ကျောင်းကနေ တရားဝင်ထုတ်ပေးတဲ့ Internship Letter နဲ့ လစာ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမယ့် Full-Time Internship (အလုပ်သင်) ကို စတိုင်လ်ကျကျ လုပ်ကိုင်ရင်း ဘွဲ့ယူနိုင်မှာ ဖြစ်ပါတယ်😊"
+},
+{    question:"ဘယ်လောက်ကြာရင် bachelor ဘွဲ့ရလဲ?",
+    answer:"Program ပေါ်မူတည်ပြီး  ၃နှစ်မှ ၄နှစ်ကြာပါမယ် 😊"
+},
+{    question:"ဘွဲ့ရပြီးရင် ဘာအကျိုးရှိလဲ?",
+    answer:"Thailand မှာမှာရောinternational မှာပါအသုံးပြုလို့ရတဲ့ Bachelor Degree ရရှိမှာဖြစ်ပါတယ် 🎓"
+},
+{
+    question:"အလုပ်လုပ်ရင်း ကျောင်းတက်လို့ရလား?",
+    answer:"Internship / Part-time အခွင့်အရေးများရှိပါတယ်အလုပ်လုပ်ရင်းနဲ့ Bachelor Degree (ဘွဲ့) ယူနိုင်ဖို့ဆိုတာ Thonburi University ရဲ့ အဓိကရည်ရွယ်ချက်နဲ့ အားသာချက်အရှိဆုံး အပိုင်းပဲ ဖြစ်ပါတယ်ဗျာ ✨"
+},
+{    question:"ကျောင်းတက်ရက်နဲ့ အလုပ်ရက် ညှိရတာ အဆင်ပြေပါ့မလား ?",
+    answer:"အရမ်းအဆင်ပြေတာပေါ့! First Year - First Semester (ပထမ ၄ လခန့်) မှာတော့ ထိုင်းဘာသာစကားနဲ့ လုပ်ငန်းခွင်အဆင်သင့်ဖြစ်အောင် တစ်ပတ် ၅ ရက် အပြည့်သင်ပေးမှာ ဖြစ်ပေမယ့်... First Year - Second Semester ကစပြီးတော့ တစ်ပတ်မှာ (၁) ရက်ပဲ ကျောင်းတက်ရတော့မှာပါ! ကျန်တဲ့ရက်တွေမှာ ကျောင်းတက်တာကို ထိခိုက်မှုမရှိဘဲ Full-time Internship (အလုပ်သင်) စိတ်ကြိုက် ဆင်းလို့ရပါပြီ။"},
+
+    {    question:"ထိုင်းမှာ တရားဝင် အလုပ်လုပ်လို့ရအောင် ဗီဇာကော အဆင်ပြေလားဟင်?",
+    answer:"Bachelor Degree ရရှိပြီးရင် ED Plus Visa with Re-entry Permit ရရှိမှာဖြစ်ပါတယ်။ Bachelor Degree ရရှိပြီးနောက်မှာတော့ ED Plus Visa ရရင် White Collar Job (ရုံးလုပ်ငန်းခွင်ကောင်းကောင်း) လျှောက်ဖို့အတွက် ဗီဇာသက်တမ်း (၁) နှစ်လုံးလုံး Visa Free အလကား ထပ်တိုးပေးတာ ဖြစ်ပါတယ်။ ကျောင်းပြီးပြီးချင်း ဗီဇာကိစ္စ ခေါင်းခဲစရာမလိုဘဲ အလုပ်ရှာဖို့ အချိန်အပြည့်အဝရတာပေါ့။ဒါကတော့ တို့ကျောင်းကို ရွေးချယ်ရတဲ့ အဓိကအချက်ပဲ။ Second Semester ရောက်တာနဲ့ ကျောင်းဘက်ကနေ Royal Thai Immigration (ထိုင်းလူဝင်မှုကြီးကြပ်ရေး) အသိအမှတ်ပြု 'Internship Letter' (အလုပ်သင်ထောက်ခံစာ) ထုတ်ပေးမှာဖြစ်လို့ ထိုင်းနိုင်ငံမှာ ဘာပြဿနာမှမရှိဘဲ တရားဝင် စိတ်အေးလက်အေး အလုပ်လုပ်ရင်း ကျောင်းတက်နိုင်မှာပါ😊"},
+{    question:"အလုပ်သင်ဆင်းရင် လစာကော ရလား အစ်ကို? ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မလား?",
+    answer:"Bachelor Degree ရရှိပြီးရင် Thailand မှာမှာရောinternational မှာပါအသုံးပြုလို့ရတဲ့ Bachelor Degree ရရှိမှာဖြစ်ပါတယ် 🎓"
+},
+{    question:"အလုပ်သင်ဆင်းရင် လစာကော ရလား အစ်ကို? ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မလား?",
+    answer:"ရတာပေါ့ ညီလေး/ညီမလေးရယ်။ အလုပ်စဝင်ပြီဆိုတာနဲ့ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမှာဖြစ်ပြီး အလုပ်အပေါ်မူတည်ပြီး နေစားငြိမ်း၊ OT၊ Bonus နဲ့ Tip Money တွေပါ ရဦးမှာပါ။ ပိုမိုက်တာက (၃) လတစ်ခါ လစာတိုးပေးတဲ့ စနစ်လည်း ရှိပါသေးတယ်။ ကျောင်းလခက တစ်နှစ်လုံးစာမှ (၆၈,၀၀၀) ဘတ်ပဲ ရှိတာဖြစ်ပြီး Semester မပြီးမချင်း ခွဲသွင်းလို့ရတာကြောင့် မိမိကျောင်းလခကို ကိုယ်တိုင်ရှာပြီး အေးဆေး ပေးဆောင်နိုင်ပါတယ်။"
+},
+{    question:"ကျောင်းပြီးသွားရင်ကော ဘာအခွင့်အရေးတွေ ရှိဦးမလဲဗျ?",
+    answer:"ကျောင်းပြီးလို့ Bachelor Degree ရသွားတဲ့အခါ အလုပ်ကောင်းကောင်း (White Collar Job) ရှာဖို့ ဒါမှမဟုတ် Master ဆက်တက်ဖို့အတွက် ED Plus Visa အထူးအခွင့်အရေးနဲ့ တစ်နှစ်စာ 'Visa Free' ထပ်ရဦးမှာပါ! ဒါ့အပြင် ကျောင်းတက်နေစဉ်အတွင်း ဘဏ်အကောင့်၊ ယာဉ်မောင်းလိုင်စင်၊ ကျန်းမာရေးအာမခံ လျှောက်ထားတာတွေကအစ ဗီဇာစာရွက်စာတမ်းကိစ္စအားလုံးကို ကျောင်းဘက်က အပြည့်အဝ တာဝန်ယူ ပံ့ပိုးပေးသွားမှာ ဖြစ်ပါတယ်"},
+
+
+{
+    question:"Hostel စီစဉ်ပေးလား?",
+    answer:"အစအဆုံး စီစဉ်ပေးပါတယ် ညီလေး/ညီမလေးရေ! မိဘတွေလည်း စိတ်ချရအောင်၊ ကျောင်းသားတွေလည်း သက်တောင့်သက်သာနဲ့ စရိတ်သက်သာစွာ နေထိုင်နိုင်အောင် တက္ကသိုလ်အဆောင်ကို ကျောင်းဘက်ကနေ သေချာအဆင်ပြေအောင် စီစဉ်ပေးပါတယ်ခင်ဗျာ။😊"
+},
+{
+    question:"ထိုင်းမှာ အခန်းငှားခတွေ ဈေးကြီးတယ်ကြားလို့ အဆောင်လခက ဘယ်လောက်လောက် ကျသင့်မလဲ?",
+    answer:"ဒါကတော့ တို့ကျောင်းသားတွေအတွက် အမိုက်ဆုံးပဲ! တက္ကသိုလ်အဆောင် အခန်းငှားခက တစ်လမှ 'ဘတ်ငါးရာဝန်းကျင်' သာ ကျသင့်မှာဖြစ်လို့ အပြင်မှာ အခန်းလိုက်ငှားနေရတာထက်စာရင် အဆမတန် သက်သာပါတယ်"
+},
+{    question:"အခန်းရှာပေးလား?",
+    answer:"ကူညီရှာပေးပါတယ်ခင်ဗျာ 😊"
+},
+{    question:"Dormitory ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+{    question:"ရန်ကုန်ကနေ စလာမယ့်သူဆိုရင် အဆောင်ကို ဘယ်လိုသွားရမလဲဗျ?",
+    answer:"စိတ်အေးအေးသာ ထားလိုက်ပါ ညီလေးရယ်။ မြန်မာနိုင်ငံကနေ ထိုင်းနိုင်ငံကို စစထွက်ချင်း ဗီဇာကိစ္စတွေကို ကျောင်းက အစအဆုံး တာဝန်ယူပေးမယ့်အပြင်၊ လေဆိပ်ကို ရောက်တဲ့အထိ ကျောင်းတည်ထောင်သူ Dr. Arung Sriwattana ကိုယ်တိုင် လိုက်လံပို့ဆောင်ပေးမှာပါ။ ထိုင်းလေဆိပ်ကို ရောက်တာနဲ့ Thonburi University ရဲ့ တာဝန်ရှိ လူကြီးမင်းတွေနဲ့ စီနီယာကျောင်းသားတွေက လာရောက်စောင့်ကြိုပြီး အဆောင်အထိ လိုက်လံပို့ဆောင်ပေးမှာ မို့လို့ နေရာအသစ်မှာ လမ်းပျောက်မှာကို လုံးဝ စိုးရိမ်စရာမလိုပါဘူး"},
+{    question:"အလုပ်သင် (Internship) ဆင်းတဲ့အခါ အဆောင်စရိတ်ကို ကိုယ်တိုင်ပေးနိုင်မလားဟင်?",
+    answer:"အေးဆေး ပေးနိုင်တာပေါ့! First Year - Second Semester ကစပြီး တစ်ပတ် ၁ ရက်ပဲ ကျောင်းတက်၊ ကျန်ရက်တွေမှာ ကျောင်းကထုတ်ပေးတဲ့ တရားဝင် Internship Letter နဲ့ အလုပ်ဝင်ရမှာဖြစ်ပြီး **လစာ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမှာပါ**။ အချို့အလုပ်တွေဆိုရင် နေစားငြိမ်း တာမျိုးတွေအပြင် OT၊ Bonus တွေပါ ရသေးတာမို့ တစ်လ ၅၀၀ ဝန်းကျင်ပဲရှိတဲ့ အဆောင်လခကို ကိုယ့်ဘာသာ အေးဆေး ပေးဆောင်နိုင်တဲ့အပြင် ကျောင်းလခပါ ကိုယ်တိုင်ရှာနိုင်မှာပါဗျာ"
+},
+
+{    question:"အခန်းရှာပေးလား?",
+    answer:"ကူညီရှာပေးပါတယ်ခင်ဗျာ 😊"
+}, 
+{
+    question:"G 12 passed နဲ့တက်လို့ရလား?",
+    answer:"စနစ်သစ် Grade 12 အောင်ထားရင်) ၃ လပဲ တက်ရမယ့် 'University Pathways Program' ကို တက်ရောက်ရမှာ ဖြစ်ပါတယ်! ၆ လတန်း (Foundation) တက်စရာမလိုဘဲ အချိန် ၃ လ တိတိ သက်သာသွားတာပေါ့😊"
+},
+{    question:"G 11 နဲ့တက်လို့ရလား?",
+    answer:"စနစ်သစ် Grade 11 အောင်ထားရင်) ၆ လတန်း (Foundation) ကို တက်ရောက်ရမှာ ဖြစ်ပါတယ်! အချိန် ၆ လ တိတိ သက်သာသွားတာပေါ့😊"
+},
+{    question:"University Pathways Program ၃ လအတွင်းမှာ ဘာတွေ သင်ကြားပေးမှာလဲဗျ?",
+    answer:"Thonburi University ရဲ့ စာသင်ခန်းထဲရောက်ရင် အခက်အခဲမရှိ အေးဆေးလိုက်နိုင်အောင် *Business Management, Basic Computer, Thai Language, English Language နဲ့ Bio Science* အစရှိတဲ့ တက္ကသိုလ်အကြို အခြေခံဘာသာရပ်တွေကို ပါမောက္ခဆရာကြီးတွေကိုယ်တိုင် သေချာ Train ပေးသွားမှာပါဗျာ။"
+},
+{    question:"၃ လတန်း Pathways အတွက် သင်တန်းကြေးက ဘယ်လောက်ရှိလဲ ?",
+    answer:"သင်တန်းကြေးအပြီးအစီး ဘတ် ၂၉,၅၀၀ ပဲ ကျသင့်မှာဖြစ်ပြီး ဒါကိုလည်း ခွဲသွင်းလို့ရအောင် စီစဉ်ပေးထားပါတယ်!ကျောင်းစအပ်ချင်း ၁၀၀၀၀ ဘတ်အတန်းစတက်တဲ့နေ့၁၀၀၀၀ ဘတ်အတန်းစပြီး ၁ လပြည့်ရင် ၉၅၀၀ ဘတ်ဆိုပြီး (၃) ကြိမ် အေးဆေး ခွဲသွင်းရုံပါပဲ။"
+},
+{    question:"Pathways ၃ လပြီးလို့ တက္ကသိုလ်ထဲရောက်ရင်ရော အလုပ်လုပ်ရင်း ကျောင်းတက်လို့ရမှာလား?",
+    answer:"ဒါပေါ့ တက္ကသိုလ်ရောက်လို့ First Year - Second Semester ကစတာနဲ့ တစ်ပတ်မှာ ၁ ရက်ပဲ ကျောင်းတက် ရတော့မှာပါ။ ကျန်တဲ့ရက်တွေမှာ ကျောင်းကတရားဝင်ထုတ်ပေးတဲ့ Internship Letter နဲ့ လစာ အနည်းဆုံး ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ကြား ရရှိမယ့် Full-time Internship ကို စိတ်ချလက်ချ လုပ်ကိုင်ရင်း ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မှာ ဖြစ်ပါတယ် 😊"
+},
+{
+    question:"ထိုင်းကို လာဖို့အတွက် ဗီဇာကိစ္စတွေကိုရော ကျောင်းက လုပ်ပေးလား",
+    answer:"လုံးဝ စိတ်ပူစရာမလိုပါဘူး။ ရန်ကုန်မြန်မာသံရုံးကနေ စထွက်ကတည်းက ဗီဇာရအောင် ကျောင်းဘက်က အစအဆုံး တာဝန်ယူပေးမှာဖြစ်ပြီး ထိုင်းရောက်ရင်လည်း University ED Plus Visa + Re-entry Permit တွေ ရရှိအောင် ကျောင်းဘက်က အပြည့်အဝ ဆောင်ရွက်ပေးသွားမှာ ဖြစ်ပါတယ်ခင်ဗျာ 😊"
+},
+
+
+{    question:"ထိုင်းရောက်နေရင် တက်လို့ရလား?",
+    answer:"ရတာပေါ့! ရန်ကုန်မှာဆို Campus တက်ရမှာဖြစ်ပြီး၊ ထိုင်းရောက်နေရင်တော့ အလုပ်မပျက်စေမယ့် Online Video Class ရှိပါတယ်။ ကိုယ်အားတဲ့အချိန် ဖွင့်သင်ရုံပဲမို့ အရမ်းအဆင်ပြေတယ်နော်😊"
+},
+{
+    question:"G11 နဲ့တက်လို့ရလား?",
+    answer:"ရတာပေါ့ ညီလေး/ညီမလေးရေ... စနစ်သစ် Grade 11 အောင်မြင်ထားတယ်ဆိုရင် Thonburi University မှာ တရားဝင် တက္ကသိုလ်တက်ပြီး ဘွဲ့ယူနိုင်ဖို့အတွက် အဆင်သင့်ဖြစ်နေပါပြီခင်ဗျာ😊"
+},
+{    question:"Grade 11 အောင်ထားရင် ဘယ်လိုစတက်ရမလဲ?",
+    answer:"စနစ်သစ် Grade 10 အောင်မြင်ထားတယ်ဆိုရင် Thonburi University မှာ တရားဝင် တက္ကသိုလ်တက်ပြီး ဘွဲ့ယူနိုင်ဖို့အတွက် အဆင်သင့်ဖြစ်နေပါပြီခင်ဗျာ😊"
+},
+
+
+{
+    question:"Passport မရှိသေးရင်ရလား?",
+    answer:"ရပါတယ်  Passport မရှိသေးရင်လည်း စိတ်ပူစရာမလိုပါဘူး။ ကျောင်းတက်နိုင်ဖို့အတွက် အစ်ကိုတို့ Dreams by HARRY ဘက်ကနေ အစအဆုံး အဆင်ပြေအောင် သေချာလမ်းညွှန် ကူညီပေးသွားမှာပါခင်ဗျာ 😊"
+},
+{    question:"Passport မရှိသေးရင် ကျောင်းအရင် အပ်ထားလို့ ရလား?",
+    answer:"ရတာပေါ့။ တက္ကသိုလ်ဝင်ခွင့် လမ်းကြောင်းတွေဖြစ်တဲ့ (၃) လတန်း Pathways သို့မဟုတ် (၆) လတန်း Foundation အတန်းတွေကို Passport မလိုဘဲ မိမိရဲ့ အခြေခံပညာ အောင်လက်မှတ်တွေနဲ့ ကျောင်းစတင်အပ်နှံပြီး အတန်းအရင်တက်ထားလို့ ရပါတယ်😊"
+},
+{    question:"ဘယ်လိုစာရွက်စာတမ်းတွေ လိုအပ်လဲ?",
+    answer:"ကျောင်းတက်ဖို့အတွက် အဓိကလိုအပ်တဲ့ စာရွက်စာတမ်းတွေကတော့ Passport, Education Certificate (သင်တန်းကြေးပေးဆောင်ပြီးရင် ကျောင်းကနေ ထုတ်ပေးမယ့် Letter of Acceptance) နဲ့ Photo တို့ပါ။ အခြားလိုအပ်တဲ့ စာရွက်စာတမ်းတွေကိုတော့ ကျောင်းဘက်ကနေ အသေးစိတ် လမ်းညွှန်ပေးသွားမှာဖြစ်ပါတယ်😊"
+},
+{    question:"ဒါဆို Passport က ဘယ်အချိန်ကျမှ လိုအပ်မှာလဲဟင်?",
+    answer:"ဒီအကြိုသင်တန်းတွေ ပြီးဆုံးလို့ ထိုင်းနိုင်ငံ Thonburi University Campus ကို တိုက်ရိုက်သွားရောက် တက်ရောက်တော့မယ့်အချိန်ကျမှသာ Passport အတည်ပြုစာအုပ် အပြင်အဆင် လိုအပ်တာ ဖြစ်ပါတယ်ဗျာ😊"
+},
+{    question:"Passport လျှောက်တဲ့အခါ ကျောင်းဘက်က ဘာတွေကူညီပေးမှာလဲဗျ?",
+    answer:"ကျောင်းသားတွေ နိုင်ငံကူးလက်မှတ် (Passport) လျှောက်ထားရတာ လွယ်ကူစေဖို့အတွက် တက္ကသိုလ်ဘက်ကနေ တရားဝင် လိုအပ်တဲ့ Documents (ထောက်ခံစာ စာရွက်စာတမ်း) တွေကို အပြည့်အဝ ထောက်ပံ့ပေးသွားမှာ ဖြစ်ပါတယ်**။ ဒါ့အပြင် မြန်မာနိုင်ငံကနေ ထိုင်းနိုင်ငံကို စတင်ထွက်ခွာဖို့အတွက် ရန်ကုန်သံရုံးမှာ **၃ လ ဗီဇာ (Visa allowed) ရရှိအောင်လည်း ထိုင်းရော မြန်မာပါ နှစ်ဖက်လုံးက တာဝန်ယူ ဆောင်ရွက်ပေးသွားမှာပါခင်ဗျာ😊"
+},
+{    question:"အကယ်၍ ထိုင်းမှာ ရောက်နှင့်ပြီးသားသူဆိုရင်ကော ?",
+    answer:"ထိုင်းမှာ ရောက်နှင့်ပြီးသားသူတွေအနေနဲ့ Passport မရှိသေးရင်တောင် မိမိမှာ Pink Card (ပန်းရောင်ကတ်)၊ CI (Certificate of Identity)၊ ဆယ်နှစ်ဘတ် သို့မဟုတ် အခြား တရားဝင်အထောက်အထား တစ်မျိုးမျိုး ရှိနေရင်ကို ကျောင်းတက်ခွင့် လျှောက်ထားနိုင်ပါတယ်။ နောက်ပိုင်း ကျောင်းသားဗီဇာ (**ED Plus Visa + Re-entry Permit**) ပြောင်းလဲလျှောက်ထားနိုင်ဖို့အတွက်လည်း ကျောင်းဘက်က အသေးစိတ် အစအဆုံး တာဝန်ယူ ကူညီပေးသွားမှာပါ😊"
+},
+
+{
+    question:"ဒါဆို အခုလောလောဆယ် ဘာလုပ်ရမလဲ ?",
+    answer:"အခုလောလောဆယ်ကတော့ နေရာမပြည့်ခင် အတန်းအရင်ဦးအောင် စာရင်းပေးသွင်းထားဖို့ပါပဲ။ အကြိုသင်တန်းတွေက ရန်ကုန်မှာ လူကိုယ်တိုင်တက်ရမှာဖြစ်ပြီး ထိုင်းရောက်နေရင် Online Video Class နဲ့ အလုပ်မပျက် တက်လို့ရတာမို့ အချိန်မပုပ်တော့ဘူးပေါ့ 😊"
+},
+
+{
+    question:"ဘယ်လိုလျှောက်ထားရမလဲ?",
+    answer:"အရင်ဆုံး သင်တန်းတွေကို ရန်ကုန်မှာ တက်ရမှာဖြစ်ပြီး၊ ထိုင်းရောက်နေရင်တော့ Online Video Class နဲ့ အလုပ်မပျက် တက်လို့ရတာမို့ အချိန်မပုပ်တော့ဘူးပေါ့ 😊"
+},
+{    question:"ဘယ်လိုစတက်ရမလဲ?",
+    answer:"စနစ်သစ် Grade 12 အောင်မြင်ထားတယ်ဆိုရင်) ၃ လပဲ တက်ရမယ့် 'University Pathways Program' ကို တက်ရောက်ရမှာ ဖြစ်ပါတယ်! ၆ လတန်း (Foundation) တက်စရာမလိုဘဲ အချိန် ၃ လ တိတိ သက်သာသွားတာပေါ့😊"
+},
+
+{
+    question:"Tuition Fee ဘယ်လောက်လဲ?",
+    answer:"Thonburi University ရဲ့ ကျောင်းလခက မြန်မာကျောင်းသားတွေအတွက် အသက်သာဆုံးဖြစ်အောင် စီစဉ်ပေးထားတဲ့အပြင် မိဘတွေရော ကျောင်းသားတွေပါ ငွေကြေးအဆင်ပြေစေဖို့ အရစ်ကျ ခွဲသွင်းလို့ရတဲ့ စနစ် ကို အပြည့်အဝ ကျင့်သုံးပေးထားပါတယ် 😊"
+},
+{    question:"အကြိုသင်တန်းတွေဖြစ်တဲ့ Foundation နဲ့ Pathways အတွက်ကော ဘယ်လောက်လဲဟင်?",
+    answer:" ဒါကတော့ ကိုယ့်ရဲ့ လက်ရှိပညာရေးအဆင့်အတန်းပေါ် မူတည်ပါတယ် University Pathways Program (၃ လတန်း - G12/ဘွဲ့ရများအတွက်): အပြီးအစီး ဘတ် ၂၉,၅၀၀ ပဲ ကျသင့်ပြီး ကျောင်းအပ်ချင်း (၁၀၀၀၀ ဘတ်)၊ အတန်းစရက် (၁၀၀၀၀ ဘတ်)၊ ၁ လပြည့်ရင် (၉,၅၀၀ ဘတ်) ဆိုပြီး (၃) ကြိမ် ခွဲသွင်းနိုင်ပါတယ် University Foundation Program (၆ လတန်း - G11/၉တန်း/၁၀တန်းများအတွက်): အပြီးအစီး ဘတ် ၃၉,၅၀၀ ကျသင့်ပြီး ကျောင်းအပ်ချင်း (၁၀၀၀၀ ဘတ်)၊ အတန်းစရက် (၁၀၀၀၀ ဘတ်)၊ ၁ လပြည့်ရင် (၁၀၀၀၀ ဘတ်)၊ ၂ လပြည့်ရင် (၉၅၀၀ ဘတ်) ဆိုပြီး **(၄) ကြိမ် ခွဲသွင်းနိုင်ပါတယ်ခင်ဗျာ 😊"
+},
+{    question:"အလုပ်လုပ်ရင်း ကိုယ့်ကျောင်းလခကိုယ် ပြန်ရှာလို့ရနိုင်မလားဗျ?",
+    answer:"ဒါကတော့ တို့ကျောင်းရဲ့ အကောင်းဆုံးအပိုင်းပဲပေါ့! First Year - Second Semester ကစပြီး တစ်ပတ် ၁ ရက်ပဲ ကျောင်းတက်ရမှာဖြစ်ပြီး ကျန်တဲ့ရက်မှာ ကျောင်းကထုတ်ပေးတဲ့ တရားဝင် Internship Letter နဲ့ အလုပ်ဆင်းရမှာပါ။ အနည်းဆုံး လစာ ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ကြား ရရှိမှာဖြစ်လို့ ကိုယ့်ရဲ့ အဆောင်လခ (တစ်လ ၅၀၀ ဝန်းကျင်) နဲ့ ကျောင်းလခတွေကို ကိုယ့်ခြေထောက်ပေါ်ကိုယ်ရပ်တည်ပြီး အေးဆေး ပြန်ရှာဖွေ ပေးချေနိုင်ပါတယ်ခင်ဗျာ"
+},
+{    question:"ဗီဇာကိစ္စတွေ၊ အခြားစာရွက်စာတမ်းကြေးတွေ ထပ်ပေးရဦးမလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊 Internship / Part-time အခွင့်အရေးများရှိပါတယ်အလုပ်လုပ်ရင်းနဲ့ Bachelor Degree (ဘွဲ့) ယူနိုင်ဖို့ဆိုတာ Thonburi University ရဲ့ အဓိကရည်ရွယ်ချက်နဲ့ အားသာချက်အရှိဆုံး အပိုင်းပဲ ဖြစ်ပါတယ်ဗျာ ✨"
+},
+
+{
+    question:"Monthly payment ရလား?",
+    answer:" ရတာပေါ့ မိဘတွေရော ကျောင်းသားတွေပါ ငွေကြေးဝန်ထုပ်ဝန်ပိုးမဖြစ်စေဘဲ စိတ်အေးချမ်းသာစွာ ပညာသင်နိုင်ဖို့အတွက် တို့ကျောင်းမှာ လအလိုက် အရစ်ကျ ခွဲသွင်းလို့ရတဲ့ စနစ် ကို သေချာစီစဉ်ပေးထားပါတယ်ခင်ဗျာ။ ✨"
+},
+{    question:"လစာကော ဘယ်လောက်လဲ?",
+    answer:"အလုပ်သင်ဆင်းရင် လစာကော ရလား အစ်ကို? ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မလား? ဆိုတဲ့အကြောင်းအရာကတော့ အလုပ်စဝင်ပြီဆိုတာနဲ့ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမှာဖြစ်ပြီး အလုပ်အပေါ်မူတည်ပြီး နေစားငြိမ်း၊ OT၊ Bonus နဲ့ Tip Money တွေပါ ရဦးမှာပါ။ ပိုမိုက်တာက (၃) လတစ်ခါ လစာတိုးပေးတဲ့ စနစ်လည်း ရှိပါသေးတယ်။"
+},
+{    question:"တက္ကသိုလ်ထဲ ရောက်သွားတဲ့အခါကျရင်ရော လစဉ်သွင်းလို့ ရဦးမလား?",
+    answer:"ရတာပေါ့! Thonburi University ထဲ ရောက်သွားတဲ့အခါ တစ်နှစ်မှာ Semester (၂) ခု ရှိပါတယ်။ Semester တစ်ခုကို ကျောင်းလခ ၃၄,၀၀၀ ဘတ် ကျသင့်မှာဖြစ်ပြီး အဲဒီ Semester မပြီးမချင်း လအလိုက် ခွဲသွင်းလို့ရတဲ့ Flexible Payment စနစ် ကို ကျင့်သုံးပေးထားတာမို့ တစ်ခါတည်း အကုန်သွင်းစရာ မလိုပါဘူး"
+},
+{    question:"လစာကော ဘယ်လောက်လဲ?",
+    answer:"အလုပ်သင်ဆင်းရင် လစာကော ရလား အစ်ကို? ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မလား? ဆိုတဲ့အကြောင်းအရာကတော့ အလုပ်စဝင်ပြီဆိုတာနဲ့ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမှာဖြစ်ပြီး အလုပ်အပေါ်မူတည်ပြီး နေစားငြိမ်း၊ OT၊ Bonus နဲ့ Tip Money တွေပါ ရဦးမှာပါ။ ပိုမိုက်တာက (၃) လတစ်ခါ လစာတိုးပေးတဲ့ စနစ်လည်း ရှိပါသေးတယ်။"
+},
+{
+    question:"Airport Pickup ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ ရှိရုံတင်မကဘူး ညီလေး/ညီမလေးရေ... မြန်မာပြည် လေဆိပ်ကနေစပြီး ထိုင်းနိုင်ငံ တက္ကသိုလ်အဆောင်ကို ရောက်တဲ့အထိ လူကြီးမင်းတွေကိုယ်တိုင် စောင့်ကြိုပြီး နွေးထွေးစွာ လိုက်လံပို့ဆောင်ပေးမယ့် VIP ဝန်ဆောင်မှုစနစ် အသင့်ရှိနေပါတယ်ခင်ဗျာ😊"
+},
+{    question:"ထိုင်းနိုင်ငံကို တစ်ခါမှမရောက်ဖူးတော့ လေဆိပ်ဆင်းရင် လမ်းပျောက်မှာ အရမ်းကြောက်လို့ ?",
+    answer:"လုံးဝ လုံးဝ စိတ်ပူစရာမလိုပါဘူး တို့ကျောင်းရဲ့ ထူးခြားချက်က မြန်မာနိုင်ငံ လေဆိပ်ကနေ ထိုင်းတက္ကသိုလ်ကို စတင်ထွက်ခွာကတည်းက **ကျောင်းတည်ထောင်သူ Dr. Arung Sriwattana ကိုယ်တိုင် အနီးကပ် တာဝန်ယူ လိုက်လံပို့ဆောင်ပေးမှာ ဖြစ်လို့ပါပဲ။😊"
+},
+{    question:"ထိုင်းလေဆိပ်ရောက်ရင်ကော ဘယ်သူတွေ လာကြိုမှာလဲဗျ?",
+    answer:"ထိုင်းလေဆိပ်ကို ရောက်တာနဲ့ Thonburi University ရဲ့ တာဝန်ရှိ လူကြီးမင်းတွေနဲ့ အရင်ရောက်နှင့်နေတဲ့ စီနီယာကျောင်းသား အစ်ကို/အစ်မတွေက လှိုက်လှိုက်လှဲလှဲနဲ့ စောင့်ကြိုနေကြမှာပါ။ အဲဒီကနေတစ်ဆင့် ကျောင်းသားတွေရဲ့ အထုတ်အပိုးတွေကို ကူညီသယ်ပိုးပေးပြီး တက္ကသိုလ်အဆောင်အထိ အဆင်သင့် စီစဉ်ထားတဲ့ ကားတွေနဲ့ စနစ်တကျ လိုက်လံပို့ဆောင်ပေးသွားမှာ ဖြစ်ပါတယ်ခင်ဗျာ"
+},
+{    question:"ဒါဆို လေဆိပ်ကဆင်းတာနဲ့ အဆောင်ကို တန်းရောက်မှာပေါ့နော်? အဆောင်လခကရော ဈေးကြီးလား?",
+    answer:"ဟုတ်ပါတယ်ဗျာ။ လေဆိပ်ကနေ အဆောင်ကို စိတ်ချလက်ချ တန်းရောက်မှာပါ။ အဆောင်လခကလည်း ကျောင်းသားတွေအတွက် အထူးသက်သာအောင် စီစဉ်ပေးထားတာမို့ တစ်လမှ 'ဘတ်ငါးရာဝန်းကျင်' သာ ကျသင့်မှာဖြစ်လို့ အပြင်မှာ အခန်းငှားနေရတာထက်စာရင် အစစအရာရာ စရိတ်သက်သာပြီး အများကြီး လုံခြုံမှုရှိတာပေါ့။ 😊"
+},
+{    question:"ထိုင်းကိုမထွက်ခွာခင် ဗီဇာကိစ္စတွေကိုရော ကျောင်းက လုပ်ပေးလားဟင်?",
+    answer:"လုပ်ပေးတာပေါ့ဗျာ။ မြန်မာနိုင်ငံကနေ ထိုင်းနိုင်ငံကို စထွက်ဖို့အတွက် ရန်ကုန် Embassy ကနေ ၃ လ ဗီဇာ (Visa allowed) ရရှိအောင် ကျောင်းဘက်က အစအဆုံး တာဝန်ယူ ဆောင်ရွက်ပေးမှာဖြစ်ပြီး၊ ထိုင်းရောက်လို့ သုံးလပြည့်ခါနီးရင်လည်း ကျောင်းသားဗီဇာ (**ED Plus Visa + Re-entry Permit**) တွေ ဆက်တိုးနိုင်ဖို့ ကျောင်းဘက်ကပဲ အပြည့်အဝ ဆက်လက်တာဝန်ယူပေးသွားမှာ ဖြစ်ပါတယ်😊"
+},
+{
+    question:"ကျောင်းတက်နေတုန်း ဗီဇာသက်တမ်းတိုးရမှာတွေ ကျောင်းက ကူညီပေးလားဗျ?",
+    answer:"ကူညီပေးရုံတင်မကဘူး ညီလေး/ညီမလေးရေ... ဗီဇာစာရွက်စာတမ်း အရှုပ်အထွေး မှန်သမျှကို ကျောင်းဘက်ကနေ အသေးစိတ် အစအဆုံး တာဝန်ယူ ဆောင်ရွက်ပေးပါတယ်! မြန်မာပြည်ကနေ စထွက်ကတည်းက ရန်ကုန်သံရုံးမှာ ၃ လဗီဇာရအောင် လုပ်ပေးမယ်၊ ထိုင်းရောက်ရင် ၃ လ ပြည့်ခါနီးမှာ ၆ လ၊ အဲဒီကနေတစ်ဆင့် သက်တမ်းတိုးတာတွေအားလုံးကို ကျောင်းကပဲ အကုန်လုပ်ပေးမှာပါ။ ဒါ့အပြင် ပြည်ပခရီးသွားရင် ဗီဇာမပျက်အောင် Re-entry Permit ကိစ္စတွေကိုပါ ကျောင်းက အပြည့်အဝ ပံ့ပိုးပေးသွားမှာမို့ စိုးရိမ်စရာ လုံးဝမလိုပါဘူးခင်ဗျာ😊"
+},
+
+{
+    question:"English မကောင်းရင်ရလား?",
+    answer:"စိတ်အေးအေးထားပါ ညီလေး/ညီမလေးရယ်။ ရပါတယ်ခင်ဗျာ! အင်္ဂလိပ်စာ အခြေခံအားနည်းတဲ့ ကျောင်းသားတွေအတွက် တက္ကသိုလ်စာသင်ခန်းထဲမှာ အဆင်ပြေပြေ လိုက်နိုင်အောင် (၆) လတာ University Foundation Program မှာ အင်္ဂလိပ်စာ အခြေခံကစပြီး ပါမောက္ခ ဆရာ၊ ဆရာမကြီးတွေ ကိုယ်တိုင် သေချာ Orientation လုပ်ပြီး စနစ်တကျ ပြင်ဆင်သင်ကြားပေးသွားမှာမို့လို့ အခြေခံမရှိလည်း ယုံကြည်မှုအပြည့်နဲ့ လှမ်းခဲ့ရုံပါပဲဗျာ 😊"
+},
+
+{
+    question:"ထိုင်းစာ၊ ထိုင်းစကား တစ်လုံးမှမတတ်လို့ ထိုင်းမှာ နေထိုင်ရတာ အဆင်ပြေပါ့မလား?",
+    answer:"မပူပါနဲ့ ညီလေးတို့ရေ။ တို့ကျောင်းရဲ့ Foundation အကြိုတန်းတွေမှာကတည်းက Basic Thai Language (ထိုင်းဘာသာစကားအခြေခံ) ကို ထည့်သွင်းသင်ကြားပေးပါတယ်။ ပိုမိုက်တာက တက္ကသိုလ်ထဲ ရောက်သွားတဲ့အခါမှာလည်း ပထမဆုံး Semester (၄ လခန့်) အတွင်းမှာ ထိုင်းနိုင်ငံရဲ့ လုပ်ငန်းခွင်ထဲ တရားဝင်ဝင်ရောက်ပြီး အလုပ်လုပ်ကိုင်နိုင်တဲ့အထိ ထိုင်းဘာသာစကားကို လုပ်ငန်းခွင်သုံးအဆင့်ထိ Train ပေးသွားမှာ ဖြစ်ပါတယ်ခင်ဗျာ😊"
+},
+
+{
+    question:"Internship Letter ရလား?",
+    answer:" ဒါက Thonburi University ရဲ့ အလန်းဆုံး အားသာချက်ပဲပေါ့! First Year - Second Semester ရောက်တာနဲ့ ကျောင်းဘက်ကနေ Royal Thai Immigration အသိအမှတ်ပြု 'Internship Letter' ကို တိုက်ရိုက်ထုတ်ပေးမှာဖြစ်လို့ ထိုင်းနိုင်ငံမှာ ဘာပြဿနာမှမရှိဘဲ တရားဝင် စိတ်အေးလက်အေး အလုပ်လုပ်ရင်း ကျောင်းတက်နိုင်မှာ ဖြစ်ပါတယ်ခင်ဗျာ✨"
+},
+
+{
+    question:"Paid Internship ရှိလား?",
+    answer:"တကယ်ရပါတယ်ခင်ဗျာ! အလုပ်စဝင်ပြီဆိုတာနဲ့ အနည်းဆုံး လစာ ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ကြား စတင်ရရှိမှာဖြစ်ပြီး အလုပ်အပေါ်မူတည်ပြီး နေစားငြိမ်း၊ OT၊ Bonus နဲ့ Tip Money တွေပါ ရဦးမှာပါ။ ပိုမိုက်တာက (၃) လတစ်ခါ လစာတိုးပေးတဲ့ စနစ်လည်း ရှိပါသေးတယ်။ တစ်နှစ်လုံးစာ ကျောင်းလခက Semester အလိုက် ခွဲသွင်းလို့ရတာကြောင့် မိမိကျောင်းလခနဲ့ အဆောင်လခ (တစ်လ ၅၀၀ ဝန်းကျင်) ကို ကိုယ်တိုင်ရှာပြီး အေးဆေး ပေးဆောင်နိုင်ပါတယ်ဗျာ😊"
+},
+
+{
+    question:"ကျောင်းက ဘယ်နားမှာရှိတာလဲဟင်? ဘန်ကောက်မှာပဲ တက်ရမှာလားဗျ?",
+    answer:"ဟုတ်ပါတယ်ခင်ဗျာ! ကျောင်းသားတွေ အလုပ်အကိုင် အခွင့်အလမ်း အပေါများဆုံးနဲ့ အချက်အချာအကျဆုံးဖြစ်တဲ့ ထိုင်းနိုင်ငံ၊ ဘန်ကောက်မြို့ (Bangkok) မှာ တည်ရှိတဲ့အတွက် သွားလာရတာလည်း အရမ်းလွယ်ကူသလို အလုပ်အကိုင်တွေလည်း စိတ်ကြိုက်ရွေးချယ်နိုင်မှာ ဖြစ်ပါတယ်! (အကြိုတန်းတွေ သင်ယူနေစဉ်မှာတော့ ရန်ကုန် Campus မှာ လူကိုယ်တိုင်တက်ရောက်နိုင်သလို၊ ထိုင်းရောက်နှင့်ပြီးသားသူတွေဆိုရင်လည်း အလုပ်မပျက်စေမယ့် Online Video Class နဲ့ အဆင်ပြေပြေ တက်ရောက်နိုင်ပါတယ်ဗျာ။)  😊"
+},
+
+{
+    question:"ကျောင်းအနီးအနားမှာ BTS (ရထားလိုင်း) ရော ရှိလားဟင်?",
+    answer:" ရှိပါတယ်ခင်ဗျာ! Thonburi University အနီးအနားမှာတင် ဘန်ကောက်မြို့ရဲ့ အဓိက အချက်အချာကျတဲ့ Lak Song BTS Stationရှိတာမို့ သွားရေးလာရေးအတွက် လုံးဝ (လုံးဝ) ပူစရာမလိုပါဘူး 😊"
+},
+{    question:"Lak Song BTS ဘူတာကနေ ကျောင်းကို သွားရတာ ဝေးလား?",
+    answer:"မဝေးဘူးဗျ! Lak Song BTS ဘူတာ ကနေ ကျောင်းကို အရမ်းနီးနီးလေးတင်မို့လို့ သွားလာရတာ တကယ်ကို အဆင်ပြေပါတယ်။ ရထားပေါ်က ဆင်းတာနဲ့ ကျောင်းကို အလွယ်တကူ ဆက်သွားလို့ ရပါတယ်ခင်ဗျာ 😊"
+},
+{    question:"BTS ရထားလိုင်း ရှိတော့ ဘာတွေ ပိုအဆင်ပြေသွားမလဲ?",
+    answer:"အများကြီး အဆင်ပြေသွားတာပေါ့ ညီလေးရဲ့။ ဘန်ကောက်မြို့လယ်ခေါင် (Siam, Sukhumvit) တွေအထိ ကားပိတ်တာ ခေါင်းခဲစရာမလိုဘဲ ရထားစီးပြီး မိနစ်ပိုင်းအတွင်း စိတ်ကြိုက် သွားလာလည်ပတ်နိုင်သလို၊ မိမိ အလုပ်သင် (Internship) ဆင်းမယ့် အလုပ်ခွင်တွေကို သွားတဲ့အခါမှာလည်း အချိန်တိကျပြီး အရမ်းသက်သာတာပေါ့"
+    },
+{    question:"ကျောင်းသားတွေအတွက် သီးသန့် ရထားလက်မှတ် Discount ကော ရလား?",
+    answer:"ကျောင်းတက်တဲ့အခါ ကျောင်းကထုတ်ပေးမယ့် Student Card (ကျောင်းသားကတ်) ကို အသုံးပြုပြီး BTS ရထားစီးကတ်ကို ကျောင်းသားဈေး (Student Rate) နဲ့ လျှော့စျေးဝယ်လို့ရတာမို့ လစဉ် သွားလာစရိတ်ကို အများကြီး ထပ်ပြီး ချွေတာနိုင်ပါသေးတယ်! 😊"
+},
+
+{
+    question:"အခန်းရှာပေးလား?",
+    answer:"အပြင်မှာ ကွန်ဒို ဒါမှမဟုတ် အခန်းသီးသန့် ငှားနေချင်တဲ့ ကျောင်းသားတွေအတွက်လည်း သွားလာရလွယ်ကူပြီး ဈေးနှုန်းအသင့်တော်ဆုံး ဖြစ်မယ့် အခန်းတွေကို ကျောင်းဘက်ကနေ သေချာ ကူညီရှာဖွေပေးပါတယ် ခင်ဗျာ။ 😊"
+},
+
+{
+    question:"ဘယ်အသက်ထိလက်ခံလဲ?",
+    answer:"အသက်ကန့်သတ်ချက် အပိုင်းအခြား အနည်းပါးဆုံးမို့ ပညာသင်ယူချင်တဲ့ စိတ်ဆန္ဒရှိရင်၊ တရားဝင်အထောက်အထားရှိရင် အသက်ဘယ်လောက်ပဲဖြစ်ဖြစ် လျှောက်ထား တက်ရောက်နိုင်ပါတယ်ခင်ဗျာ😊"
+},
+
+{
+    question:"ဘယ် Major ကအလုပ်အကိုင်ကောင်းလဲ?",
+    answer:"အခုခေတ်မှာတော့ ခေတ်နဲ့အညီ Digital Marketing, IT နဲ့ Digital Business Computer မေဂျာတွေက ထိုင်းနိုင်ငံရော နိုင်ငံတကာမှာပါ Demand (အလိုရှိမှု) အမြင့်ဆုံးဖြစ်ပြီး အလုပ်အကိုင် အခွင့်အလမ်း အကောင်းဆုံး မေဂျာတွေပဲ ဖြစ်ပါတယ်ဗျာ။ ✨"
+},
+
+{
+    question:"Digital Marketing Major ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Engineering Major ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Business Major ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Accounting Major ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"IT Major ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Scholarship ရလား?",
+    answer:"Promotion အလိုက်ရှိနိုင်ပါတယ် 😊"
+},
+
+{
+    question:"ဘယ်နှစ်နှစ်တက်ရမလဲ?",
+    answer:"Program ပေါ်မူတည်ပါတယ် 😊"
+},
+
+{
+    question:"Foundation Program ဘယ်နှလလဲ?",
+    answer:"၆လ Program ပါ 😊"
+},
+
+{
+    question:"Pathway Program ဘယ်နှလလဲ?",
+    answer:"၃လ Program ပါ 😊"
+},
+
+{
+    question:"Degree ရသူတွေတက်လို့ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"တက္ကသိုလ်ဝင်တန်းမအောင်ရင်ရလား?",
+    answer:"Foundation Program ကနေ တက်နိုင်ပါတယ် 😊"
+},
+
+{
+    question:"Old System 10 တန်းနဲ့ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Old System 9 တန်းနဲ့ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Student Visa ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"ED Visa နဲ့အလုပ်လုပ်လို့ရလား?",
+    answer:"Internship Program များရှိပါတယ် ✨"
+},
+
+{
+    question:"ကျောင်းတက်ရင်းဝင်ငွေရလား?",
+    answer:"Internship အခွင့်အရေးများရှိပါတယ် 😊"
+},
+
+{
+    question:"Company ချိတ်ဆက်ပေးလား?",
+    answer:"MOU Company များနဲ့ ချိတ်ဆက်ပေးပါတယ် ✨"
+},
+
+{
+    question:"Arrival Day မှာကူညီပေးလား?",
+    answer:"ကူညီပေးပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Medical Check လိုလား?",
+    answer:"လုပ်ဆောင်ရပါတယ် 😊"
+},
+
+{
+    question:"စာရွက်စာတမ်းဘာလိုလဲ?",
+    answer:"Passport, Education Pass Certificate များလိုအပ်ပါတယ် 😊"
+},
+
+{
+    question:"Photo လိုလား?",
+    answer:"Passport size Photo ပေးပါတယ်ခင်ဗျာ 😊"
+},
+
+
+{
+    question:"Online Apply လုပ်လို့ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ ✨"
+},
+
+{
+    question:"Registration Fee ရှိလား?",
+    answer:"ရှိနိုင်ပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Deposit ဘယ်လောက်လဲ?",
+    answer:"Program အလိုက် ကွာခြားပါတယ် 😊"
+},
+
+{
+    question:"ဘယ်လမှာ Intake ရှိလဲ?",
+    answer:"တစ်နှစ်ပတ်လုံးမှာ အဓိက Intake ကြီး (၄) သုတ် တိတိ ရှိပါတယ်ခင်ဗျာ! တို့ Thonburi University မှာ ကျောင်းသားတွေ အချိန်မပုပ်ဘဲ အဆင်ပြေပြေ တက်ရောက်နိုင်ဖို့အတွက် 1 / 3 / 6 / 9 (ဇန်နဝါရီ၊ မတ်၊ ဇွန်၊ စက်တင်ဘာ) လအလိုက် အတန်းသစ်များကို စနစ်တကျ ခွဲခြားဖွင့်လှစ်ပေးထားပါတယ် ညီလေး/ညီမလေးရေ... မိမိရဲ့ စာရွက်စာတမ်း အဆင်သင့်ဖြစ်မှုအပေါ် မူတည်ပြီး စိတ်ကြိုက် ရွေးချယ်တက်ရောက်နိုင်ပါတယ်ဗျာ 😊"
+},
+{    question:"HI မင်္ဂလာပါ?",
+    answer:"HI မင်္ဂလာပါခင်ဗျာ! ✨🤍Dreams by HARRY ကနေ လှိုက်လှိုက်လှဲလှဲ ကြိုဆိုပါတယ်ဗျ။ Thonburi University (TRU) မှာ ကျောင်းတက်ရင်း၊ အလုပ်လုပ်ရင်းနဲ့ စမတ်ကျကျ ဘွဲ့ယူမယ့် အစီအစဉ်တွေနဲ့ ပတ်သက်ပြီး ဘာများ အသေးစိတ် သိချင်ပါသလဲခင်ဗျာ?မိမိ စိတ်ဝင်စားတဲ့ မေဂျာအကြောင်း၊ ကျောင်းလခ အရစ်ကျပေးသွင်းပုံ၊ Paid Internship (လစာရအလုပ်သင်) အစီအစဉ် ဒါမှမဟုတ် အဆောင်နဲ့ ဗီဇာကိစ္စ အစရှိတာတွေကို လွတ်လပ်စွာ မေးမြန်းစုံစမ်းနိုင်ပါတယ်ဗျာ။အစ်ကိုတို့ Support Team ကနေ အကောင်းဆုံး အသေးစိတ် ရှင်းပြပေးဖို့ အဆင်သင့် ရှိနေပါတယ်ခင်ဗျာ😊"
+},
+{    question:"hello?",
+    answer:"Hello! 😊✨Dreams by HARRY မှ လှိုက်လှိုက်လှဲလှဲ ကြိုဆိုပါတယ်ဗျာ။ Thonburi University (TRU) မှာ ကျောင်းတက်ရင်း၊ အလုပ်လုပ်ရင်းနဲ့ စမတ်ကျကျ ဘွဲ့ယူမယ့် အစီအစဉ်တွေနဲ့ ပတ်သက်ပြီး ဘာများ အသေးစိတ် ကူညီရှင်းပြပေးရမလဲခင်ဗျာ။ 😊"
+},
+{
+    question:"Myanmar Student များရှိလား?",
+    answer:"ရှိရုံတင်မကဘူး အရမ်းကို စည်စည်ကားကားနဲ့ မိသားစုလို နွေးနွေးထွေးထွေး ရှိနေပါတယ် ညီလေး/ညီမလေးရေ... Thonburi University မှာ မြန်မာကျောင်းသား/ကျောင်းသူတွေ အများကြီး တက်ရောက်နေကြတာဖြစ်လို့ မင်းတစ်ယောက်တည်း အထီးကျန်ဖြစ်နေမှာကို လုံးဝ (လုံးဝ) ပူစရာမလိုပါဘူးခင်ဗျာ 😊"
+},
+{    question:"ထိုင်းရောက်စမှာ သူငယ်ချင်းအသစ်တွေနဲ့ ရင်းနှီးဖို့ အဆင်ပြေပါ့မလား?",
+    answer:"အဆင်ပြေပါတယ်ဗျာ။ တို့ကျောင်းမှာ ကျောင်းစတက်ခါစကတည်းက ကျင်းပပေးမယ့် Orientation Day (ကျောင်းသားသစ်ကြိုဆိုပွဲ) မှာ မြန်မာကျောင်းသားအချင်းချင်းရော၊ စီနီယာ အစ်ကို/အစ်မတွေနဲ့ပါ တိုက်ရိုက်ဆုံတွေ့ ရင်းနှီးခွင့် ရမှာပါ။ ကျောင်းသားအချင်းချင်း သတင်းအချက်အလက်တွေ မျှဝေတာ၊ ကူညီဖေးမတာတွေ လုပ်ဖို့အတွက် သီးသန့်မြန်မာ Community လေးလို ဖြစ်နေတာမို့ မိခင်နိုင်ငံမှာပဲ ကျောင်းတက်နေရသလို ပျော်စရာကောင်းပြီး နွေးထွေးပါတယ် 😊"
+},
+
+{
+    question:"Intake တွေအကြောင်းကို အတိုချုပ်လေး ရှင်းပြပေးပါလား?",
+    answer:"ရှင်းပြပေးရတာပေါ့ဗျာ! အကြမ်းဖျင်းအားဖIntake Januaryနှစ်ဆန်းပိုင်းမှာ အချိန်မဖြုန်းဘဲ ချက်ချင်း ကျောင်းတက်၊ အလုပ်လုပ်ချင်သူတွေအတွက်။Intake Marchလက်ရှိ Demand အမြင့်ဆုံးနဲ့ လူဦးရေ အကန့်သတ်ဆုံးဖြစ်လို့ အမြန်ဆုံး နေရာဦးရမယ့် အတန်း။Intake Juneဝါဆိုဝါခေါင်မတိုင်ခင် အခြေချချင်သူတွေနဲ့ ကြိုတင်ပြင်ဆင်ချိန် ပိုရချင်သူတွေအတွက်။Intake Septemberနှစ်ကုန်ပိုင်းမတိုင်ခင် တက္ကသိုလ်ကျောင်းသားဘဝကို စမတ်ကျကျ အစပြုချင်သူတွေအတွက် ဖြစ်ပါတယ်ဗျာ"
+},
+{
+    question:"Thai Certificate ရမှာလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Bachelor Degree ရမှာလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Master ဆက်တက်လို့ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ ✨"
+},
+
+
+
+{
+    question:"Classroom က Modern ဖြစ်လား?",
+    answer:"Modern Facilities များရှိပါတယ် 😊"
+},
+
+{
+    question:"WiFi ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Library ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ 😊"
+},
+{
+    question:"Uniform လိုလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ! တို့ Thonburi University မှာ စနစ်တကျနဲ့ စတိုင်လ်ကျလှပတဲ့ University Uniformသတ်မှတ်ချက် ရှိပါတယ် ညီလေး/ညီမလေးရေ... ထိုင်းဇာတ်လမ်းတွဲတွေထဲကလို စမတ်ကျကျ ကျောင်းသားဝတ်စုံလေးတွေကို ကိုယ်တိုင် ဝတ်ဆင်ခွင့်ရမှာ ဖြစ်လို့ အရမ်းကို စိတ်လှုပ်ရှားဖို့ ကောင်းပါတယ် 😊"
+},
+{    question:"ယူနီဖောင်းကို နေ့တိုင်း ဝတ်ရမှာလား ? ဘယ်လိုပုံစံလေးတွေ ဝတ်ရလဲ?",
+    answer:"အတန်းတွေ"},
+
+
+{    question:"ဘယ်နေ့တွေမှာ ယူနီဖောင်းဝတ်ရလဲ?",
+    answer:"အတန်းတွေမှာ သတ်မှတ်ထားတဲ့ အချိန်ဇယားအတိုင်း တစ်ပတ် ၁ ရက်ပဲ ကျောင်းတက်ရမှာဖြစ်ပြီး ကျန်တဲ့ရက်တွေမှာတော့ လုပ်ငန်းခွင်အလိုက် သတ်မှတ်ဝတ်စုံ ဒါမှမဟုတ် ကျောင်းကထုတ်ပေးတဲ့ ပေါ့ပေါ့ပါးပါး Activity ပိုလိုအင်္ကျီ (Polo Shirt) လေးတွေကို Flexible ဖြစ်ဖြစ် လဲလှယ်ဝတ်ဆင်နိုင်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"ယူနီဖောင်း ဝယ်ယူဖို့နဲ့ အဆောင်ကိစ္စတွေကိုရော ဘယ်သူက ကူညီပေးမှာလဲ?",
+    answer:"ထိုင်းနိုင်ငံကို စတင်ရောက်ရှိတာနဲ့ ယူနီဖောင်းအတွက် လိုအပ်တဲ့ အသုံးအဆောင်တွေ ဝယ်ယူတာ၊ တစ်လ ၅၀၀ ဝန်းကျင်ပဲ ရှိမယ့် အဆောင်နေရာချထားပေးတာအပြင် ဗီဇာနဲ့ ဘဏ်အကောင့်ဖွင့်တာအဆုံး အားလုံးကို တို့ရဲ့ Student Support Team က ဘေးကနေ အနီးကပ် လိုက်လံကူညီပေးသွားမှာမို့ အစစအရာရာ စိတ်အေးလက်အေး ရှိနေရုံပါပဲဗျာ"},
+
+
+
+
+
+{
+    question:"ယူနီဖောင်းအပြင် တခြား ပေါ့ပေါ့ပါးပါး (Casual) ဝတ်လို့ရတဲ့ နေ့တွေရော ရှိလား?",
+    answer:"း Paid Internship ဆင်းရတဲ့အခါ (သို့မဟုတ်) ကျောင်းတွင်း Sports Activities နဲ့ လှုပ်ရှားမှုပွဲတွေ ရှိတဲ့ရက်တွေမှာတော့ လုပ်ငန်းခွင်အလိုက် သတ်မှတ်ဝတ်စုံ ဒါမှမဟုတ် ကျောင်းကထုတ်ပေးတဲ့ ပေါ့ပေါ့ပါးပါး Activity ပိုလိုအင်္ကျီ (Polo Shirt) လေးတွေကို Flexible ဖြစ်ဖြစ် လဲလှယ်ဝတ်ဆင်နိုင်ပါတယ်ဗျာ။ 😊"},
+
+{question:"Attendance အရေးကြီးလား?",
+    answer:"အရေးကြီးပါတယ်ခင်ဗျာ 😊"},
+
+{
+    question:"Teacher တွေက International လား?",
+    answer:"နိုင်ငံတကာအဆင့်မီ သင်ကြားရေးစနစ်ဖြစ်အောင် အတွေ့အကြုံရင့်ကျက်ပြီး ဘာသာရပ်အလိုက် ကျွမ်းကျင်တဲ့ Qualified Lecturers (အရည်အချင်းပြည့်မီတဲ့ ပါမောက္ခချုပ်တွေနဲ့ ဆရာ၊ ဆရာမကြီးတွေ) ကိုယ်တိုင် စနစ်တကျ သင်ကြားပြသပေးတာ ဖြစ်ပါတယ်ဗျာ။ အင်္ဂလိပ်စာ သိပ်မကောင်းမှာ စိုးရိမ်နေရင်လည်း Foundation အကြိုတန်းတွေကတည်းက စကားပြောပုံ၊ ဆိုပုံကစလို့ လုပ်ငန်းခွင်သုံးအဆင့်အထိ စိတ်ရှည်လက်ရှည် Train ပေးသွားမှာမို့လို့ အကောင်းဆုံး ပညာရပ်တွေကို လေ့လာခွင့်ရမှာပါဗျာ။ 😊"
+},
+
+{
+    question:"Assignment များလား?",
+    answer:"ဒါကတော့ မိမိရွေးချယ်လိုက်တဲ့ Major (မေဂျာအလိုက်) ကွာခြားမှု ရှိပါတယ် ခင်ဗျာ။ ဒါပေမဲ့ မပူပါနဲ့ ညီလေးရဲ့... တို့ကျောင်းရဲ့ သင်ကြားမှုစနစ်က စာအုပ်ကြီးအတိုင်း အလွတ်ကျက်ပြီး အိမ်စာတွေ အများကြီးပိနေစေမယ့် ပုံစံမျိုး မဟုတ်ပါဘူး။ လက်တွေ့လုပ်ငန်းခွင်မှာ တကယ်အသုံးချလို့ရမယ့် Project အပေါ့စားလေးတွေနဲ့ Presentation အလေ့အကျင့်တွေကိုပဲ အဓိက လုပ်ဆောင်ရမှာဖြစ်လို့ အလုပ်လုပ်ရင်း ကျောင်းတက်ရမယ့် ညီလေးတို့အတွက် Flexible ဖြစ်အောင် အဆင်ပြေဆုံး ညှိနှိုင်းစီစဉ်ပေးထားပါတယ်ဗျာ 😊"
+},
+
+{
+    question:"Exam ခက်လား?",
+    answer:"အတန်းထဲမှာ ဆရာမတွေသင်တာကို သေချာအာရုံစိုက်ပြီး ကြိုးစားသင်ယူရင် ရာနှုန်းပြည့် အေးဆေး အဆင်ပြေပါတယ်ဗျာ! ဆရာ၊ ဆရာမတွေကလည်း ကျောင်းသားတွေကို စာမေးပွဲမှာ အခက်တွေ့စေဖို့ထက် စာကို တကယ်နားလည်သွားစေဖို့ပဲ အဓိက ဦးတည်တာဖြစ်လို့ အနီးကပ် သေချာ Guide လုပ်ပေးကြပါတယ်။ ဒါတင်မကသေးဘူး... အခက်အခဲရှိရင် တိုင်ပင်လို့ရမယ့် Student Support Team ကလည်း အမြဲရှိနေတာမို့လို့ စာမေးပွဲအတွက် အရမ်းကြီး ရင်တုန်ပန်းတုန် ဖြစ်စရာ လုံးဝမလိုပါဘူးခင်ဗျာ 😊"
+},
+
+{
+    question:"Transfer Credit ရလား?",
+    answer:"ရနိုင်ပါတယ်ခင်ဗျာ! မိမိမှာရှိထားတဲ့ အမှတ်စာရင်း အထောက်အထား (Transcript) တွေကို အစ်ကိုတို့ Dreams by HARRY အဖွဲ့သားတွေထံ ပေးပို့ပြီး တက္ကသိုလ်ဘက်က စည်းကမ်းသတ်မှတ်ချက်တွေနဲ့ ကိုက်ညီမှု ရှိ၊ မရှိ သေချာ စစ်ဆေးပေးနိုင်ပါတယ်ဗျာ။ Credit လွှဲလို့ရမယ့် ဘာသာရပ်တွေ ပါဝင်ခဲ့ရင် ကျောင်းတက်ရမယ့်သက်တမ်းကို ပိုပြီးတော့တောင် သက်သာသွားစေနိုင်တာမို့ အခုပဲ အမှတ်စာရင်းလေးတွေယူပြီး လှမ်းခဲ့လိုက်တော့နော်😊"
+},
+
+{
+    question:"ဘွဲ့ရပြီး Thailand မှာအလုပ်လုပ်လို့ရလား?",
+    answer:"အခွင့်အရေးတွေက အများကြီးရှိပါတယ် ညီလေး/ညီမလေးရေ... Thonburi University ရဲ့ ထူးခြားချက်က ကျောင်းပြီးတာနဲ့ ထိုင်းနိုင်ငံမှာ တရားဝင် အလုပ် ဆက်ရှာနိုင်ဖို့အတွက် အခွင့်အရေးတွေ အပြည့်အဝ ဖန်တီးပေးထားလို့ပဲ ဖြစ်ပါတယ်ဗျာ ✨"
+},
+{
+    question:"ကျောင်းတက်တုန်းက လုပ်ခဲ့ရတဲ့ အလုပ်သင် (Internship) ကော အလုပ်ရဖို့ အထောက်အကူပြုလား?",
+    answer:"အများကြီး ထောက်ကူပြုတာပေါ့ ညီမလေးရဲ့! First Year - Second Semester ကတည်းက ကျောင်းကထုတ်ပေးတဲ့ တရားဝင် Internship Letter နဲ့ လစာ အနည်းဆုံး ၁၂,၀၀၀ မှ ၁၅,၀၀၀ ဘတ် ကြား ရရှိမယ့် လုပ်ငန်းခွင်ထဲ ဝင်ခဲ့ရတာမို့လို့ ကျောင်းပြီးတဲ့အချိန်မှာ ညီမလေးဆီမှာ '၄ နှစ်စာ လုပ်ငန်းခွင် လက်တွေ့အတွေ့အကြုံ (Work Experience)' က ရှိပြီးသား ဖြစ်နေပါပြီ! အလုပ်အတွေ့အကြုံရှိပြီးသားလူကို ကုမ္ပဏီကြီးတွေက လက်မလွှတ်တမ်း အလိုရှိကြလို့ တခြားသူတွေထက် အလုပ်ရဖို့ ရာနှုန်းပြည့် အခွင့်အလမ်း သာနေမှာပါ"
+},
+{    question:"ဘွဲ့ရပြီးရင်ကော လစာတွေက ဘယ်လောက်လောက်အထိ ရနိုင်လဲ?",
+    answer:"ဒါကတော့ အားရစရာကြီးဗျာ! နိုင်ငံတကာအသိအမှတ်ပြု Bachelor Degree (ဘွဲ့လက်မှတ်) ရော၊ ၄ နှစ်တာအတွင်း လေ့ကျင့်ထားလို့ ထူးချွန်နေမယ့် ထိုင်းဘာသာစကားနဲ့ အင်္ဂလိပ်စာ Skill ကြောင့် ရုံးထိုင်အလုပ်ကောင်းကောင်းတွေ (White Collar Jobs) ကို တန်းဝင်နိုင်ပါတယ်။ ရာထူးနဲ့ လုပ်ငန်းအလိုက် လစာ ၂၅၀၀၀ မှ ၄၅၀၀၀ ဘတ် (သို့မဟုတ်) ထိုထက်မက ကုမ္ပဏီကြီးတွေရဲ့ သတ်မှတ်ချက်အလိုက် စတင်ရရှိနိုင်ပါတယ်ဗျာ။✨"
+},
+{
+    question:"ဘွဲ့ရပြီးနိုင်ငံခြားဆက်တက်လို့ရလား?",
+    answer:"ရာနှုန်းပြည့်ကို အဆင်ပြေပါတယ်ဗျာ! Thonburi University ကနေ ပေးအပ်မယ့် Bachelor Degree (ဘွဲ့လက်မှတ်) က နိုင်ငံတကာအသိအမှတ်ပြု တရားဝင်ဘွဲ့ ဖြစ်တဲ့အတွက်ကြောင့် ကျောင်းပြီးရင် ထိုင်းနိုင်ငံမှာတင်မကဘဲ ဥရောပ၊ အမေရိက၊ အော်စတြေးလျ သို့မဟုတ် တခြား အာရှနိုင်ငံကြီးတွေမှာ Master Degree ဆက်တက်ဖို့အတွက် လုံးဝ (လုံးဝ) စိတ်ချလက်ချ လျှောက်ထားနိုင်ပါတယ်ဗျာ။ စာတွေ့တင်မကဘဲ ၄ နှစ်စာ Work Experience (လုပ်ငန်းခွင်အတွေ့အကြုံ) ပါ ဘွဲ့နဲ့တစ်ပြိုင်တည်း ပါပြီးသားဖြစ်နေလို့ နိုင်ငံခြားကျောင်းကြီးတွေက ပိုပြီးတော့တောင် မျက်စိကျဦးမှာပါဗျာ 😊"
+},
+
+{
+    question:"Accommodation Fee ဘယ်လောက်လဲ?",
+    answer:"ဒါကတော့ မိမိရွေးချယ်မယ့် Location (တည်နေရာ) နဲ့ အဆောင်အမျိုးအစား ပေါ်မှာ မူတည်ပါတယ် ညီလေးရဲ့။ ကျောင်းသားတွေ စရိတ်သက်သာအောင် ကျောင်းနဲ့နီးပြီး သွားလာရလွယ်ကူတဲ့ နေရာတွေမှာ အဆောင်တွေ စီစဉ်ပေးထားပါတယ်။ အခန်းပုံစံနဲ့ Facilities ပေါ်မူတည်ပြီး ဈေးနှုန်းကွာခြားနိုင်ပေမယ့် အခြေခံအားဖြင့် တစ်လကို ဘတ် ၅၀၀ ဝန်းကျင်ကစပြီး သက်သက်သာသာနဲ့ အဆင်ပြေပြေ နေထိုင်နိုင်မယ့် အဆောင်တွေရှိတာမို့လို့ စရိတ်အတွက် အရမ်းကြီး စိုးရိမ်စရာမလိုပါဘူးခင်ဗျာ 😊"
+},
+
+{
+    question:"Electric Bill သီးသန့်လား?",
+    answer:"ဒါကလည်း မိမိတည်းခိုမယ့် Accommodation (အဆောင်တစ်ခုချင်းစီရဲ့ စည်းကမ်း) အလိုက် ကွာခြားပါတယ်ခင်ဗျာ။ အဆောင်အချို့မှာတော့ အဆောင်လခထဲမှာ တစ်ခါတည်း ပေါင်းပြီးသားဖြစ်သလို၊ အချို့အဆောင်တွေမှာတော့ ကိုယ်သုံးသလောက် မီတာခကို သီးသန့်ပြန်ပေးရတာမျိုး ရှိပါတယ်။ ဒါပေမဲ့ မပူပါနဲ့ ညီမလေးရယ်... အစ်ကိုတို့ Student Support Team ကနေ ကျောင်းသားတွေအတွက် စရိတ်အသက်သာဆုံးဖြစ်မယ့် အဆောင်တွေကို သေချာရွေးချယ် ညှိနှိုင်းပေးသွားမှာမို့ အဆင်ပြေမှာပါဗျာ 😊"
+},
+
+{
+    question:"Roommate နေလို့ရလား?",
+    answer:"ရတာပေါ့ဗျာ! အေးဆေး နေလို့ရပါတယ်။ သူငယ်ချင်းချင်း တွဲနေပြီး အဆောင်လခနဲ့ မီတာခတွေကို အချိုးကျ ခွဲဝေကျခံလိုက်ရင် စရိတ်က ပိုပြီးတော့တောင် သက်သာသွားသေးတာပေါ့။ 2nd Semester ကျရင်လည်း ကျောင်းကထုတ်ပေးမယ့် တရားဝင် Internship Letter နဲ့ လစာ အနည်းဆုံး ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ကြား Paid Internship ဆင်းရမှာဆိုတော့ သူငယ်ချင်းချင်း တိုင်ပင်ပြီး အလုပ်အတူတူသွား၊ အဆောင်ခအတူတူမျှစိုက်ရင်း ပျော်စရာကောင်းတဲ့ စမတ်ကျကျ Student Life ကို ဖြတ်သန်းနိုင်မှာပါဗျာ။😊"
+},
+
+{
+    question:"Cooking လုပ်လို့ရလား?",
+    answer:"ဒါကတော့ မိမိနေထိုင်မယ့် Accommodation Rules (အဆောင်ရဲ့ စည်းကမ်းချက်များ) ပေါ်မှာ မူတည်ပါတယ် ညီလေး/ညီမလေးရေ။ အဆောင်အချို့မှာတော့ မီးဘေးအန္တရာယ်ကြောင့် ဂတ်စ်မီးဖို သုံးခွင့်မပြုပေမယ့် လျှပ်စစ်ဒယ်အိုး၊ Microwave ဒါမှမဟုတ် Rice Cooker လေးတွေနဲ့ အပေါ့စားချက်ပြုတ်တာမျိုးကို ခွင့်ပြုပေးထားတာမို့လို့ ကိုယ်တိုင် မြန်မာဟင်းလေးတွေ ချက်စားဖို့ အဆင်ပြေပါတယ်ဗျာ။ အသေးစိတ်ကိုတော့ အဆောင်ရွေးချယ်တဲ့အခါ စည်းကမ်းချက်လေးတွေ အတူတူ သေချာပြန်စစ်ပေးမယ်နော် 😊"
+},
+
+{
+    question:"Near BTS ရှိလား?",
+    answer:"လုံးဝ စိတ်ပူစရာမလိုပါဘူးဗျာ! ကျောင်းသားတွေ သွားလာရေး လွယ်ကူစေဖို့အတွက် Location ကောင်းကောင်း မှာရှိတဲ့ အဆောင်တွေကို စီစဉ်ပေးထားတာဖြစ်ပြီး တို့ Thonburi University အနီးနားမှာတင် ဘန်ကောက်ရဲ့ အဓိကရထားလိုင်းဖြစ်တဲ့ Lak Song BTS Station ရှိတာမို့လို့ မြို့ထဲ (Siam, Sukhumvit) တွေကို ကားပိတ်ဒုက္ခမရှိ မိနစ်ပိုင်းအတွင်း စတိုင်လ်ကျကျ သွားလာနိုင်မှာ ဖြစ်ပါတယ်ခင်ဗျာ။ 😊"
+},
+
+{
+    question:"Safety ကောင်းလား?",
+    answer:"ဒါကတော့ မိဘတွေအစိုးရိမ်ဆုံးအပိုင်းမို့ သေချာပြောပြမယ်နော်။ တို့ကျောင်းသားတွေ နေထိုင်ရမယ့်နေရာက အရမ်းကို အေးချမ်းပြီး စာသင်ဖို့အတွက် အကောင်းဆုံးဖြစ်တဲ့ Student Environment (ကျောင်းသားပတ်ဝန်းကျင်ကောင်း) ဖြစ်လို့ လုံခြုံစိတ်ချရမှုကတော့ ရာနှုန်းပြည့်နီးပါးပါပဲဗျာ။ ကျောင်းသားအချင်းချင်း ဖေးမကူညီကြတဲ့အပြင် တစ်ခုခုဆို ချက်ချင်းအနီးကပ် ကူညီပေးမယ့် Student Support Team ကလည်း ဘေးမှာ အမြဲရှိနေမှာမို့ လုံးဝ စိုးရိမ်စရာမလိုပါဘူးခင်ဗျာ။ 😊"
+},
+
+{
+    question:"24 Hours Security ရှိလား?",
+    answer:"ဟုတ်ပါတယ်ဗျာ! မိမိရွေးချယ် နေထိုင်မယ့် Accommodation (အဆောင်အမျိုးအစား) အလိုက် ၂၄ နာရီ လုံခြုံရေးဝန်ထမ်း (Security Guards) တွေ ရှိသလို၊ CCTV ကင်မရာစနစ်တွေနဲ့ အဆောင်ဝင်/ထွက်ရင် Key Card စနစ် တွေနဲ့ သေချာ ထိန်းချုပ်ပေးထားတာမို့လို့ နေ့ရောညပါ စိတ်အေးလက်အေး နေထိုင်နိုင်မှာ ဖြစ်ပါတယ်😊"
+},
+
+{
+    question:"Food Court ရှိလား?",
+    answer:"ရှိပါတယ်ခင်ဗျာ စျေးနှုန်းကတော့ အပြင်ဆိုင်တွေထက် အများကြီး သက်သာလို့ ကျောင်းသားတွေအတွက် အကြိုက်ပဲပေါ့ဗျာ! တစ်ပွဲကို ဘတ် ၃၀၊ ၄၀ ဝန်းကျင်ကစပြီး အရသာရှိတဲ့ ထိုင်းရိုးရာအစားအစာတွေ၊ လူကြိုက်များတဲ့ အကြော်အလှော်တွေ၊ ပင်လယ်စာတွေနဲ့ လတ်ဆတ်တဲ့ အသီးအနှံ၊ အအေးစုံလင်စွာ ရရှိနိုင်ပါတယ်။ တစ်နေ့စာ စားစရိတ်ကို အများကြီး ချွေတာနိုင်တာပေါ့😊"
+},
+
+{
+    question:"Halal Food ရှိလား?",
+    answer:"ရနိုင်ပါတယ် ညီလေး/ညီမလေးရေ... Thonburi University မှာ အစ္စလာမ်ဘာသာဝင် နိုင်ငံတကာကျောင်းသားတွေ အဆင်ပြေစေဖို့အတွက် ကျောင်းတွင်း Food Court မှာတင် သီးသန့် Halal Food ဆိုင်တွေ ရှိတာမို့လို့ စားသောက်ရေးအတွက် လုံးဝ (လုံးဝ) စိုးရိမ်စရာမလိုပါဘူးခင်ဗျာ😊"
+},
+
+{
+    question:"Myanmar Food ရလား?",
+    answer:"Bangkok မှာ ရနိုင်ပါတယ် 😊"
+},
+
+{
+    question:"Transportation အဆင်ပြေလား?",
+    answer:"အဆင်ပြေပါတယ်ခင်ဗျာ 😊"
+},
+
+{
+    question:"Student Card ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ 😊"
+},
+
+
+
+{
+    question:"Orientation Day ရှိလား?",
+    answer:"ရှိတာပေါ့ ညီလေး/ညီမလေးရေ... ကျောင်းသားသစ်တွေအားလုံး အခက်အခဲမရှိ ကျောင်းပတ်ဝန်းကျင်သစ်နဲ့ အသားကျသွားစေဖို့အတွက် Orientation Day (ကျောင်းသားသစ်လမ်းညွှန်ပွဲ) ကို စနစ်တကျ စည်စည်ကားကား ကျင်းပပေးပါတယ်ဗျာ။ အဲဒီနေ့မှာ တက္ကသိုလ်ရဲ့ တာဝန်ရှိဆရာ၊ ဆရာမကြီးတွေ၊ ပါမောက္ခတွေနဲ့ စီနီယာအစ်ကို၊ အစ်မတွေက နွေးထွေးစွာ ကြိုဆိုနှုတ်ဆက်ကြမှာဖြစ်ပြီး ကျောင်းတွင်းစည်းကမ်းတွေ၊ စာသင်ခန်းတွေ၊ အတန်းဇယားတွေနဲ့ 2nd Semester မှာ ဆင်းရမယ့် Paid Internship (လစာရအလုပ်သင်) အကြောင်းတွေကိုပါ အသေးစိတ် သေချာရှင်းပြ လမ်းညွှန်ပေးမှာ ဖြစ်ပါတယ်ခင်ဗျ😊"
+},
+
+{
+    question:"Graduation Ceremony ရှိလား?",
+    answer:"ဒါကတော့ ညီလေးတို့ ညီမလေးတို့ ဘဝရဲ့ အဂုဏ်ယူရဆုံးနဲ့ အပျော်ဆုံးနေ့ကြီး ဖြစ်မှာပေါ့ဗျာ! အောင်အောင်မြင်မြင်နဲ့ ကျောင်းပြီးသွားတဲ့အခါ ခမ်းနားထည်ဝါလှတဲ့ Graduation Ceremony (ဘွဲ့နှင်းသဘင် အခမ်းအနားကြီး) ကို ထိုင်းနိုင်ငံမှာ စနစ်တကျ ကျင်းပပေးပါတယ်ခင်ဗျာ။ မိဘတွေကိုလည်း ဖိတ်ကြားပြီး ကိုယ်တိုင်လည်း ဘွဲ့ဝတ်စုံ (Graduation Gown) လေးဝတ်၊ နိုင်ငံတကာအသိအမှတ်ပြု Bachelor Degree (ဘွဲ့လက်မှတ်) ကို ဂုဏ်ယူဝင့်ကြွားစွာ လက်ခံရယူရမှာ ဖြစ်ပါတယ်။ အဲဒီနေ့ကျရင် ၄ နှစ်လုံးလုံး ကိုယ်တိုင်လည်း ပိုက်ဆံရှာ၊ ကျောင်းလည်းတက်ပြီး အောင်မြင်ခဲ့တဲ့ ကိုယ့်ကိုယ်ကိုယ် ပြန်ကြည့်ပြီး အတိုင်းမသိ ဝမ်းသာပီတိဖြစ်ရမှာ အသေအချာပါပဲဗျာ။ 🎓"
+},
+
+{
+    question:"Student Activity ရှိလား?",
+    answer:"ရှိရုံတင်မကဘူး ညီလေး/ညီမလေးရေ... အရမ်းကို စည်ကားပြီး အနှစ်သာရရှိတဲ့ Student Activities (ကျောင်းတွင်းလှုပ်ရှားမှုပွဲများ) အမြဲတမ်း ရှိပါတယ်ခင်ဗျာ! နိုင်ငံတကာက ကျောင်းသားတွေအချင်းချင်း ရင်းနှီးခွင့်ရမယ့် ကြိုဆိုပွဲတွေ၊ ယဉ်ကျေးမှုပွဲတော်တွေ၊ ဂီတပွဲတွေနဲ့ ပညာရပ်ဆိုင်ရာ ပြိုင်ပွဲတွေ အစုံအလင်ရှိတာမို့ အမိုက်စား International Campus Life ကို ရရှိခံစားရမှာ ဖြစ်ပါတယ်ဗျာ✨"
+},
+
+{
+    question:"Club တွေရှိလား?",
+    answer:"ကျောင်းသားတွေရဲ့ ဝါသနာနဲ့ စွမ်းရည်တွေကို ဖော်ထုတ်နိုင်ဖို့အတွက် စိတ်ဝင်စားရာ ဝါသနာတူ Club မျိုးစုံ ကို စနစ်တကျ ဖွဲ့စည်းပေးထားပါတယ်ဗျာ။ နည်းပညာ၊ စီးပွားရေး၊ ဘာသာစကား ကလပ်တွေအပြင် အနုပညာနဲ့ ဖျော်ဖြေရေးကလပ်တွေပါ ရှိတာမို့ ကိုယ်နဲ့ အကြိုက်တူတဲ့ သူငယ်ချင်းအသစ်တွေနဲ့အတူ ပျော်ပျော်ပါးပါး လေ့လာဖန်တီးနိုင်မှာ ဖြစ်ပါတယ်ခင်ဗျာ။ 😊"
+},
+
+{
+    question:"Sports Activity ရှိလား?",
+    answer:"ရှိတာပေါ့ခင်ဗျာ! ကျောင်းသားတွေ ကျန်းမာကြံ့ခိုင်ပြီး ပျော်ရွှင်စေဖို့အတွက် Sports Activities (အားကစားလှုပ်ရှားမှုများနှင့် ပြိုင်ပွဲများ) ကို အစဉ်အမြဲ ကျင်းပပေးပါတယ် ညီလေး။ ဘောလုံး၊ ဘတ်စကတ်ဘော၊ ကြက်တောင် အစရှိတဲ့ အားကစားပွဲစဉ်တွေမှာ ပါဝင်ဆင်နွှဲနိုင်သလို၊ ကျောင်းတွင်းမှာလည်း Facilities အပြည့်နဲ့ Gym တွေပါ အခမဲ့ အသုံးပြုခွင့်ပေးထားတာမို့ အားကစားဝါသနာရှင်တွေအတွက်တော့ အကြိုက်ပဲပေါ့ 😊"
+},
+
+{
+    question:"Computer Lab ရှိလား?",
+    answer:"ဒါကတော့ တို့တက္ကသိုလ်ရဲ့ အားအကိုးရဆုံး အစိတ်အပိုင်းတစ်ခုပဲပေါ့! ခေတ်မီဆန်းသစ်ပြီး စွမ်းဆောင်ရည်မြင့်မားတဲ့ စက်တွေနဲ့ အသင့်ပြင်ဆင်ထားတဲ့ Hi-tech Computer Labs (ကွန်ပျူတာခန်းများ) အပြည့်အစုံ ရှိပါတယ်ခင်ဗျာ။ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချမယ့် Coding သင်တာ၊ Design ဆွဲတာနဲ့ AI Tools တွေ အသုံးပြုတဲ့အခါမှာ ကျောင်းသားတိုင်း လက်တွေ့ စိတ်ကြိုက်အသုံးချပြီး လေ့လာနိုင်အောင် ကျောင်းတွင်း အခမဲ့ WiFi စနစ်တွေနဲ့ပါ သေချာ ပံ့ပိုးပေးထားပါတယ်ဗျာ 💻"
+},
+
+{
+    question:"Coding သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ IT Major (Information Technology) / Digital Business Computer မှာ အခြေခံကစပြီး ခေတ်သုံး Coding Language တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ နည်းပညာလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Data Analysis သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ IT Major (Information Technology) / Digital Business Computer မှာ အခြေခံကစပြီး ခေတ်သုံး Data Analysis Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ နည်းပညာလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Project Management သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Business Major (Business Management) မှာ အခြေခံကစပြီး ခေတ်သုံး Project Management Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ စီမံခန့်ခွဲမှုလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Financial Analysis သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Business Major (Accounting) မှာ အခြေခံကစပြီး ခေတ်သုံး Financial Analysis Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ ဘဏ္ဍာရေးလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Business Communication သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Business Major (Business Management) မှာ အခြေခံကစပြီး ခေတ်သုံး Business Communication Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ စီးပွားရေးလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Digital Marketing Tools သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Digital Marketing Major မှာ အခြေခံကစပြီး ခေတ်သုံး Digital Marketing Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ ဒစ်ဂျစ်တယ်မားကတ်တင်းလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"IT Tools သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ IT Major (Information Technology) / Digital Business Computer မှာ အခြေခံကစပြီး ခေတ်သုံး IT Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ နည်းပညာလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Computer Software သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ IT Major (Information Technology) / Digital Business Computer မှာ အခြေခံကစပြီး ခေတ်သုံး Computer Software တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ နည်းပညာလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Business Software သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Business Major (Business Management) မှာ အခြေခံကစပြီး ခေတ်သုံး Business Software တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ စီးပွားရေးလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Accounting Software သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Business Major (Accounting) မှာ အခြေခံကစပြီး ခေတ်သုံး Accounting Software တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ ဘဏ္ဍာရေးလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Digital Business Computer သင်ရလား?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ Digital Business Computer Major မှာ အခြေခံကစပြီး ခေတ်သုံး Digital Business Computer Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ ဒစ်ဂျစ်တယ်စီးပွားရေးလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"Digital Business Computer သင်ရလားဟင်? ဘာတွေလေ့လာရမှာလဲဗျ?",
+    answer:"သင်ပေးတာပေါ့ ညီလေး/ညီမလေးရေ... တို့ Thonburi University ရဲ့ Digital Business Computer Major မှာ အခြေခံကစပြီး ခေတ်သုံး Digital Business Computer Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်ဗျာ။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ ဒစ်ဂျစ်တယ်စီးပွားရေးလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်😊"
+},
+{    question:"Digital Business Computerဒီမေဂျာက သာမန် Business မေဂျာတွေနဲ့ ဘာကွာတာလဲ?",
+    answer:"ကွာတာပေါ့ ညီလေးရဲ့! သာမန်စီးပွဲတက်ရင် စီမံခန့်ခွဲမှုလောက်ပဲ သင်ရပေမယ့် ဒီမေဂျာမှာတော့ စီးပွားရေးဗဟုသုတ (Business Management) ရော ခေတ်မီနည်းပညာ (Digital Tools & Data) ပိုင်းပါ နှစ်ခုစလုံးကို ပေါင်းစပ်သင်ကြားရတာပါ။ ဒစ်ဂျစ်တယ်စနစ်နဲ့ လုပ်ငန်းတွေကို ဘယ်လိုတိုးတက်အောင် လုပ်မလဲဆိုတာ အဓိကလေ့လာရမှာမို့ အခုခေတ် ကုမ္ပဏီတိုင်းက အလိုချင်ဆုံး လူစွမ်းကောင်းတွေ ဖြစ်လာမှာပေါ့။ 😊"
+},
+{
+    question:"Digital Business Computer Majorဒီမေဂျာနဲ့ ကျောင်းတက်ရင်း အလုပ်လုပ်ရင် (Internship) ရော ဘယ်လိုနေရာတွေမှာ လုပ်ရမှာလဲဟင်?",
+    answer:"ဒါကတော့ တို့ကျောင်းရဲ့ အမိုက်ဆုံးအပိုင်းပဲ! First Year - Second Semester ရောက်တာနဲ့ ကျောင်းကတရားဝင်ထုတ်ပေးမယ့် Internship Letter နဲ့အတူ လစာ အနည်းဆုံး ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ကြား ရရှိမယ့် Paid Internship ဆင်းရမှာပါ။ ကုမ္ပဏီကြီးတွေရဲ့ Digital Operations, E-commerce Department, Data Entry သို့မဟုတ် Business Analysis အပိုင်းတွေမှာ လက်တွေ့ပိုက်ဆံရှာရင်း လုပ်ငန်းခွင်အတွေ့အကြုံ ယူနိုင်မှာ ဖြစ်ပါတယ်ဗျာ။"},
+{    question:"ဒီမေဂျာနဲ့ ဘွဲ့ရပြီးရင် အနာဂတ် (Future Career) အတွက် ဘာတွေလုပ်လို့ရမလဲ အစ်ကို?",
+    answer:"အခွင့်အရေးတွေကတော့ အကျယ်ကြီးပဲ ညီမလေးရယ်။ E-commerce Manager, Digital Business Analyst, Project Coordinator တွေအဖြစ် လုပ်ကိုင်နိုင်သလို၊ ကိုယ်ပိုင်အွန်လိုင်းစီးပွားရေးလုပ်ငန်း ထောင်ချင်တဲ့သူတွေအတွက်လည်း အကောင်းဆုံး အခြေခံအုတ်မြစ် ဖြစ်မှာပါ။ ကျောင်းပြီးတာနဲ့ Bachelor Degree (ဘွဲ့လက်မှတ်) ကော ၄ နှစ်စာ လုပ်ငန်းခွင်အတွေ့အကြုံ ပါ တစ်ပြိုင်တည်း ရပြီးသားဖြစ်နေမှာမို့ အလုပ်ရဖို့ကတော့ ရာနှုန်းပြည့် အားသာနေမှာ အသေအချာပါပဲဗျာ"
+},
+
+
+{    question:"IT Major နဲ့ Digital Business Computer Major က ဘာကွာတာလဲ?",
+    answer:"သင်ပေးတာပေါ့ တို့ Thonburi University ရဲ့ IT Major (Information Technology) မှာ အခြေခံကစပြီး ခေတ်သုံး Information Technology Tools တွေကို စနစ်တကျ သင်ကြားပေးပါတယ်။ ပိုမိုက်တာက စာတွေ့တင်မကဘဲ အလုပ်ခွင်ထဲ တိုက်ရိုက်အသုံးချနိုင်မယ့် လက်တွေ့ပရောဂျက်တွေပါ လုပ်ဆောင်ရမှာဖြစ်လို့ နည်းပညာလောကထဲကို ယုံကြည်မှုရှိရှိ ခြေလှမ်းစတင်နိုင်မှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{
+    question:"Business Management သင်ရလား?",
+    answer:"Digital Business Computer Major/IT Business Major တွင် သင်ကြားပေးပါတယ် 😊"
+},
+
+{
+    question:"Marketing သင်ရလား?",
+    answer:"Digital Marketing Major ရှိပါတယ် 😊"
+},
+
+{
+    question:"Engineering Practical ရှိလား?",
+    answer:"Practical Learning များရှိပါတယ် 😊"
+},
+
+{
+    question:"Accounting Software သင်လား?",
+    answer:"သင်ကြားပေးပါတယ် 😊"
+},
+
+{
+    question:"Graphic Design သင်ရလား?",
+    answer:"မိမိရွေးချယ်လိုက်တဲ့ Program လမ်းကြောင်းနဲ့ မေဂျာအလိုက် (ဥပမာ- Digital Marketing သို့မဟုတ် Digital Media အတန်းတွေမှာ) Graphic Design ပညာရပ်တွေ ထည့်သွင်းပါဝင်ပါတယ် ခင်ဗျာ။ Content တွေ ဖန်တီးတာ၊ ဒီဇိုင်းဆွဲတာ၊ အနုပညာနဲ့ နည်းပညာကို ပေါင်းစပ်တာတွေကို စနစ်တကျ သင်ယူရမှာ ဖြစ်ပါတယ်ဗျာ 😊"
+},
+
+{
+    question:"AI Technology သင်ရလား?",
+    answer:"မရရင် ခေတ်နောက်ကျကျန်ခဲ့မှာပေါ့ ညီလေးရဲ့! တို့ကျောင်းရဲ့  Program တွေနဲ့ ခေတ်မီနည်းပညာအတန်းတွေမှာ AI Technology (ဉာဏ်ရည်တုနည်းပညာ) အကြောင်းအရာတွေ၊ ခေတ်သစ် AI Tools တွေကို လုပ်ငန်းခွင်မှာ ဘယ်လိုထိရောက်စွာ ပေါင်းစပ်အသုံးချရမလဲဆိုတာတွေကို လေ့လာခွင့်ရမှာ ဖြစ်လို့ အမြဲခေတ်ရှေ့ပြေးနေမှာ အသေအချာပါပဲဗျာ။😊"
+},
+
+{
+    question:"Presentation Skill တိုးတက်လား?",
+    answer:"အစပိုင်းမှာ လူတိုင်း ကြောက်တတ်တာ သဘာဝပါ  ဒါပေမဲ့ လုံးဝစိတ်ပူစရာမလိုပါဘူး! ကျောင်းရဲ့ စာသင်ခန်းတွင်း Class Activities (သင်ခန်းစာ လှုပ်ရှားမှုများ) မှာ ဆရာမတွေက ကျောင်းသားတစ်ဦးချင်းစီ ယုံကြည်မှုရှိရှိ စကားပြောနိုင်အောင် စနစ်တကျ လေ့ကျင့်မြှင့်တင်ပေးပါတယ်။ Presentation Skill ဆိုတာက အကြိမ်ကြိမ် လေ့ကျင့်ရာကနေ တက်မြောက်လာတာဖြစ်လို့ ကျောင်းပြီးသွားတဲ့အခါ လူပုံအလယ်မှာ စမတ်ကျကျနဲ့ ဆွဲဆောင်မှုရှိရှိ စကားပြောဆို ရှင်းလင်းပြသနိုင်တဲ့သူတစ်ယောက် ဖြစ်လာမှာ အသေအချာပါပဲဗျာ။😊"
+},
+
+{
+    question:"Teamwork Skill ရလား?",
+    answer:"တို့တက္ကသိုလ်ရဲ့ သင်ကြားမှုစနစ်က စာအုပ်ထဲကစာတွေကို တစ်ယောက်တည်း ကျက်နေရတာမျိုးမဟုတ်ဘဲ လက်တွေ့ကျကျ Group Projects (အဖွဲ့လိုက် ပရောဂျက်များ) ကို အတူတူ တိုင်ပင်ဖန်တီးရတာ ဖြစ်ပါတယ်။ မတူညီတဲ့ အမြင်ရှိတဲ့ နိုင်ငံစုံက သူငယ်ချင်းတွေနဲ့အတူ ပူးပေါင်းပြီး ပြဿနာတွေကို အတူတူဖြေရှင်းရင်း လုပ်ငန်းခွင်ထဲမှာ အရေးအကြီးဆုံးဖြစ်တဲ့ အသင်းအဖွဲ့နဲ့ လုပ်ကိုင်တတ်တဲ့စွမ်းရည် (Teamwork Skill) ကို ရာနှုန်းပြည့် ပိုင်ဆိုင်သွားမှာ ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+
+{
+    question:"Leadership Skill တိုးတက်လား?",
+    answer:"သေချာပေါ့ ညီမလေးရယ်... အရမ်းကို အားပေးပါတယ်! တက္ကသိုလ်တွင်းမှာရှိတဲ့ University Activities (ကျောင်းတွင်း လှုပ်ရှားမှုများနှင့် ပွဲလမ်းသဘင်များ)၊ စိတ်ဝင်စားရာ Club တွေနဲ့ အဖွဲ့လိုက် ပရောဂျက်တွေမှာ မိမိက Leader (အဖွဲ့ခေါင်းဆောင်) အဖြစ် တာဝန်ယူပြီး ဦးဆောင်ခွင့်ရမယ့် အခွင့်အရေးတွေ အများကြီး ရှိပါတယ်။ ဒီလိုမျိုး လက်တွေ့နယ်ပယ်မှာ ကြုံတွေ့ရတဲ့ အတွေ့အကြုံတွေက ညီမလေးရဲ့ ဆုံးဖြတ်ချက်ချနိုင်စွမ်းနဲ့ အဖွဲ့အစည်းကို လမ်းညွှန်ပေးနိုင်မယ့် ဦးဆောင်မှုစွမ်းရည် (Leadership Skill) ကို အလိုအလျောက် ထူးချွန်တိုးတက်လာစေမှာပါဗျာ။✨"
+},
+
+
+{
+    question:"Confidence ရလာမလား?",
+    answer:"အရမ်းကို အဆင်ပြေပါတယ် ညီလေးရဲ့။ တို့ကျောင်းရဲ့ Learning Environment ကောင်းကြီး က ကျောင်းသားတွေကို အမှားလုပ်မှာ မကြောက်ဘဲ လွတ်လပ်စွာ ဖော်ထုတ်ပြသခွင့်ပေးတဲ့ ပတ်ဝန်းကျင်မျိုး ဖြစ်ပါတယ်။ ပထမနှစ် အကြိုတန်းတွေကတည်းက စာတွေ့လက်တွေ့ ပြင်ဆင်ပေးမယ့်အပြင်၊ မိဘလက်ထဲကနေ ခွဲထွက်ပြီး ထိုင်းနိုင်ငံ ဘန်ကောက်မြို့ကြီးမှာ ကိုယ်တိုင် အလုပ်လုပ်၊ ကိုယ်တိုင် ပိုက်ဆံရှာပြီး ကျောင်းတက်ရမှာ ဖြစ်တဲ့အတွက် ကျောင်းပြီးသွားတဲ့အခါ ဘယ်လိုအခက်အခဲမျိုးကိုမဆို ရင်ဆိုင်ရဲတဲ့ ကိုယ့်ခြေထောက်ပေါ်ကိုယ်ရပ်တည်နိုင်တဲ့ 'ယုံကြည်မှု (Confidence) အပြည့်ရှိတဲ့သူ' တစ်ယောက်အဖြစ် လုံးဝ အသွင်ပြောင်းလဲသွားမှာပါဗျာ😊"
+},
+
+{
+    question:"Future Career အတွက်ကောင်းလား?",
+    answer:"ဒါကတော့ တို့ကျောင်းကို ရွေးချယ်ရတဲ့ အဓိက အကျဆုံး အချက်ပဲပေါ့ ညီမလေးရေ! အပြင်ကျောင်းတွေမှာ တက်ရင် ကျောင်းပြီးမှ အလုပ်အတွေ့အကြုံ စရှာရပေမယ့် တို့ကျောင်းမှာတော့ ၄ နှစ်တာအတွင်းမှာ 'Work Experience' (လုပ်ငန်းခွင် လက်တွေ့အတွေ့အကြုံ) နဲ့ 'Bachelor Degree' (နိုင်ငံတကာအသိအမှတ်ပြု ဘွဲ့လက်မှတ်) ကို တစ်ပြိုင်တည်း ရရှိမှာ ဖြစ်ပါတယ်! ကျောင်းပြီးတာနဲ့ လုပ်ငန်းခွင်အတွေ့အကြုံ ၄ နှစ်စာ ရှိပြီးသားဖြစ်နေလို့ ကုမ္ပဏီကြီးတွေက လက်မလွှတ်တမ်း အလုအယက် ခေါ်ယူရမယ့် ခေတ်ရှေ့ပြေး ထူးချွန်သူတစ်ယောက် ဖြစ်နေမှာပါ။ ဒါ့အပြင် ကျောင်းပြီးရင် အလုပ်ရှာဖို့ (၁) နှစ်စာ Visa Free (ED Plus Visa) အခွင့်အရေးပါ ရဦးမှာမို့ အနာဂတ် Future Career အတွက်တော့ ရာနှုန်းပြည့် စိတ်ချလိုက်ပါဗျာ။ ✨"
+},
+
+{
+    question:"Thailand မှာ Student Life ကောင်းလား?",
+    answer:"အရမ်းကို အဓိပ္ပာယ်ရှိပြီး အမိုက်စား ဖြစ်မှာပေါ့ ညီလေး/ညီမလေးရေ... Thonburi University မှာ ကုန်ဆုံးရမယ့် ကျောင်းသားဘဝက စာအုပ်ထဲက စာတွေချည်းပဲ သင်နေရတာမျိုး မဟုတ်ဘဲ Learning (နိုင်ငံတကာအဆင့်မီ ပညာရေး) ရော Working Experience(လက်တွေ့လုပ်ငန်းခွင် အတွေ့အကြုံ) ပါ တစ်ပြိုင်တည်း ရရှိမယ့် စမတ်ကျကျ ကျောင်းသားဘဝမျိုး ဖြစ်ပါတယ်ဗျာ။ 😊"
+},
+{    question:"ကျောင်းတက်ရင်း အလုပ်လုပ်ရမှာဆိုတော့ Student Life က အရမ်းပင်ပန်းပြီး ပျင်းစရာကြီး ဖြစ်နေမလား?",
+    answer:"လုံးဝ မပျင်းရပါဘူးဗျာ! ပထမဆုံး Semester ပြီးတာနဲ့ First Year - Second Semester ကစလို့ တစ်ပတ်မှာ (၁) ရက်ပဲ ကျောင်းတက်ရမှာပါ! ကျန်တဲ့ရက်တွေမှာ ကျောင်းကတရားဝင်ထုတ်ပေးတဲ့ Internship Letter နဲ့အတူ လစာလည်းရ၊ အတွေ့အကြုံလည်းရမယ့် Paid Internship ဆင်းရမှာ ဖြစ်ပါတယ်။ ကိုယ့်ခြေထောက်ပေါ်ကိုယ်ရပ်တည်ပြီး သူငယ်ချင်းတွေနဲ့အတူ ပိုက်ဆံရှာရတဲ့ ကျောင်းသားဘဝက တကယ့်ကို ပျော်စရာကောင်းပြီး ရင်ခုန်ဖို့ကောင်းပါတယ် ညီလေး"
+},
+{    question:"ကျောင်းဝန်းထဲက Environment (ပတ်ဝန်းကျင်) ကော ဘယ်လိုရှိလဲ?",
+    answer:"အဆင့်မြင့် Facilities တွေနဲ့ အရမ်းမိုက်တာပေါ့Modern စာသင်ခန်းတွေ၊ Hi-tech Computer Lab တွေ၊ အေးအေးဆေးဆေး စာဖတ်လို့ရမယ့် Library တွေအပြင် အားကစားလုပ်ဖို့ Gym တွေနဲ့ ကျောင်းတွင်း အခမဲ့ WiFi စနစ်တွေ အပြည့်ရှိပါတယ်။ ဒါတင်မကသေးဘူး... ၊ သူငယ်ချင်းတွေနဲ့ ဆုံတွေ့ပြီး ကျောင်းတွင်း Activities တွေ၊ Club တွေ၊ အားကစားပွဲတွေမှာ ပျော်ပျော်ပါးပါး ဆင်နွှဲခွင့်ရဦးမှာပါဗျာ။"
+},
+{    question:"သွားရေးလာရေးနဲ့ အစားအသောက်အတွက်ကော အဆင်ပြေပါ့မလား?",
+    answer:"ဒါကတော့ အားလုံးထက် သာတဲ့အချက်ပဲ! ကျောင်းအနီးနားမှာတင် ဘန်ကောက်မြို့ရဲ့ အဓိကရထားလိုင်းဖြစ်တဲ့ Lak Song BTS Station ရှိလို့ မြို့ထဲကို မိနစ်ပိုင်းအတွင်း အလွယ်တကူ သွားလာလည်ပတ်နိုင်ပါတယ်။ ပြီးတော့ ကျောင်းသားကတ်ပြရုံနဲ့ Student Discount တွေလည်း နေရာအစုံမှာ ရဦးမှာနော်။ ကျောင်းထဲက Food Court မှာလည်း သန့်ရှင်းပြီး စျေးသက်သာတဲ့ အစားအသောက်တွေအပြင် မြန်မာစာနဲ့ ဟာလာလ်အစားအစာ (Halal Food) တွေပါ အလွယ်တကူ ရနိုင်လို့ အစစအရာရာ အဆင်ပြေပါတယ်ဗျာ"
+},
+{    question:"မိဘတွေနဲ့ ဝေးပြီး တစ်ယောက်တည်း သွားရမှာဆိုတော့ တစ်ခုခုဆို ဘယ်သူ့ကို အားကိုးရမလဲ?",
+    answer:"ဒါကတော့မပူပါနဲ့  ရန်ကုန်ကနေ စထွက်ကတည်းက ကျောင်းက လူကြီးမင်းတွေက လေဆိပ်အထိ လိုက်လံပို့ဆောင်ပေးမှာဖြစ်ပြီး၊ ထိုင်းလေဆိပ်ရောက်တာနဲ့ အဆောင်အထိ လာကြိုပေးမယ့်အပြင် ထိုင်းမှာ နေထိုင်စဉ်တစ်လျှောက်လုံး ဘဏ်အကောင့်ဖွင့်တာ၊ SIM ကတ်ဝယ်တာကအစ အရေးပေါ်ကျန်းမာရေးကိစ္စအဆုံး အနီးကပ် ကူညီဖြေရှင်းပေးမယ့် Student Support Team ရှိလို့ မိသားစုလို စိတ်ချလက်ချ အားကိုးနိုင်ပါတယ်ဗျာ"
+},
+{
+    question:"English Skill တိုးတက်လား?",
+    answer:"နေ့စဉ်အသုံးပြုရတာကြောင့် တိုးတက်စေပါတယ် 😊"
+},
+
+{
+    question:"Thai Skill တိုးတက်လား?",
+    answer:"အများကြီး တိုးတက်လာမှာပေါ့ ညီလေး/ညီမလေးရေ... Thonburi University မှာ တက်ရောက်ရမယ့် ပတ်ဝန်းကျင်က ထိုင်းနိုင်ငံရဲ့ အချက်အချာကျတဲ့ ဘန်ကောက်မြို့ကြီး ဖြစ်တာကြောင့် နေထိုင်ရင်းရော၊ အလုပ်လုပ်ရင်းပါ ထိုင်းစကားက မတတ်ချင်လွန်းလို့ကို တတ်လာမယ့် အနေအထားမျိုးပါဗျာ 😊"
+},
+{    question:"ထိုင်းစကား လုံးဝ (လုံးဝ) အခြေခံ မရှိဘူး အစ်ကို... အဆင်ပြေပါ့မလား?",
+    answer:"အရမ်းကို အဆင်ပြေပါတယ်ဗျာ။ တို့ရဲ့ Foundation အကြိုတန်းတွေမှာကတည်းက Basic Thai Language (ထိုင်းဘာသာစကားအခြေခံ) ကို စနစ်တကျ ထည့်သွင်းသင်ကြားပေးပါတယ်။ ပိုမိုက်တာက တက္ကသိုလ်ထဲ ရောက်သွားတဲ့အခါမှာလည်း ပထမဆုံး Semester (၄ လခန့်) အတွင်းမှာ ထိုင်းနိုင်ငံရဲ့ လုပ်ငန်းခွင်ထဲ တရားဝင်ဝင်ရောက်ပြီး အလုပ်လုပ်ကိုင်နိုင်တဲ့အထိ ထိုင်းဘာသာစကားကို လုပ်ငန်းခွင်သုံးအဆင့်ထိ သေချာ Train ပေးသွားမှာ ဖြစ်လို့ပါပဲ ✨"
+},
+{    question:"ကျောင်းတက်ရင်း အလုပ်လုပ်တဲ့အခါ (Internship) ရော ထိုင်းစကား ပိုတိုးတက်လာနိုင်မလား?",
+    answer:"ဒါကတော့ အဓိက အချက်ပဲပေါ့  First Year - Second Semester ကျရင် ကျောင်းကထုတ်ပေးမယ့် တရားဝင် Internship Letter နဲ့ လစာ အနည်းဆုံး ၁၂၀၀၀ မှ ၁၅၀၀၀ ဘတ် ကြား ရရှိမယ့် အလုပ်တွေကို ဆင်းရမှာပါ။ နေ့စဉ် ထိုင်းလူမျိုးတွေ၊ ထိုင်းမန်နေဂျာတွေနဲ့ တိုက်ရိုက်ထိတွေ့ ပြောဆို ဆက်ဆံရမှာ ဖြစ်တဲ့အတွက် အပြင်သင်တန်းတွေမှာ ဘယ်လောက်ပဲတက်တက် မရနိုင်တဲ့ 'အပြင်လက်တွေ့ လုပ်ငန်းခွင်သုံး ထိုင်းစကား (Spoken Thai)' က အလိုအလျောက် ပေါက်မြောက် သွားမှာ ဖြစ်ပါတယ် 😊"
+},
+{    question:"ကျောင်းပြီးသွားရင် ဘွဲ့လက်မှတ်အပြင် ဘာသာစကားပါ ကျွမ်းကျင်သွားမှာပေါ့?",
+    answer:"ကျောင်းပြီးလို့ Bachelor Degree (ဘွဲ့) ရသွားတဲ့အခါ ထိုင်းရော အင်္ဂလိပ်ပါ 2 ဘာသာစကားလုံး ကျွမ်းကျင်တဲ့သူ (Bilingual) ဖြစ်သွားမှာမို့လို့ ထိုင်းနိုင်ငံမှာပဲ ဖြစ်ဖြစ်၊ နိုင်ငံတကာမှာပဲ ဖြစ်ဖြစ် လစာကောင်းကောင်းနဲ့ အလုပ်အကိုင်ကောင်းတွေ (White Collar Jobs) ရရှိဖို့ လမ်းခင်းပြီးသား ဖြစ်သွားမှာပါ"
+},
+
+{
+    question:"ဘွဲ့ရပြီးအတွေ့အကြုံရမလား?",
+    answer:"Internship Experience များရရှိနိုင်ပါတယ် ✨"
+},
+
+{
+    question:"Legal Internship ဟုတ်လား?",
+    answer:"University ချိတ်ဆက် Program များရှိပါတယ် 😊"
+},
+
+{
+    question:"ထိုင်းနိုင်ငံမှာ ဘာသာစကားလည်းမတတ်၊ နေရာလည်းအသစ်ဆိုတော့ နေမကောင်းဖြစ်တာမျိုး ဒါမှမဟုတ် အရေးပေါ်ကိစ္စတွေရှိရင် ဘယ်သူ့ကို အားကိုးရမလဲ?",
+    answer:"ကျောင်းရဲ့ Student Support Team က ကျောင်းသားတွေအတွက် Emergency Support (အရေးပေါ်အကူအညီ) အပြည့်အဝ ပေးပါတယ်။ နေမကောင်းလို့ ဆေးရုံပြတာကအစ ကျန်းမာရေးအာမခံ လျှောက်ထားတာတွေအထိ အနီးကပ် လိုက်လံကူညီပေးမှာ ဖြစ်သလို၊ စိတ်ဓာတ်ကျတာ ဒါမှမဟုတ် အခက်အခဲရှိရင်လည်း သီးသန့် Counseling (နှစ်သိမ့်ဆွေးနွေး အကြံဉာဏ်ပေးခြင်း) တွေပါ လုပ်ဆောင်ပေးလို့ မိသားစုလို အားကိုးလို့ ရပါတယ်ဗျာ 😊"
+},
+{    question:"ထိုင်းရောက်ရင် ဘဏ်အကောင့်ဖွင့်တာတို့၊ SIM ကတ်ဝယ်တာတို့ကော ကူညီပေးလား?",
+    answer:"အစအဆုံး ကူညီလမ်းညွှန်ပေးပါတယ်ဗျာ။ ထိုင်းရောက်တာနဲ့ အဆင်ပြေပြေ အသုံးပြုနိုင်ဖို့ ထိုင်း SIM ကတ် ဝယ်ယူတာ၊ Bank Account (ဘဏ်အကောင့်) တရားဝင်ဖွင့်လှစ်တာနဲ့ ထိုင်းယာဉ်မောင်းလိုင်စင် လျှောက်ထားတာတွေအထိ အစ်ကိုတို့ Support Team က စာရွက်စာတမ်းကူညီတာကအစ အားလုံးကို ဘေးကနေ လိုက်လံဆောင်ရွက်ပေးမှာ ဖြစ်ပါတယ်😊"
+},
+{
+    question:"Student Support Team ရှိလား?",
+    answer:"ရန်ကုန်ကနေ စထွက်ကတည်းက ဘန်ကောက်ရောက်တဲ့အထိ ကျောင်းသားတွေရဲ့ အခက်အခဲမှန်သမျှကို အနီးကပ် လိုက်လံဖြေရှင်းပေးမယ့် အကောင်းဆုံး Student Support Team အသင့်ရှိနေပါတယ်ခင်ဗျာ 😊"
+},
+{    question:"အဆောင်ကိစ္စနဲ့ ဗီဇာကိစ္စတွေကိုရော သူတို့ပဲ တာဝန်ယူပေးတာလား?",
+    answer:"တစ်လ ၅၀၀ ဝန်းကျင်ပဲ ရှိမယ့် အဆောင်နေရာချထားပေးတာ၊ လေဆိပ်အကြိုအပို့ လုပ်ပေးတာအပြင် ကျောင်းသားဗီဇာ (ED Plus Visa + Re-entry Permit) သက်တမ်းတိုးစာရွက်စာတမ်း အရှုပ်အထွေး မှန်သမျှကို Support Team ကပဲ အခမဲ့ အစအဆုံး တာဝန်ယူပေးသွားမှာ ဖြစ်ပါတယ်"
+},
+{    question:"အခက်အခဲရှိရင် ဘယ်သူ့ကို ဆက်သွယ်ရမလဲ?",
+    answer:"အခက်အခဲရှိရင် ကျောင်းရဲ့ Student Support Team ကို ဆက်သွယ်နိုင်ပါတယ် 😊"
+},
+{    question:"အရေးပေါ်ကိစ္စတွေရှိရင် ဘယ်သူ့ကို ဆက်သွယ်ရမလဲ?",
+    answer:"အရေးပေါ်ကိစ္စတွေရှိရင်လည်း Student Support Team ကို ဆက်သွယ်နိုင်ပါတယ် 😊"
+},
+{    question:"အဆောင်ကိစ္စတွေရှိရင် ဘယ်သူ့ကို ဆက်သွယ်ရမလဲ?",
+    answer:"အဆောင်ကိစ္စတွေရှိရင်လည်း Student Support Team ကို ဆက်သွယ်နိုင်ပါတယ် 😊"
+},
+{    question:"ဘယ်လိုအခက်အခဲတွေကို ကူညီပေးလဲ?",
+    answer:"ကျန်းမာရေးကိစ္စတွေ၊ စိတ်ဓာတ်ကျတာ၊ အဆောင်ကိစ္စတွေ၊ ဗီဇာကိစ္စတွေ အပြင် အခြားအခက်အခဲရှိရင်လည်း Support Team က အနီးကပ် လိုက်လံကူညီပေးမှာ ဖြစ်ပါတယ်😊"
+},
+
+
+{
+    question:"Emergency Support ရှိလား?",
+    answer:"Support Team များရှိပါတယ် 😊"
+},
+
+{
+    question:"Apply Process ခက်လား?",
+    answer:"Step by Step ကူညီပေးပါတယ် "
+},
+
+
+
+{
+    question:"Offer Letter ရလား?",
+    answer:"ရပါတယ်ခင်ဗျာ "
+},
+
+{
+    question:"Visa Approved လွယ်လား?",
+    answer:"လိုအပ်ချက်တွေ ပြည့်စုံရင် အရမ်းကို အဆင်ပြေပြေနဲ့ ဗီဇာရရှိနိုင်ပါတယ် ညီလေး/ညီမလေးရေ။ ဗီဇာရရှိဖို့အတွက် လိုအပ်တဲ့ တက္ကသိုလ်ဘက်က တရားဝင် စာရွက်စာတမ်း မှန်သမျှကို အစ်ကိုတို့ Dreams by HARRY ဘက်ကနေ အစအဆုံး အပြည့်အဝ တာဝန်ယူ ပြင်ဆင်ပေးသွားမှာ ဖြစ်လို့ လုံးဝ စိတ်ပူစရာမလိုပါဘူးခင်ဗျာ။ 😊"
+},
+{    question:"ဗီဇာကျဖို့ ကျောင်းဘက်က ဘာတွေအဓိက ပံ့ပိုးပေးတာလဲ?",
+    answer:"အဓိကကတော့ တရားဝင် ဗီဇာလျှောက်ထားနိုင်ဖို့အတွက် Thonburi University ရဲ့ Official Offer Letter (ကျောင်းဝင်ခွင့်စာ) အပြင် ထိုင်းလူဝင်မှုကြီးကြပ်ရေး (လဝက) က သတ်မှတ်ထားတဲ့ ကျောင်းရဲ့ တရားဝင် စာရွက်စာတမ်း အထောက်အထား မှန်သမျှကို ကျောင်းဘက်က အစအဆုံး ထုတ်ပေးတာ ဖြစ်ပါတယ်။ စာရွက်စာတမ်း ခိုင်လုံပြည့်စုံတဲ့အတွက် ဗီဇာ Approved ဖြစ်ဖို့က ရာနှုန်းပြည့်နီးပါး သေချာသွားတာပေါ့😊"
+},
+{    question:"မြန်မာပြည်ကနေ သွားရမှာဆိုတော့ ဘယ်လိုအဆင့်ဆင့် လုပ်ရမလဲ?",
+    answer:"မခက်ပါဘူးဗျာ။ မြန်မာနိုင်ငံကနေ စထွက်ကတည်းက ရန်ကုန်ထိုင်းသံရုံးမှာ ၃ လ တရားဝင်ဗီဇာ (Visa allowed) ရအောင် ကျောင်းဘက်က စာရွက်စာတမ်းတွေ အကုန်အဆင့်ဆင့် လုပ်ပေးမှာဖြစ်ပြီး၊ ထိုင်းနိုင်ငံကို ရောက်သွားတဲ့အခါမှာလည်း တစ်ခါတည်း အလန်းဆုံးဖြစ်တဲ့ University ED Plus Visa + Re-entry Permit တွေရအောင် ကျောင်းကပဲ ဆက်လက် တာဝန်ယူပေးသွားမှာ ဖြစ်ပါတယ်ခင်ဗျာ။"
+},
+
+{
+    question:"Thailand မှာနေထိုင်စရိတ်များလား?",
+    answer:"Lifestyle ပေါ်မူတည်ပါတယ် "
+},
+
+{
+    question:"Student Discount ရလား?",
+    answer:"Thonburi University ရဲ့ ကျောင်းသား/ကျောင်းသူ ဖြစ်သွားတာနဲ့ ကျောင်းကထုတ်ပေးမယ့် တရားဝင် Student Card (ကျောင်းသားကတ်) ကိုအသုံးပြုပြီး ထိုင်းနိုင်ငံရဲ့ နေရာအတော်များများမှာ ကျောင်းသား Discount တွေကို လန်းလန်းလေး ခံစားခွင့်ရမှာ ဖြစ်ပါတယ်ဗျာ 😊"
+},
+{    question:"ကျောင်းသားကတ်နဲ့ အဓိက ဘယ်လိုနေရာတွေမှာ လျှော့စျေးရတာလဲ?",
+    answer:"အသုံးအဝင်ဆုံးကတော့ လမ်းပန်းဆက်သွယ်ရေးပဲဗျ။ တို့ကျောင်းအနီးမှာရှိတဲ့ Lak Song BTS (ရထားလိုင်း) အပါအဝင် ဘန်ကောက်မြို့ရဲ့ ရထားလိုင်းတွေမှာ ကျောင်းသားကတ်ပြပြီး စီးရင် သာမန်လူတွေထက် အများကြီး သက်သာတဲ့ Student Rate (ကျောင်းသားစျေး) နဲ့ စီးလို့ရတာမို့ လစဉ် သွားလာစရိတ်ကို အများကြီး ချွေတာနိုင်တာပေါ့"
+},
+{    question:"တခြား ဖျော်ဖြေရေးနဲ့ စားသောက်ဆိုင်တွေမှာကော ရလား?",
+    answer:"Major Cineplex နဲ့ SF Cinema လိုမျိုး ထိုင်းက ရုပ်ရှင်ရုံကြီးတွေမှာ Student Price နဲ့ ရုပ်ရှင်ကြည့်လို့ရတယ်။ ဒါ့အပြင် ကုန်တိုက်ကြီးတွေထဲက နာမည်ကြီး အကင်ဆိုင်၊ ဆူရှီဆိုင်တွေ၊ ကဖေးတချို့နဲ့ Apple Store လိုမျိုး နည်းပညာပစ္စည်းအရောင်းဆိုင်တွေမှာပါ ပညာရေးအထူးပရိုမိုးရှင်း (Student Discount) တွေနဲ့ ဝယ်ယူခွင့် ရရှိမှာ ဖြစ်ပါတယ်"
+},
+{    question:"ကျောင်းသားကတ်က ထိုင်းနိုင်ငံမှာ တော်တော်လေး အရာရောက်တာပေါ့နော်?",
+    answer:"ဟုတ်ပါတယ်ဗျာ။ ဒါတင်မကသေးဘူးနော်... ဘန်ကောက်မြို့က နာမည်ကြီး ပြတိုက်တွေ၊ ကစားကွင်းတွေ၊ တိရစ္ဆာန်ရုံတွေနဲ့ သမိုင်းဝင်အမွေအနှစ် ကမ္ဘာလှည့်ခရီးသွားနေရာတွေ မှာလည်း ကျောင်းသားကတ်ပြရုံနဲ့ ဝင်ကြေးကို လျှော့စျေး (သို့မဟုတ်) အလကား ဝင်ခွင့်ပေးတာမျိုးတွေ ရှိတာမို့ ထိုင်းမှာ ကျောင်းတက်ရတာ တကယ့်ကို တန်ဖိုးရှိလှပါတယ်ဗျာ"
+},
+{
+    question:"Flexible Payment ရလား?",
+    answer:"အဓိကက ကျောင်းသားတွေ ငွေကြေးအခက်အခဲကြောင့် ပညာရေးလမ်းမဆုံးစေရအောင် တို့ကျောင်းမှာ Installment Plan (အရစ်ကျ ခွဲသွင်းလို့ရတဲ့စနစ်) တွေကို အကောင်းဆုံးနဲ့ အဆင်ပြေဆုံးဖြစ်အောင် Flexible ညှိနှိုင်း စီစဉ်ပေးထားပါတယ်ခင်ဗျာ။😊"
+},
+{ 
+    question:"ကျောင်းလခ သွင်းရမယ့်စနစ်က ဘယ်လောက်အထိ Flexible ဖြစ်မှာလဲ?",
+    answer:"အရမ်းကို စိတ်ချမ်းသာဖို့ကောင်းပါတယ်ဗျာ။ Thonburi University ရဲ့ Bachelor Degree အတန်းတွေမှာ တစ်နှစ်ကို Semester (၂) ခုပဲ ရှိပြီး တစ်ခုကို ၃၄၀၀၀ ဘတ်ပဲ ကျသင့်တာပါ။ အဲဒီကျောင်းလခကို Semester တစ်ခုမပြီးမချင်း မိမိအဆင်ပြေမယ့်လအလိုက် အချိုးကျ ခွဲသွင်းသွားလို့ရမယ့် Flexible Plan တွေ ရှိတာမို့လို့ တစ်ခါတည်း အကုန်သွင်းရမှာကို လုံးဝ (လုံးဝ) စိုးရိမ်စရာမလိုပါဘူး"
+    },
+];
+
+/* =========================
+   DOM
+========================= */
+
+const searchInput =
+document.getElementById("searchInput");
+
+const faqGrid =
+document.getElementById("faqGrid");
+
+const resultCount =
+document.getElementById("resultCount");
+
+const emptyState =
+document.getElementById("emptyState");
+
+/* =========================
+   RENDER
+========================= */
+
+function renderFAQ(data){
+
+    faqGrid.innerHTML = "";
+
+    if(data.length === 0){
+
+        emptyState.style.display = "block";
+
+        resultCount.innerHTML =
+        "0 Results Found";
+
+        return;
+    }
+
+    emptyState.style.display = "none";
+
+    resultCount.innerHTML =
+    `${data.length} Results Found`;
+
+    data.forEach(item=>{
+
+        faqGrid.innerHTML += `
+
+        <div class="faq-card">
+
+            <div class="question">
+                ${item.question}
+            </div>
+
+            <div class="answer">
+                ${item.answer}
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+searchInput.addEventListener("input",function(){
+
+    const value =
+    this.value.toLowerCase().trim();
+
+    if(value === ""){
+
+        faqGrid.innerHTML = "";
+
+        resultCount.innerHTML =
+        "Search anything about Thailand Study";
+
+        emptyState.style.display = "none";
+
+        return;
+    }
+
+    const filtered = faqData.filter(item => {
+
+        return (
+
+            item.question
+            .toLowerCase()
+            .includes(value)
+
+            ||
+
+            item.answer
+            .toLowerCase()
+            .includes(value)
+
+        );
+
+    });
+
+    renderFAQ(filtered);
+
+});
+
+/* =========================
+   PLACEHOLDER EFFECT
+========================= */
+
+const placeholders = [
+
+    "Search Visa...",
+    "Search Internship...",
+    "Search Foundation...",
+    "Search Major...",
+    "Search Bangkok...",
+    "Search Passport..."
+
+];
+
+let current = 0;
+
+setInterval(()=>{
+
+    searchInput.placeholder =
+    placeholders[current];
+
+    current++;
+
+    if(current >= placeholders.length){
+        current = 0;
+    }
+
+},2500);
+
+</script>
+<br><br>
+
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<h2 class="section-title fade">
+Student Q&A
+</h2>
+
+<div class="divider"></div>
+
+<div class="faq-container">
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ ထိုင်းမှာ တက္ကသိုလ်တတ်ရင်း အလုပ်လုပ်လို့ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ  <br>
+Thonburi University မှာ
+First Year – Second Semester ရောက်တာနဲ့ Universityဘက်မှ
+Internship letter <br>ဖြင့် အလုပ်လုပ်ရင်း တက္ကသိုလ်တတ်နိုင်ပါပြီ
+</div>
+</div>
+</div>
+
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Internship ဆိုတာ တရားဝင်လား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ တရားဝင်ပါတယ်ခင်ဗျာ ⚖️ <br>
+University ဘက်က
+Royal Thai Immigration အသိမှတ်ပြု
+Internship Letter ထုတ်ပေးပါတယ်
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Foundation Program Fee ဘယ်လောက်လဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ 39,500 Baht ပါခင်ဗျာ ( အရစ်ကျခွဲသွင်းလို့ရပါတယ် ခင်ဗျာ့ )
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Pathways Program Fee ဘယ်လောက်လဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ 29,500 Baht ပါခင်ဗျာ ( အရစ်ကျခွဲသွင်းလို့ရပါတယ် ခင်ဗျာ့ )
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Visa ကရော စိတ်ချရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ University ED Plus Visa + Re-entry Permit ရရှိပါမယ် 🛂
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Major တွေဘာရှိလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+   ✅ ဒီမေဂျာတွေကတော့ students life balance ဖြစ်စေပြီး <br>အလုပ်လုပ်ရင်းတက္ကသိုလ်တတ်ခွင့်ရတဲ့
+    မေဂျာလေးတွေ ဖြစ်ပါတယ် ဗျာ့<br>
+(1) Digital Business Computer <br>
+(2) Digital Marketing <br>
+(3) Accounting <br>
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Illegal Job ဖြစ်နိုင်လား?
+
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ မဖြစ်အောင် University ဘက်က စီစဉ်ပေးပါတယ်ခင်ဗျာ   
+Internship Letter + ED Plus Visa နဲ့ တရားဝင်သွားတဲ့ System ဖြစ်ပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ တစ်ပတ် ဘယ်နှရက် ကျောင်းတတ်ရလဲ?
+
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅  First Year -Second Semester ရောက်ရင် တစ်ပတ် (၁) ရက်ပဲ ကျောင်းတတ်ရပါတယ် 
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ ကျန်တဲ့ရက်တွေမှာဘာလုပ်ရလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Internship / Paid Internship ဆင်းနိုင်ပါတယ်ခင်ဗျာ 💼
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Full Time Internship လုပ်လို့ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ 😊 <br>
+Work Life Balance ဖြစ်တဲ့ System နဲ့ သွားပါတယ်
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Internship လစာ ဘယ်လောက်ရနိုင်လဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ အနည်းဆုံး 12,000+ Baht ကနေ စရနိုင်ပါတယ် 😊 <br>
+OT / Bonus / Tip Money ပါ ရနိုင်ပါတယ်
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Salary တိုးနိုင်လား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ တိုးနိုင်ပါတယ်ခင်ဗျာ 😊 <br>
+Performance ကောင်းရင် သုံးလတစ်ခါ တိုးတာမျိုးလည်းရှိပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ OT မဆင်းချင်ရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ မဆင်းလည်းရပါတယ်ခင်ဗျာ 😊 <br>
+Company Policy ပေါ်မူတည်ပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Internship နဲ့ Part Time ဘာကွာလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Internship က University အသိမှတ်ပြု Official Training System ပါ 😊 <br>
+Part Time က သာမန်အလုပ်လုပ်တဲ့ပုံစံဖြစ်ပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Thai စကား မတတ်သေးရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Foundation မှာရော ပထမနှစ် မှာရော အခြေခံကနေ Train ပေးပါတယ်ခင်ဗျာ 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ English မရရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ အဆင်ပြေပါတယ်ခင်ဗျာ <br>
+Foundation / Pathways Program  မှာရော ပထမနှစ် မှာရော အခြေခံကနေ သင်ပေးပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ ဘယ်သူတွေ တက်လို့ရလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+📌 G12 အောင် or Bachelor Degree ရပြီးသားဆို <br>
+➡️ University Pathways Program (3 Months) <br><br>
+
+📌 GED or G11 / စနစ်ဟောင်း ၉တန်း အောင် or ၁၀တန်းအောင်ဆို <br>
+➡️ University Foundation Program (6 Months)
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ ဘာသာစကား ဘယ်လောက်လိုလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Thai 50% + English 50% လောက် ကြိုးစားထားဖို့ လိုပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ GED မရှိရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Foundation Program နဲ့ တတ်လို့ရပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Drop Out ဖြစ်ထားရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Education Background ပေါ်မူတည်ပြီး လမ်းကြောင်းရွေးပေးပါတယ် 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ အသက်ကန့်သတ်ချက်ရှိလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Case by Case ကြည့်ပေးပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Foundation Program မှာ ဘာတွေသင်ရလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Business <br>
+✅ Computer <br>
+✅ Thai Language <br>
+✅ English Language <br>
+✅ Mathematics <br>
+✅ Biology <br>
+✅ Physics <br>
+✅ Chemistry
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Pathways Program မှာ ဘာတွေသင်ရလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Business Management <br>
+✅ Basic Computer <br>
+✅ Thai Language <br>
+✅ English Language <br>
+✅ Bio Science
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Online Class ရှိလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရှိပါတယ်ခင်ဗျာ <br>
+Video Class  video  class 
+ဖြစ်တာကြောင့် မိမိ အားတဲ့ အချိန် ဖွင့် သင်ကြားယုံပါဗျာ့
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Campus တတ်ချင်ရင်ရော?
+<span class="click-text">Click</span>          
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရန်ကုန် Campus - အမှတ် 147/A ၊မင်္ဂလာလမ်း၊(၁၃)ရပ်ကွက်၊တောင်ဥက္ကလာပမြို့နယ်၊ရန်ကုန်မြို့မှာ တတ်လို့ရပါတယ် 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Foundation Program Fee ဘယ်လောက်လဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ 39,500 Baht ပါခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Pathways Program Fee ဘယ်လောက်လဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ 29,500 Baht ပါခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Installment ရှိလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရှိပါတယ်ခင်ဗျာ 😊 <br>
+ခွဲသွင်းလို့ရပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Deposit ဘယ်လောက်လိုလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ 10,000 Baht Deposit နဲ့ Seat Confirm လုပ်လို့ရပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Deposit Refund ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Policy ပေါ်မူတည်ပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ University Semester Fee ဘယ်လောက်လဲ?
+<span class="click-text">Click</span>          
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Semester တစ်ခု — 34,000 Baht ပါ 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Semester တစ်ခု ဘယ်လောက်ကြာလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ (၅) လဝန်းကျင် ကြာပါတယ် 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ တစ်နှစ် Semester ဘယ်နှခုရှိလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Semester နှစ်ခုရှိပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ ကျောင်းလခကို တစ်ခါတည်းသွင်းရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ မလိုပါဘူးခင်ဗျာ 😊 <br>
+Semester မပြီးခင်အထိ ခွဲသွင်းလို့ရပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Bangkok မှာ နေစရိတ်များလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ လူနေမှုပုံစံပေါ် မူတည်ပါတယ် 😊 <br>
+University Dormitory နေရင် သက်သာပါတယ်
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ အဆောင်ရှိလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရှိပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Female Students တွေအတွက် Safe ဖြစ်လား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ University Environment ဖြစ်လို့ Safe ဖြစ်ပါတယ်ခင်ဗျာ 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Hostel Rules ရှိလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရှိပါတယ်ခင်ဗျာ 😊 <br>
+University Rules အတိုင်း နေထိုင်ရပါတယ်
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Visa ကရော စိတ်ချရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ စိတ်ချရပါတယ်ခင်ဗျာ 🛂 <br>
+University ED Plus Visa + Re-entry Permit ရရှိပါမယ်
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Re-entry Permit ဆိုတာဘာလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Thailand ထဲကနေ ထွက်ပြီး ပြန်ဝင်လို့ရအောင် လုပ်ထားတဲ့ Permit ပါ 
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Passport မရှိသေးရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ PV / PE Passport Process တွေကို College ဘက်က ကူညီပေးပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Visa Reject ဖြစ်ဖူးရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Case by Case ကြည့်ပေးပါတယ်ခင်ဗျာ 😊
+</div>
+</div></div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Airport မှာ ဘယ်သူလာကြိုလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ University & College တာဝန်ရှိသူတွေ လာကြိုပေးပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Airport Immigration စစ်ရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ University Documents တွေရှိလို့ စိတ်မပူရပါဘူး 
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+</div><div class="faq-item fade">
+<button class="faq-question">
+❓ အလုပ်ဘယ်လိုရလဲ?
+<span class="click-text">Click  </span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ နည်း (၃) မျိုးရှိပါတယ် 😊 <br><br>
+
+① University MOU Company Interview <br>
+② Senior Students Referral <br>
+③ Walk-in Apply with Internship Letter
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ MOU Company ဆိုတာဘာလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ University နဲ့ Agreement ထိုးထားတဲ့ Company တွေပါ 
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Senior Students တွေ Help ပေးလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ပေးပါတယ်ခင်ဗျာ 😊 <br>
+အလုပ်အကိုင် Opportunities တွေ ချိတ်ဆက်ပေးပါတယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Walk-in Apply ဆိုတာဘာလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ကိုယ်တိုင် Company သွားလျှောက်တဲ့ System ပါ 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ ဘယ်အလုပ်တွေ လုပ်လို့ရလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Office Jobs <br>
+✅ Hotel <br>
+✅ Restaurant <br>
+✅ Cafe <br>
+✅ Customer Service <br>
+✅ Factory Office <br>
+✅ Elderly Care <br><br>
+
+အစရှိတဲ့ အလုပ်တွေ ရှိပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ White Collar Job ဆိုတာဘာလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Office / Admin / Marketing / IT / Business ပိုင်းအလုပ်တွေကို ပြောတာပါ 😊
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ White Collar Job လုပ်ချင်ရင်ဘာလိုလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Thai + English + Presentation Skill လိုပါတယ် 
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ University မှာ Training ပေးလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Workplace Training + Presentation + Communication Skill တွေ Train ပေးပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Attendance မပြည့်ရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ University Rules အတိုင်း ဆုပေးဒဏ်ပေးရှိပါမယ်
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ GPA မကောင်းရင်ရော?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ကြိုးစားပြီး Maintain လုပ်ဖို့လိုပါတယ် 
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Semester Break ရှိလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရှိပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Bachelor Degree ပြီးရင်ဘာရမလဲ?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ Thailand မှာအသုံးပြုလို့ရတဲ့ Bachelor Degree ရရှိမှာဖြစ်ပါတယ် 🎓
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Third Country မှာ အသုံးပြုလို့ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Master ဆက်တတ်လို့ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Graduation ပြီးရင် Visa ရသေးလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ White Collar Job / Master ဆက်တတ်ဖို့ Visa Free တစ်နှစ် ထပ်ရနိုင်ပါတယ် 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>    
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Bank Account ဖွင့်လို့ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ 😊
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+</div><div class="faq-item fade">
+<button class="faq-question">
+❓ Driving License လုပ်လို့ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ 😊
+</div>
+</div>
+</div><style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+
+<div class="faq-item fade">
+<button class="faq-question">
+❓ Health Insurance ရလား?
+<span class="click-text">Click</span>
+</button>
+
+<div class="faq-answer">
+<div class="faq-answer-content">
+✅ ရပါတယ်ခင်ဗျာ 
+</div>
+</div>
+</div>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#00c6ff,#0072ff);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,114,255,0.3);
+}
+</style>
+</div>
+
+<section id="contact">
+
+<div class="cta-card fade">
+
+    <h2>Work and Study Opportunity in Bangkok</h2>
+
+    <p>
+        University + Internship + Career + Future Opportunity <br>
+        စာသင်ခန်းတွင်း Quality ကို အပြည့်အဝ ထိန်းသိမ်းချင်တာကြောင့် Intake တစ်သုတ်မှာ (၁၅) ယောက်ပဲ ကန့်သတ်လက်ခံတာကတော့ ထုံးစံအတိုင်းမို့လို့ လက်လွတ်မခံရအောင် အခုပဲ အမြန်ဆုံး Enr
+oll လုပ်လိုက်ပါနော် 
+
+    </p>
+
+    <a href="https://t.me/dreambyharry" class="cta-btn">
+        Enroll Now
+    </a>
+
+</div>
+
+</section>
+
+<style>
+.cta-card{
+    width: 90%;
+    max-width: 900px;
+    min-height: 320px;
+
+    margin: 60px auto;
+    padding: 50px;
+
+    border-radius: 22px;
+
+    background: url("ssss.8.jpg") center/cover no-repeat;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+    color: #fff;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+
+/* DARK OVERLAY (VERY IMPORTANT) */
+.cta-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:1;
+}
+
+/* CONTENT ABOVE OVERLAY */
+.cta-card h2,
+.cta-card p,
+.cta-btn{
+    position: relative;
+    z-index: 2;
+}
+
+/* TITLE */
+.cta-card h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ffffff;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+}
+
+/* TEXT */
+.cta-card p{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #f1f5f9;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* BUTTON */
+.cta-btn{
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    color: #fff;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,114,255,0.4);
+    transition: 0.3s;
+}
+
+.cta-btn:hover{
+    transform: translateY(-3px) scale(1.05);
+}
+</style>
+
+<!-- TELEGRAM FLOAT -->
+ <div class="telegram-btn">
+<a href="https://t.me/dreambyharry">
+📞
+
+</a>
+<style>
+.click-text{
+    background: linear-gradient(1deg,#0b0405,#06fe02);
+    color: white;
+    padding: 0.55px 14px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 250;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(216, 7, 28, 0.838);
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<i class="fa-solid fa-headset" style="color:#09dc1aec;"></i> Text Message   
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 Dreams by Harry • Educational Consultant | Study & Career Guidance in Thailand
+</footer>
+
+<script>
+
+/* FAQ */
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+const btn = item.querySelector(".faq-question");
+
+btn.addEventListener("click", () => {
+
+item.classList.toggle("active");
+
+});
+
+});
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{threshold:0.15});
+
+document.querySelectorAll(".fade").forEach((el)=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
