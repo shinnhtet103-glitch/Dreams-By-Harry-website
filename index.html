@@ -520,117 +520,62 @@ Dreams By HARRY
 
 <section class="hero" id="home">
 
-<div class="hero-container">
+    <div class="hero-container">
 
-<div class="hero-text fade">
+        <div class="hero-text fade">
 
-<h1 class="hero-title">
-    <span class="title-line">
-        ထိုင်းတက္ကသိုလ်
-    </span>
+            <h1 class="hero-title">
+                ထိုင်းတက္ကသိုလ်<br>
+                တက်ရင်း အလုပ်လုပ်မယ်
+            </h1>
 
-    <span class="title-line glow">
-        တက်ရင်း အလုပ်လုပ်မယ်
-    </span>
+            <p class="highlight-text">
+                Study + Work + Future Career Opportunity
+            </p>
 
-    
-       <p class="highlight-text"> Study + Work + Future Career Opportunity
-    </p>
-</h1>
+        </div>
+
+    </div>
+
+</section>
+       
 <style>
 
+/* HERO TITLE */
 .hero-title{
-    font-family:'Poppins',sans-serif;
-    font-weight:900;
-    line-height:1.15;
+    font-family:'Noto Sans Myanmar','Poppins',sans-serif;
+    font-weight:700;
+
+    /* RESPONSIVE FONT */
+    font-size:clamp(28px, 7vw, 72px);
+
+    line-height:1.3;
+    text-align:center;
+    color:white;
     margin-bottom:25px;
-
+    padding:0 15px;
 }
 
-.title-bg{
-    display:inline-block;
-
-    font-size:72px;
-    font-weight:900;
-    color:#ffffff;
-
-    padding:0px 15px;
-    margin-bottom:12px;
-
-    border-radius:18px;
-
-    background:
-    linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-    url('campus.jpg');
-
-    background-size:cover;
-    background-position:center;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.35);
-
-    text-shadow:0 4px 15px rgba(0,0,0,0.4);
+.highlight-text{
+    font-size:clamp(14px, 3.8vw, 28px);
 }
 
-.second{
-    background:
-    linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-    url('students.jpg');
 
-    background-size:cover;
-    background-position:center;
-}
-/* Mobile Responsive */
-@media(max-width:768px){
+/* MOBILE */
 
-    body{
-        overflow-x:hidden;
-    }
+@media(max-width:480px){
 
-    .navbar{
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        padding:15px;
-        z-index:1000;
-    }
-
-    .hero{
-        padding-top:160px;
-        padding-left:20px;
-        padding-right:20px;
-    }
-
-    .hero-content{
-        width:100%;
-        text-align:center;
-    }
-
-    .title-bg{
+    .hero-title{
         font-size:32px;
-        line-height:1.5;
-        width:100%;
-        text-align:center;
+        line-height:1.25;
     }
 
-    .nav-links{
-        gap:12px;
-        font-size:14px;
-    }
-
-    .benefit-container{
-        grid-template-columns:1fr;
-    }
-
-    .floating-contact{
-        width:65px;
-        height:65px;
-        bottom:20px;
-        right:20px;
+    .highlight-text{
+        font-size:15px;
+        padding:14px;
     }
 
 }
-
 </style>
 
 <p>
