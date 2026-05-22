@@ -579,7 +579,6 @@ Dreams By HARRY
     background-size:cover;
     background-position:center;
 }
-
 /* Mobile Responsive */
 @media(max-width:768px){
 
@@ -587,31 +586,32 @@ Dreams By HARRY
         overflow-x:hidden;
     }
 
- @media(max-width:768px){
+    .navbar{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        padding:15px;
+        z-index:1000;
+    }
 
     .hero{
         padding-top:160px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .hero-content{
+        width:100%;
+        text-align:center;
     }
 
     .title-bg{
         font-size:32px;
         line-height:1.5;
-    }
-
-}
-
-    .hero{
-        padding-top:140px;
-    }
-
-    .hero-content{
         width:100%;
+        text-align:center;
     }
-
- .navbar{
-    position:fixed;
-    top:0;
-}
 
     .nav-links{
         gap:12px;
@@ -629,7 +629,6 @@ Dreams By HARRY
         right:20px;
     }
 
-}
 }
 
 </style>
@@ -954,15 +953,15 @@ Video Class ဖြစ်တာကြောင့် မိမိအားတဲ�
 /* BACKGROUND IMAGES */
 
 .foundation-card{
-    background-image:url("images/ssss-2.jpg");
+background-image:url("../images/ssss-2.jpg");
 }
 
 .pathway-card{
-    background-image:url("images/ssss-3.jpg");
+    background-image:url("../images/ssss-3.jpg");
 }
 
 .study-card{
-    background-image:url("images/ssss-1.jpg");
+    background-image:url("../images/ssss-1.jpg");
 }
 
 /* MODAL */
