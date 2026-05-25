@@ -446,7 +446,7 @@ transition:1s;
 
 .fade.show{
 opacity:1;
-tran sform:translateY(0);
+transform:translateY(0);
 }
 
 /* MOBILE */
@@ -518,77 +518,28 @@ Dreams By HARRY
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section class="hero">
 
     <div class="container">
 
         <div class="hero-container">
 
-            <!-- LEFT -->
+            <h1 class="hero-title">
+                ထိုင်းတက္ကသိုလ်<br>
+                တက်ရင်း အလုပ်လုပ်မယ်
+            </h1>
 
-            <div class="hero-text">
+            <p class="highlight-text">
+                Study + Work + Future Career Opportunity
+            </p>
 
-                <h1 class="hero-title">
-                    <span class="gradient-text">
-                        ထိုင်းတက္ကသိုလ်
-                    </span>
-                    <br>
-                    တက်ရင်း အလုပ်လုပ်မယ်
-                </h1>
+            <p class="hero-description">
+                Dreams By HARRY မှ ကြိုဆိုပါတယ် ✨
+            </p>
 
-                <p class="highlight-text">
-                    Study + Work + Future Career Opportunity
-                </p>
-
-                <p class="hero-description">
-                    Dreams By HARRY မှ ကြိုဆိုပါတယ် ✨
-                    Thailand University Program များကို
-                    Premium Mobile Responsive Design နဲ့
-                    အကောင်းဆုံး တင်ဆက်ထားပါတယ်။
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#" class="btn primary-btn">
-                        Enroll Now
-                    </a>
-
-                    <a href="#faq" class="btn secondary-btn">
-                        View Q&A
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT -->
-
-            <div class="hero-card">
-
-                <div class="stat-box">
-
-                    <div class="stat">
-                        <h2>4+</h2>
-                        <p>Programs</p>
-                    </div>
-
-                    <div class="stat">
-                        <h2>100+</h2>
-                        <p>Students</p>
-                    </div>
-
-                    <div class="stat">
-                        <h2>ED</h2>
-                        <p>Visa Support</p>
-                    </div>
-
-                    <div class="stat">
-                        <h2>Work</h2>
-                        <p>Internship</p>
-                    </div>
-
-                </div>
-
+            <div class="hero-buttons">
+                <a href="#" class="btn">Enroll Now</a>
+                <a href="#" class="btn-outline">View Q&A</a>
             </div>
 
         </div>
@@ -596,6 +547,7 @@ Dreams By HARRY
     </div>
 
 </section>
+       
 <style>
 
 /* HERO TITLE */
@@ -636,7 +588,128 @@ Dreams By HARRY
     .hero-title{
         font-size:30px !important;
     }
+/* =========================================
+MOBILE RESPONSIVE FIX
+========================================= */
 
+@media(max-width:768px){
+
+/* NAVBAR */
+
+.nav-container{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+}
+
+.nav-links{
+    width:100%;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.nav-links a{
+    font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+    padding-top:160px !important;
+    padding-bottom:80px !important;
+}
+
+.hero-container{
+    grid-template-columns:1fr !important;
+    gap:40px;
+}
+
+/* TEXT */
+
+.hero-text{
+    text-align:center;
+}
+
+.hero-title{
+    font-size:clamp(32px,9vw,48px) !important;
+    line-height:1.45 !important;
+
+    word-break:break-word;
+    overflow-wrap:break-word;
+}
+
+.hero-text p,
+.hero-description,
+.highlight-text{
+    line-height:1.9;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+    flex-direction:column;
+    align-items:stretch;
+
+    gap:16px;
+
+    margin-top:35px;
+    margin-bottom:60px;
+}
+
+.btn,
+.primary-btn,
+.secondary-btn{
+    width:100%;
+    text-align:center;
+    justify-content:center;
+}
+
+/* CARD */
+
+.hero-card{
+    width:100%;
+    padding:24px;
+}
+
+/* STATS */
+
+.stat-box{
+    grid-template-columns:1fr;
+}
+
+.stat{
+    padding:22px;
+}
+
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+.hero{
+    padding-top:170px !important;
+}
+
+.hero-title{
+    font-size:30px !important;
+}
+
+.logo{
+    font-size:18px;
+}
+
+.nav-links{
+    gap:10px;
+}
+
+.nav-links a{
+    font-size:13px;
+}
+
+}
 }
 
 </style>
