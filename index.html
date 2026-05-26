@@ -49,242 +49,94 @@ background-size:200% 200%;
 100%{background-position:0% 50%;}
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* FIX BODY */
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
 
-.navbar{
-    width:100%;
-    padding:14px 20px;
+/* NAVBAR */
+nav{
     position:fixed;
     top:0;
     left:0;
-    z-index:1000;
+    width:100%;
+    z-index:9999;
 
+    background:rgba(5,15,35,0.95);
+
+    backdrop-filter:blur(10px);
+
+    padding:14px 20px;
+}
+
+/* NAV CONTAINER */
+.nav-container{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     flex-wrap:wrap;
-
-    background:rgba(10,15,35,0.75);
-    backdrop-filter:blur(14px);
-
-    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 /* LOGO */
-
 .logo{
-    font-size:2rem;
-    font-weight:700;
-    line-height:1.1;
-
-    background:linear-gradient(90deg,#00e5ff,#33ff99);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-size:26px;
+    font-weight:800;
+    color:#00f5ff;
 }
 
-/* MENU */
-
+/* NAV LINKS */
 .nav-links{
     display:flex;
-    gap:25px;
+    gap:24px;
     flex-wrap:wrap;
 }
 
 .nav-links a{
     color:white;
     text-decoration:none;
-    font-size:1rem;
+    font-size:18px;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero{
-    min-height:100vh;
-    padding-top:140px;
-    padding-left:20px;
-    padding-right:20px;
-
-    display:flex;
-    align-items:center;
+/* MAIN CONTENT FIX */
+main,
+.container,
+.content{
+    padding-top:120px;
 }
 
-/* HERO CONTENT */
-
-.hero-container{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-
-    flex-wrap:wrap;
-}
-
-/* TEXT */
-
-.hero-text{
-    flex:1;
-    min-width:280px;
-}
-
-.hero-title{
-    font-size:4rem;
-    font-weight:800;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-/* BUTTONS */
-
-/* =========================
-   MODERN BUTTONS
-========================= */
-
-.hero-buttons{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:35px;
-}
-
-/* PRIMARY BUTTON */
-
-.btn-primary{
-    padding:16px 38px;
-    border-radius:50px;
-
-    background:linear-gradient(135deg,#00c6ff,#0072ff);
-    color:white;
-
-    font-size:1rem;
-    font-weight:700;
-    text-decoration:none;
-
-    border:none;
-    cursor:pointer;
-
-    transition:0.35s ease;
-
-    box-shadow:
-    0 0 20px rgba(0,198,255,0.35),
-    inset 0 1px 1px rgba(255,255,255,0.2);
-}
-
-.btn-primary:hover{
-    transform:translateY(-4px) scale(1.03);
-
-    box-shadow:
-    0 0 30px rgba(0,198,255,0.6),
-    0 10px 30px rgba(0,114,255,0.35);
-}
-
-/* SECOND BUTTON */
-
-.btn-secondary{
-    padding:16px 38px;
-    border-radius:50px;
-
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
-
-    color:white;
-
-    font-size:1rem;
-    font-weight:700;
-    text-decoration:none;
-
-    border:1px solid rgba(255,255,255,0.15);
-
-    transition:0.35s ease;
-
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.1);
-}
-
-.btn-secondary:hover{
-    transform:translateY(-4px);
-
-    background:rgba(255,255,255,0.14);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.25);
-}
-.btn-primary:active,
-.btn-secondary:active{
-    transform:scale(0.96);
-}
-/* MOBILE */
-
+/* MOBILE FIX */
 @media(max-width:768px){
 
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .btn-primary,
-    .btn-secondary{
-        width:100%;
-        max-width:280px;
-
-        text-align:center;
-        font-size:0.95rem;
-        padding:15px 20px;
-    }
-
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media(max-width:768px){
-
-    .navbar{
-        padding:15px;
-        gap:15px;
+    nav{
+        padding:12px 14px;
     }
 
     .logo{
-        font-size:1.7rem;
+        font-size:20px;
     }
 
     .nav-links{
-        width:100%;
-        justify-content:center;
-        gap:18px;
+        gap:14px;
+        margin-top:8px;
     }
 
     .nav-links a{
-        font-size:0.95rem;
+        font-size:15px;
     }
 
-    .hero{
-        padding-top:170px;
-        text-align:center;
+    main,
+    .container,
+    .content{
+        padding-top:140px;
     }
 
-    .hero-container{
-        flex-direction:column;
+    body{
+        font-size:15px;
     }
-
-    .hero-title{
-        font-size:2.5rem;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
 
 }
-
 </style>
 </head>
 
@@ -2344,7 +2196,7 @@ const faqData = [
     answer:"အလုပ်သင်ဆင်းရင် လစာကော ရလား အစ်ကို? ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မလား? ဆိုတဲ့အကြောင်းအရာကတော့ အလုပ်စဝင်ပြီဆိုတာနဲ့ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမှာဖြစ်ပြီး အလုပ်အပေါ်မူတည်ပြီး နေစားငြိမ်း၊ OT၊ Bonus နဲ့ Tip Money တွေပါ ရဦးမှာပါ။ ပိုမိုက်တာက (၃) လတစ်ခါ လစာတိုးပေးတဲ့ စနစ်လည်း ရှိပါသေးတယ်။"
 },
 {    question:"တက္ကသိုလ်ထဲ ရောက်သွားတဲ့အခါကျရင်ရော လစဉ်သွင်းလို့ ရဦးမလား?",
-    answer:"ရတာပေါ့! Thonburi University ထဲ ရောက်သွားတဲ့အခါ တစ်နှစ်မှာ Semester (၂) ခု ရှိပါတယ်။ Semester တစ်ခုကို ကျောင်းလခ ၃၄,၀၀၀ ဘတ် ကျသင့်မှာဖြစ်ပြီး အဲဒီ Semester မပြီးမချင်း လအလိုက် ခွဲသွင်းလို့ရတဲ့ Flexible Payment စနစ် ကို ကျင့်သုံးပေးထားတာမို့ တစ်ခါတည်း အကုန်သွင်းစရာ မလိုပါဘူး"
+    answer:"ရတာပေါ့! Thonburi University ထဲ ရောက်သွားတဲ့အခါ တစ်နှစ်မှာ Semester (၂) ခု ရှိပါတယ်။ Semester တစ်ခုကို ကျောင်းလခ ၃၄၀၀၀ ဘတ် ကျသင့်မှာဖြစ်ပြီး အဲဒီ Semester မပြီးမချင်း လအလိုက် ခွဲသွင်းလို့ရတဲ့ Flexible Payment စနစ် ကို ကျင့်သုံးပေးထားတာမို့ တစ်ခါတည်း အကုန်သွင်းစရာ မလိုပါဘူး"
 },
 {    question:"လစာကော ဘယ်လောက်လဲ?",
     answer:"အလုပ်သင်ဆင်းရင် လစာကော ရလား အစ်ကို? ကိုယ့်ကျောင်းလခကိုယ် ရှာနိုင်မလား? ဆိုတဲ့အကြောင်းအရာကတော့ အလုပ်စဝင်ပြီဆိုတာနဲ့ အနည်းဆုံး ၁၂၀၀၀ ဘတ်ကနေ စတင်ရရှိမှာဖြစ်ပြီး အလုပ်အပေါ်မူတည်ပြီး နေစားငြိမ်း၊ OT၊ Bonus နဲ့ Tip Money တွေပါ ရဦးမှာပါ။ ပိုမိုက်တာက (၃) လတစ်ခါ လစာတိုးပေးတဲ့ စနစ်လည်း ရှိပါသေးတယ်။"
@@ -2583,7 +2435,6 @@ const faqData = [
 },
 
 
-
 {
     question:"Classroom က Modern ဖြစ်လား?",
     answer:"Modern Facilities များရှိပါတယ် 😊"
@@ -2610,14 +2461,10 @@ const faqData = [
     answer:"အတန်းတွေမှာ သတ်မှတ်ထားတဲ့ အချိန်ဇယားအတိုင်း တစ်ပတ် ၁ ရက်ပဲ ကျောင်းတက်ရမှာဖြစ်ပြီး ကျန်တဲ့ရက်တွေမှာတော့ လုပ်ငန်းခွင်အလိုက် သတ်မှတ်ဝတ်စုံ ဒါမှမဟုတ် ကျောင်းကထုတ်ပေးတဲ့ ပေါ့ပေါ့ပါးပါး Activity ပိုလိုအင်္ကျီ (Polo Shirt) လေးတွေကို Flexible ဖြစ်ဖြစ် လဲလှယ်ဝတ်ဆင်နိုင်ပါတယ်ဗျာ။ 😊"
 },
 {    question:"ယူနီဖောင်း ဝယ်ယူဖို့နဲ့ အဆောင်ကိစ္စတွေကိုရော ဘယ်သူက ကူညီပေးမှာလဲ?",
-    answer:"ထိုင်းနိုင်ငံကို စတင်ရောက်ရှိတာနဲ့ ယူနီဖောင်းအတွက် လိုအပ်တဲ့ အသုံးအဆောင်တွေ ဝယ်ယူတာ၊ တစ်လ ၅၀၀ ဝန်းကျင်ပဲ ရှိမယ့် အဆောင်နေရာချထားပေးတာအပြင် ဗီဇာနဲ့ ဘဏ်အကောင့်ဖွင့်တာအဆုံး အားလုံးကို တို့ရဲ့ Student Support Team က ဘေးကနေ အနီးကပ် လိုက်လံကူညီပေးသွားမှာမို့ အစစအရာရာ စိတ်အေးလက်အေး ရှိနေရုံပါပဲဗျာ"},
+    answer:"ထိုင်းနိုင်ငံကို စတင်ရောက်ရှိတာနဲ့ ယူနီဖောင်းအတွက် လိုအပ်တဲ့ အသုံးအဆောင်တွေ ဝယ်ယူတာ၊ တစ်လ ၅၀၀ ဝန်းကျင်ပဲ ရှိမယ့် အဆောင်နေရာချထားပေးတာအပြင် ဗီဇာနဲ့ ဘဏ်အကောင့်ဖွင့်တာအဆုံး အားလုံးကို တို့ရဲ့ Student Support Team က ဘေးကနေ အနီးကပ် လိုက်လံကူညီပေးသွားမှာမို့ အစစအရာရာ စိတ်အေးလက်အေး ရှိနေရုံပါပဲဗျာ"
+},
 
-
-
-
-
-{
-    question:"ယူနီဖောင်းအပြင် တခြား ပေါ့ပေါ့ပါးပါး (Casual) ဝတ်လို့ရတဲ့ နေ့တွေရော ရှိလား?",
+ { question:"ယူနီဖောင်းအပြင် တခြား ပေါ့ပေါ့ပါးပါး (Casual) ဝတ်လို့ရတဲ့ နေ့တွေရော ရှိလား?",
     answer:"း Paid Internship ဆင်းရတဲ့အခါ (သို့မဟုတ်) ကျောင်းတွင်း Sports Activities နဲ့ လှုပ်ရှားမှုပွဲတွေ ရှိတဲ့ရက်တွေမှာတော့ လုပ်ငန်းခွင်အလိုက် သတ်မှတ်ဝတ်စုံ ဒါမှမဟုတ် ကျောင်းကထုတ်ပေးတဲ့ ပေါ့ပေါ့ပါးပါး Activity ပိုလိုအင်္ကျီ (Polo Shirt) လေးတွေကို Flexible ဖြစ်ဖြစ် လဲလှယ်ဝတ်ဆင်နိုင်ပါတယ်ဗျာ။ 😊"},
 
 {question:"Attendance အရေးကြီးလား?",
