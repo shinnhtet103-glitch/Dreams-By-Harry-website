@@ -579,151 +579,12 @@ a{
     }
 
 }
-/* =========================
-INTRO SCREEN
-========================= */
-
-#intro-screen{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#000;
-z-index:999999;
-overflow:hidden;
-transition:1s;
-}
-
-#intro-video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.intro-overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.65);
-backdrop-filter:blur(2px);
-}
-
-.intro-content{
-position:relative;
-z-index:5;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.intro-logo{
-font-size:clamp(40px,6vw,90px);
-font-weight:900;
-color:#fff;
-}
-
-.intro-logo span{
-color:#00f5ff;
-}
-
-.intro-tagline{
-margin-top:15px;
-color:#d8ecff;
-}
-
-.loading-box{
-width:250px;
-height:6px;
-background:rgba(255,255,255,.15);
-border-radius:20px;
-overflow:hidden;
-margin-top:25px;
-}
-
-.loading-bar{
-height:100%;
-width:0;
-background:linear-gradient(90deg,#00f5ff,#008cff);
-animation:loading 6s linear forwards;
-}
-
-#enter-btn{
-margin-top:30px;
-padding:14px 30px;
-border:none;
-border-radius:999px;
-background:#00f5ff;
-font-weight:700;
-cursor:pointer;
-}
-
-#skip-btn{
-position:absolute;
-top:20px;
-right:20px;
-z-index:10;
-padding:10px 20px;
-border:none;
-border-radius:30px;
-background:rgba(255,255,255,.15);
-color:white;
-cursor:pointer;
-}
-
-.intro-hide{
-opacity:0;
-visibility:hidden;
-pointer-events:none;
-}
-
-@keyframes loading{
-from{width:0%;}
-to{width:100%;}
-}
 </style>
 </head>
 
 
 <body>
-<!-- =========================
-PREMIUM INTRO SCREEN
-========================= -->
 
-<div id="intro-screen">
-
-    <video autoplay muted playsinline id="intro-video">
-        <source src="intro-video.mp4" type="video/mp4">
-    </video>
-
-    <div class="intro-overlay"></div>
-
-    <button id="skip-btn">Skip</button>
-
-    <div class="intro-content">
-
-        <h1 class="intro-logo">
-            Dreams By <span>HARRY</span>
-        </h1>
-
-        <p class="intro-tagline">
-            Study • Work • Future Career
-        </p>
-
-        <div class="loading-box">
-            <div class="loading-bar"></div>
-        </div>
-
-        <button id="enter-btn">
-            Enter Website
-        </button>
-
-    </div>
-
-</div>
 <!-- HERO -->
 
 <section id="home" class="hero">
@@ -3700,36 +3561,6 @@ entry.target.classList.add("show");
 document.querySelectorAll(".fade").forEach((el)=>{
 observer.observe(el);
 });
-
-</script>
-
-<script>
-
-const intro=document.getElementById("intro-screen");
-const enterBtn=document.getElementById("enter-btn");
-const skipBtn=document.getElementById("skip-btn");
-
-function closeIntro(){
-    intro.classList.add("intro-hide");
-
-    setTimeout(()=>{
-        intro.remove();
-    },1000);
-}
-
-if(enterBtn){
-    enterBtn.addEventListener("click",closeIntro);
-}
-
-if(skipBtn){
-    skipBtn.addEventListener("click",closeIntro);
-}
-
-setTimeout(()=>{
-    if(intro){
-        closeIntro();
-    }
-},7000);
 
 </script>
 </body>
