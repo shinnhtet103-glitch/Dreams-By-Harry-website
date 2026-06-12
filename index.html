@@ -583,16 +583,17 @@ a{
 INTRO SCREEN
 ========================= */
 
-#intro-screen{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#000;
-z-index:999999;
-overflow:hidden;
-transition:1s;
+#intro-screen video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 #intro-video{
@@ -695,7 +696,7 @@ PREMIUM INTRO SCREEN
 
 <div id="intro-screen">
 
- <video autoplay muted loop playsinline>
+<video autoplay loop playsinline controls style="width: 100%; height: 100%; object-fit: cover;">
   <source src="intro-video.webm" type="video/webm">
 </video>
 
