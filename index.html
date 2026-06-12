@@ -699,11 +699,13 @@ PREMIUM INTRO SCREEN
         </video>
 
         <script>
-            // ဗီဒီယို အရှိန်ကို ၀.၅ ဆ (တစ်ဝက်) သို့ လျှော့ချရန်
-            const video = document.getElementById('introVideo');
-            if (video) {
-                video.playbackRate = 0.5;
-            }
+            // ဝဘ်ဆိုဒ် လိုဒ်ဒင်း ပြီးခါနီးမှ စိတ်ချရအောင် ဗီဒီယိုကို ၀.၅ ဆ နှေးရန်
+            window.addEventListener('DOMContentLoaded', () => {
+                const video = document.getElementById('introVideo');
+                if (video) {
+                    video.playbackRate = 0.5;
+                }
+            });
         </script>
     <div class="intro-overlay"></div>
 
