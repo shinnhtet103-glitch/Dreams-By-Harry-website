@@ -7,21 +7,22 @@
 <title>Dreams By Harry</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:'Noto Sans Myanmar',sans-serif;
-background:#e9f502;
-color:white;
-overflow-x:hidden;
+    font-family:Arial, sans-serif;
+    background:#071426;
+    color:#fff;
+    overflow-x:hidden;
 }
 
 /* ANIMATED BACKGROUND */
@@ -579,159 +580,166 @@ a{
     }
 
 }
-/* =========================
-INTRO SCREEN
-========================= */
+/* INTRO VIDEO */
 
-#intro-screen video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+#intro{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    z-index:9999;
+    background:#000;
+    transition:opacity 1s ease;
 }
 
-#intro-video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
+#intro video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .intro-overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.65);
-backdrop-filter:blur(2px);
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
 }
 
-.intro-content{
-position:relative;
-z-index:5;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+/* MAIN WEBSITE */
+
+#website{
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease;
 }
 
-.intro-logo{
-font-size:clamp(40px,6vw,90px);
-font-weight:900;
-color:#fff;
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(6,17,35,.75),rgba(6,17,35,.75)),
+    url('hero-image.jpg') center/cover;
 }
 
-.intro-logo span{
-color:#00f5ff;
+.hero-content{
+    max-width:800px;
+    padding:30px;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:24px;
 }
 
-.intro-tagline{
-margin-top:15px;
-color:#d8ecff;
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
-.loading-box{
-width:250px;
-height:6px;
-background:rgba(255,255,255,.15);
-border-radius:20px;
-overflow:hidden;
-margin-top:25px;
+.hero p{
+    font-size:1.1rem;
+    color:#ddd;
+    margin-bottom:25px;
 }
 
-.loading-bar{
-height:100%;
-width:0;
-background:linear-gradient(90deg,#00f5ff,#008cff);
-animation:loading 6s linear forwards;
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin:5px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
 }
 
-#enter-btn{
-margin-top:30px;
-padding:14px 30px;
-border:none;
-border-radius:999px;
-background:#00f5ff;
-font-weight:700;
-cursor:pointer;
+.btn-primary{
+    background:#d4af37;
+    color:#000;
 }
 
-#skip-btn{
-position:absolute;
-top:20px;
-right:20px;
-z-index:10;
-padding:10px 20px;
-border:none;
-border-radius:30px;
-background:rgba(255,255,255,.15);
-color:white;
-cursor:pointer;
+.btn-secondary{
+    border:1px solid #d4af37;
+    color:#d4af37;
 }
 
-.intro-hide{
-opacity:0;
-visibility:hidden;
-pointer-events:none;
+.btn:hover{
+    transform:translateY(-3px);
 }
 
-@keyframes loading{
-from{width:0%;}
-to{width:100%;}
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
 }
+
+.hero p{
+    font-size:1rem;
+}
+
+}
+
 </style>
 </head>
 
 
 <body>
-<!-- =========================
-PREMIUM INTRO SCREEN
-========================= -->
-<div id="intro-screen">
-        <video autoplay muted loop playsinline id="introVideo" style="width: 100vw; height: 100vh; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1;">
-            <source src="IMG_0763.MP4" type="video/mp4">
-        </video>
+<!-- INTRO VIDEO -->
 
-        <script>
-            // ဝဘ်ဆိုဒ် လိုဒ်ဒင်း ပြီးခါနီးမှ စိတ်ချရအောင် ဗီဒီယိုကို ၀.၅ ဆ နှေးရန်
-            window.addEventListener('DOMContentLoaded', () => {
-                const video = document.getElementById('introVideo');
-                if (video) {
-                    video.playbackRate = 0.5;
-                }
-            });
-        </script>
+<div id="intro">
+
+    <video id="introVideo" autoplay muted playsinline>
+        <source src="img_0763.mp4" type="video/mp4">
+    </video>
+
     <div class="intro-overlay"></div>
 
-    <button id="skip-btn">Skip</button>
+</div>
 
-    <div class="intro-content">
+<!-- MAIN WEBSITE -->
 
-        <h1 class="intro-logo">
-            Dreams By <span>HARRY</span>
-        </h1>
+<div id="website">
 
-        <p class="intro-tagline">
-            Study • Work • Future Career
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Welcome to Our University</h1>
+
+        <p>
+            International Education • Innovation • Future Careers
         </p>
 
-        <div class="loading-box">
-            <div class="loading-bar"></div>
-        </div>
-
-        <button id="enter-btn">
-            Enter Website
-        </button>
+        <a href="#" class="btn btn-primary">Apply Now</a>
+        <a href="#" class="btn btn-secondary">Explore Programs</a>
 
     </div>
 
+</section>
+
 </div>
+
+<script>
+
+const introVideo = document.getElementById('introVideo');
+const intro = document.getElementById('intro');
+const website = document.getElementById('website');
+
+introVideo.addEventListener('ended', () => {
+
+    intro.style.opacity = '0';
+
+    setTimeout(() => {
+        intro.style.display = 'none';
+        website.style.visibility = 'visible';
+        website.style.opacity = '1';
+    }, 1000);
+
+});
+
+</script>
+
 <!-- HERO -->
 
 <section id="home" class="hero">
@@ -3730,6 +3738,8 @@ skipBtn.addEventListener("click",closeIntro);
 setTimeout(()=>{
 closeIntro();
 },7000);
+
+
 
 </script>
 </body>
