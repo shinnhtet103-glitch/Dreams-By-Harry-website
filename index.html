@@ -564,20 +564,23 @@ a{
     }
 
 }
-#intro{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:black;
-    z-index:99999;
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#intro video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+#intro video, #introVideo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
 }
 
 </style>
