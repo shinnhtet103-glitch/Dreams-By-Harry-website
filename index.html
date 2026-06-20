@@ -586,14 +586,15 @@ a{
 
 <body>
 <div id="intro">
-   <video controls autoplay muted width="400">
-   <source src="videos/intro-video.mp4" type="video/mp4">
-</video>
+    <video autoplay muted loop playsinline class="intro-video">
+        <source src="videos/intro-video.mp4" type="video/mp4">
+    </video>
 </div>
+
 <script>
 setTimeout(function(){
-document.getElementById("intro").style.display="none";
-},5000);
+    document.getElementById("intro").style.display="none";
+}, 5000); 
 </script>
 
 <!-- HERO -->
