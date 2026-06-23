@@ -596,7 +596,72 @@ a{
     object-fit: cover;   
     border-radius: 50%;   
 }
+/* --- HERO BACKGROUND & SLIDER STYLES --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: luxuryFade 36s infinite linear; /* ပုံ ၉ ပုံအတွက် အလှည့်ကျစနစ် */
+}
+
+/* Luxury Dark Gradient Overlay (စာသားများ ပိုမိုထင်ရှားစေရန် နောက်ခံကို အမှောင်ချခြင်း) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 25, 47, 0.5), rgba(10, 25, 47, 0.8));
+    z-index: 2;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3; 
+}
+
+@keyframes luxuryFade {
+    0% { opacity: 0; transform: scale(1.08); }
+    3% { opacity: 1; }
+    11% { opacity: 1; }
+    14% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; }
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+.slide:nth-child(5) { animation-delay: 16s; }
+.slide:nth-child(6) { animation-delay: 20s; }
+.slide:nth-child(7) { animation-delay: 24s; }
+.slide:nth-child(8) { animation-delay: 28s; }
+.slide:nth-child(9) { animation-delay: 32s; }
 </style>
 </head>
 
@@ -617,24 +682,28 @@ setTimeout(function(){
 <!-- HERO -->
 
 <section id="home" class="hero">
+    <div class="hero-slider">
+        <div class="slide" style="background-image: url('image/ssss-1.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-2.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-4.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-5.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-6.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-7.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-8.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-9.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-7.jpg');"></div> 
+    </div>
 
     <div class="container">
-
         <div class="hero-container">
-
             <h1 class="hero-title">
-                ထိုင်းတက္ကသိုလ်<br>
-                တက်ရင်း အလုပ်လုပ်မယ်
+                ထိုင်းတက္ကသိုလ်<br>တက်ရင်း အလုပ်လုပ်မယ်
             </h1>
-
             <p class="highlight-text">
                 Study + Work + Future Career Opportunity
             </p>
-
-        </div> <!-- hero-container -->
-
-    </div> <!-- container -->
-
+        </div>
+    </div>
 </section>
        
 <div class="bg-animation"></div>
