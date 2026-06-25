@@ -3467,6 +3467,27 @@ const emptyState =
 document.getElementById("emptyState");
 
 /* =========================
+   SEARCH LOGIC
+========================= */
+
+searchInput.addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase().trim();
+
+   
+    const filteredData = faqData.filter(item => {
+        return item.question.toLowerCase().includes(searchTerm) || 
+               item.answer.toLowerCase().includes(searchTerm);
+    });
+
+    
+    renderFAQ(filteredData);
+});
+
+
+renderFAQ(faqData);
+
+
+/* =========================
    RENDER
 ========================= */
 
