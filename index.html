@@ -625,10 +625,10 @@ a{
     background-size: cover;
     background-position: center;
     opacity: 0;
-    animation: luxuryFade 36s infinite linear; /* ပုံ ၉ ပုံအတွက် အလှည့်ကျစနစ် */
+    animation: luxuryFade 36s infinite linear; 
 }
 
-/* Luxury Dark Gradient Overlay (စာသားများ ပိုမိုထင်ရှားစေရန် နောက်ခံကို အမှောင်ချခြင်း) */
+
 .hero::before {
     content: '';
     position: absolute;
@@ -667,7 +667,100 @@ a{
 .slide:nth-child(12) { animation-delay: 44s; }
 .slide:nth-child(13) { animation-delay: 48s; }
 .slide:nth-child(14) { animation-delay: 52s; }
+/* --- LUXURY LANGUAGE SWITCHER --- */
+.lang-switcher {
+    position: relative;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+}
 
+.lang-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #86aed6;
+}
+
+.lang-btn .arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: #0a192f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 6px 0;
+    list-style: none;
+    width: 130px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10000;
+}
+
+.lang-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s ease;
+}
+
+.lang-dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.lang-dropdown .flag {
+    font-size: 14px;
+}
+
+/* Responsive for Mobile screen */
+@media (max-width: 768px) {
+    .lang-switcher {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .lang-dropdown {
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -10px);
+    }
+    .lang-dropdown.show {
+        transform: translate(-50%, 0);
+    }
+}
 
 </style>
 </head>
@@ -681,9 +774,29 @@ a{
 </div>
 
 <script>
-setTimeout(function(){
-    document.getElementById("intro").style.display="none";
-}, 5000); 
+   
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        if (langBtn && langDropdown) {
+           
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('show');
+            });
+
+           
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('show');
+            });
+        }
+    });
+
+  
+    setTimeout(function(){
+        document.getElementById("intro").style.display="none";
+    }, 5000); 
 </script>
 
 <!-- HERO -->
@@ -730,13 +843,25 @@ setTimeout(function(){
     <span>Dreams By HARRY</span>
 </div>
 
-<div class="nav-links">
+ <div class="nav-links">
     <a href="#home">Home</a>
     <a href="#programs">Programs</a>
     <a href="#faq">Search</a>
     <a href="#contact">Enroll</a>
-</div>
 
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" type="button">
+            <i class="fa-solid fa-globe"></i>
+            <span class="current-lang">Myanmar</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+        </button>
+        <ul class="lang-dropdown" id="langDropdown">
+            <li><a href="index.html"><span class="flag">🇲🇲</span> Myanmar</a></li>
+            <li><a href="index-th.html"><span class="flag">🇹🇭</span> Thai</a></li>
+            <li><a href="index-en.html"><span class="flag">🇺🇸</span> English</a></li>
+            <li><a href="index-zh.html"><span class="flag">🇨🇳</span> Chinese</a></li>
+        </ul>
+    </div>
 </div>
 </nav>
 
