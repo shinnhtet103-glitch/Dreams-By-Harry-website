@@ -1,0 +1,3849 @@
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dreams By Harry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ANIMATED BACKGROUND */
+
+.bg-animation{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15), transparent 25%),
+radial-gradient(circle at 80% 20%, rgba(0,140,255,0.18), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(255,0,200,0.12), transparent 30%),
+linear-gradient(135deg,#07111f,#0d1b2a,#111827);
+animation:bgmove 12s ease infinite;
+background-size:200% 200%;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* FIX BODY */
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+/* =========================
+   PREMIUM NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+
+    background:rgba(8,18,35,0.75);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    padding:14px 24px;
+    transition:.3s ease;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:.5px;
+
+    background:linear-gradient(
+    90deg,
+    #00f5ff,
+    #6ee7ff,
+    #ffffff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+
+    transition:.3s ease;
+    position:relative;
+}
+
+.nav-links a:hover{
+    color:#00f5ff;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:2px;
+
+    background:#00f5ff;
+    transition:.3s ease;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* MAIN CONTENT FIX */
+main,
+.container,
+.content{
+    padding-top:120px;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+    nav{
+        padding:12px 14px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .nav-links{
+        gap:14px;
+        margin-top:8px;
+    }
+
+    .nav-links a{
+        font-size:15px;
+    }
+
+    main,
+    .container,
+    .content{
+        padding-top:140px;
+    }
+
+    body{
+        font-size:15px;
+    }
+
+}
+/* =========================
+   PREMIUM HERO
+========================= */
+
+.hero{
+    padding-top:150px !important;
+    padding-bottom:50px !important;
+
+    min-height:auto;
+}
+
+.hero-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    max-width:900px;
+    margin:auto;
+}
+
+.hero-title{
+    font-size:clamp(34px,7vw,72px);
+    line-height:1.15;
+    font-weight:900;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 10px 30px rgba(0,0,0,.4);
+}
+
+.highlight-text{
+    font-size:clamp(16px,2vw,22px);
+
+    color:#bdefff;
+
+    margin-top:8px;
+    margin-bottom:30px;
+
+    letter-spacing:.5px;
+}
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        padding:12px 16px;
+    }
+
+    .nav-container{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .nav-links{
+        gap:16px;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:14px;
+    }
+
+    .hero{
+        padding-top:170px !important;
+    }
+
+    .hero-title{
+        font-size:34px;
+    }
+
+    .benefit-content{
+        padding:35px 20px;
+    }
+
+    .stat h2{
+        font-size:30px;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero-title{
+        font-size:30px;
+    }
+
+    .highlight-text{
+        font-size:15px;
+    }
+
+    .btn,
+    .btn-outline,
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+}
+/* =========================
+   PREMIUM BUTTONS
+========================= */
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.btn,
+.primary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 32px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    color:#061220;
+    background:linear-gradient(
+    135deg,
+    #00f5ff,
+    #6ee7ff
+    );
+    box-shadow:0 10px 30px rgba(0,245,255,.35);
+    transition:.35s ease;
+}
+
+.btn:hover,
+.primary-btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline,
+.secondary-btn{
+    padding:14px 32px;
+    border-radius:999px;
+    text-decoration:none;
+    color:white;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(12px);
+}
+
+.btn-outline:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+/* =========================
+   BENEFITS CARD
+========================= */
+
+.hero-card{
+    position:relative;
+
+    max-width:1200px;
+    margin:50px auto;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+}
+
+.benefit-content{
+    position:relative;
+    z-index:2;
+
+    padding:50px 30px;
+}
+
+.benefit-title{
+    text-align:center;
+
+    font-size:clamp(24px,4vw,42px);
+
+    margin-bottom:35px;
+
+    font-weight:800;
+}
+
+.benefit-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,245,255,.12),
+    rgba(255,255,255,.02)
+    );
+}
+/* =========================
+   STATS
+========================= */
+
+.stat-box{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.stat{
+    padding:30px 20px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.06);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    transition:.35s ease;
+}
+
+.stat:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.25);
+}
+
+.stat h2{
+    font-size:38px;
+
+    color:#00f5ff;
+
+    margin-bottom:10px;
+}
+
+.stat p{
+    color:#d8ecff;
+    line-height:1.6;
+}
+/* =========================
+   FINAL PREMIUM UPDATE
+========================= */
+
+/* CONTAINER */
+.container{
+    width:min(92%,1200px);
+    margin:auto;
+}
+
+/* BODY TEXT */
+p{
+    color:#e6f1ff;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* SECTION SPACING */
+section{
+    padding:70px 0;
+}
+
+/* PREMIUM SCROLLBAR */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#08111f;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(
+    180deg,
+    #00f5ff,
+    #008cff
+    );
+    border-radius:50px;
+}
+
+/* GLASS EFFECT */
+.glass,
+.hero-card,
+.stat{
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+/* SMOOTH FADE */
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .8s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* HOVER EFFECT */
+.hero-card:hover{
+    transform:translateY(-5px);
+    transition:.4s ease;
+}
+
+/* LINK EFFECT */
+a{
+    transition:.3s ease;
+}
+
+/* PREMIUM TITLE EFFECT */
+.hero-title,
+.benefit-title{
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #c9f7ff,
+        #7de7ff
+    );
+    -webkit-background-clip:text;  
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* BENEFITS CARD SHADOW */
+.hero-card{
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35),
+    0 0 40px rgba(0,245,255,.08);
+}
+
+/* STAT NUMBER GLOW */
+.stat h2{
+    text-shadow:
+    0 0 15px rgba(0,245,255,.4);
+}
+
+/* MOBILE IMPROVEMENT */
+@media(max-width:768px){
+
+    section{
+        padding:50px 0;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+    .hero-card{
+        margin:30px auto;
+    }
+
+}
+
+/* LARGE SCREEN */
+@media(min-width:1400px){
+
+    .hero-container{
+        max-width:1100px;
+    }
+
+    .hero-title{
+        font-size:78px;
+    }
+
+}
+@media(min-width:1400px){
+
+    .hero-container{
+        max-width:1100px;
+    }
+
+    .hero-title{
+        font-size:78px;
+    }
+
+}
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro video, #introVideo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+
+.nav-logo-img {
+    width: 42px;         
+    height: 42px;       
+    object-fit: cover;   
+    border-radius: 50%;   
+}
+/* --- HERO BACKGROUND & SLIDER STYLES --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: luxuryFade 36s infinite linear; 
+}
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 25, 47, 0.5), rgba(10, 25, 47, 0.8));
+    z-index: 2;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3; 
+}
+
+@keyframes luxuryFade {
+    0% { opacity: 0; transform: scale(1.08); }
+    3% { opacity: 1; }
+    11% { opacity: 1; }
+    14% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; }
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+.slide:nth-child(5) { animation-delay: 16s; }
+.slide:nth-child(6) { animation-delay: 20s; }
+.slide:nth-child(7) { animation-delay: 24s; }
+.slide:nth-child(8) { animation-delay: 28s; }
+.slide:nth-child(9) { animation-delay: 32s; }
+.slide:nth-child(10) { animation-delay: 36s; }
+.slide:nth-child(11) { animation-delay: 40s; }
+.slide:nth-child(12) { animation-delay: 44s; }
+.slide:nth-child(13) { animation-delay: 48s; }
+.slide:nth-child(14) { animation-delay: 52s; }
+/* --- LUXURY LANGUAGE SWITCHER --- */
+.lang-switcher {
+    position: relative;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 10px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #86aed6;
+}
+
+.lang-btn .arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: #0a192f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 6px 0;
+    list-style: none;
+    width: 130px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10000;
+}
+
+.lang-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.2s ease;
+}
+
+.lang-dropdown li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.lang-dropdown .flag {
+    font-size: 14px;
+}
+
+/* Responsive for Mobile screen */
+@media (max-width: 768px) {
+    .lang-switcher {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .lang-dropdown {
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -10px);
+    }
+    .lang-dropdown.show {
+        transform: translate(-50%, 0);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+<div id="intro">
+    <video autoplay muted loop playsinline class="intro-video">
+        <source src="videos/intro-video.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+   
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+
+        if (langBtn && langDropdown) {
+           
+            langBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('show');
+            });
+
+           
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('show');
+            });
+        }
+    });
+
+  
+    setTimeout(function(){
+        document.getElementById("intro").style.display="none";
+    }, 5000); 
+</script>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+    <div class="hero-slider">
+        <div class="slide" style="background-image: url('image/ssss-13.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-1.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-4.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-2.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-6.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-7.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-8.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-22.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-7.jpg');"></div> 
+        <div class="slide" style="background-image: url('image/ssss-14.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-15.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-16.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-17.jpg');"></div>
+        <div class="slide" style="background-image: url('image/ssss-18.jpg');"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                Study in Thailand <br> with Work Opportunities
+            </h1>
+            <p class="highlight-text">
+                Study + Work + Future Career Opportunity
+            </p>
+        </div>
+    </div>
+</section>
+       
+<div class="bg-animation"></div>
+
+<!-- NAV -->
+
+<nav>
+<div class="nav-container">
+
+<div class="logo">
+    <img src="image/ssss-11.jpg" alt="Dreams By Harry Logo" class="nav-logo-img">
+    <span>Dreams By HARRY</span>
+</div>
+
+ <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#programs">Programs</a>
+    <a href="#faq">Search</a>
+    <a href="#contact">Enroll</a>
+
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn" type="button">
+            <i class="fa-solid fa-globe"></i>
+            <span class="current-lang">Myanmar</span>
+            <i class="fa-solid fa-chevron-down arrow"></i>
+        </button>
+        <ul class="lang-dropdown" id="langDropdown">
+            <li><a href="index.html"><span class="flag">🇲🇲</span> Myanmar</a></li>
+            <li><a href="index-th.html"><span class="flag">🇹🇭</span> Thai</a></li>
+            <li><a href="index-en.html"><span class="flag">🇺🇸</span> English</a></li>
+            <li><a href="index-zh.html"><span class="flag">🇨🇳</span> Chinese</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+
+<p>
+Warm Greetings!<br>
+Welcome to Dreams By HARRY 🤍<br><br>
+
+We have put together essential Q&A information regarding university enrollment,
+ internships, visa processing, and work placement systems in Thailand for all students seeking 
+ to study and work simultaneously. ✨
+</p>
+<br><br>
+<div class="hero-buttons">
+<a href="https://t.me/dreambyharry" class="btn primary-btn">
+Enroll Now
+</a>
+
+
+<a href="#faq" class="btn secondary-btn">
+Search Q&A
+</a></div>
+
+</div>
+
+<!-- STUDENT BENEFITS -->
+
+<div class="hero-card benefit-card-bg fade">
+
+    <div class="benefit-overlay"></div>
+
+    <div class="benefit-content">
+
+        <h2 class="benefit-title">
+            🎓 Student Benefits
+        </h2>
+
+        <div class="stat-box">
+
+            <div class="stat">
+                <h2>12K+</h2>
+                <p>Internship Salary</p>
+            </div>
+
+            <div class="stat">
+                <h2>ED+</h2>
+                <p>Legal Visa System<br>4 Years</p>
+            </div>
+
+            <div class="stat">
+                <h2>3-6</h2>
+                <p>Months Programs</p>
+            </div>
+
+            <div class="stat">
+                <h2>1 Day</h2>
+                <p>Weekly Campus</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- PROGRAMS -->
+
+<section id="programs">
+
+<h5 class="section-title fade">
+    Available Programs
+</h5>
+
+<div class="divider"></div>
+
+<p class="section-sub fade">
+
+Students are not required to take external entrance examinations such as GED, IELTS, TOEFL, IGCSE, Duolingo, or other admission tests. To pursue a 4-year Bachelor's Degree while working in Thailand, students must first complete a Foundation or Pathway Program.<br><br>
+
+The program offers an on-campus option in Yangon for students residing in Myanmar. For students currently living in Thailand, online classes are available. Since these are recorded video classes, you can conveniently study at your own pace and anytime at your convenience.
+
+</p>
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* SECTION */
+
+#programs{
+    padding:120px 18px 100px;
+    background:
+    radial-gradient(circle at top left,#163b74 0%,#07111f 45%,#020611 100%);
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+}
+@media(max-width:768px){
+    .hero-title {
+        font-size: 24px !important;      
+        line-height: 1.8 !important;      
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+}
+/* TITLE */
+
+.section-title{
+    text-align:center;
+    font-size:clamp(32px,6vw,52px);
+    font-weight:800;
+    color:#fff;
+    margin-bottom:15px;
+    line-height:1.2;
+}
+
+.divider{
+    width:95px;
+    height:5px;
+    margin:0 auto 22px;
+    border-radius:100px;
+    background:linear-gradient(to right,#1d8fff,#63b3ff);
+}
+
+.section-sub{
+    text-align:center;
+    color:rgba(255,255,255,0.78);
+    line-height:2.1;
+
+    max-width:900px;
+
+    margin:0 auto 80px;
+
+    font-size:16px;
+
+    padding:0 18px;
+}
+
+/* CARD CONTAINER */
+
+.program-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* CARD */
+
+.program-card{
+    position:relative;
+    width:100%;
+    min-height:520px;
+
+    border-radius:28px;
+    overflow:hidden;
+
+    display:flex;
+    align-items:flex-end;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.45);
+
+    transition:0.4s ease;
+}
+
+/* CLEAN OVERLAY */
+
+.program-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,0.82) 8%,
+    rgba(0,0,0,0.38) 45%,
+    rgba(0,0,0,0.08) 100%
+    );
+
+    z-index:1;
+}
+
+/* REMOVE BLACK SHADOW CIRCLE */
+
+.program-card::after{
+    display:none;
+    content:none;
+}
+
+.program-card:hover{
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.55),
+    0 0 40px rgba(0,140,255,.18);
+
+    filter:brightness(1.08);
+}
+
+/* CONTENT */
+
+.program-content{
+    position:relative;
+    z-index:5;
+    padding:32px;
+    width:100%;
+}
+
+/* TAG */
+
+.program-tag{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(8px);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:18px;
+
+    letter-spacing:1px;
+}
+
+/* TITLE */
+
+.program-content h2{
+    font-size:clamp(30px,5vw,46px);
+    line-height:1.12;
+    font-weight:800;
+    margin-bottom:18px;
+    color:#fff;
+
+    text-shadow:
+    0 3px 10px rgba(0,0,0,0.55);
+}
+
+.program-content p{
+    color:#fff;
+
+    line-height:1.8;
+    font-size:15px;
+    margin-bottom:28px;
+
+    background:rgba(0,0,0,0.4);
+    padding:10px 14px;
+    border-radius:10px;
+}
+.program-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+
+    padding:18px 28px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #3aa0ff,
+    #1f5fff
+    );
+
+    color:#fff;
+
+    font-size:18px;
+    font-weight:700;
+
+    letter-spacing:0.5px;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 12px 35px rgba(45,140,255,0.35);
+
+    border:1px solid rgba(255,255,255,0.12);
+}
+/* BUTTON HOVER */
+
+.program-btn:hover{
+    transform:translateY(-3px);
+
+    background:
+    linear-gradient(135deg,#45a2ff,#356bff);
+
+    box-shadow:
+    0 15px 40px rgba(45,140,255,0.55);
+}
+
+
+
+/* BACKGROUND IMAGES */
+
+.foundation-card{
+    background-image:url("image/ssss-2.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.pathway-card{
+    background-image:url("image/ssss-3.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.study-card{
+    background-image:url("image/ssss-1.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+/* MODAL */
+
+.program-modal{
+    display:none;
+    position:fixed;
+    z-index:99999;
+    inset:0;
+
+    overflow:auto;
+
+    background:rgba(0,0,0,0.75);
+
+    backdrop-filter:blur(8px);
+
+    padding:20px;
+}
+
+/* MODAL BOX */
+
+.program-box{
+    background:#fff;
+
+    width:100%;
+    max-width:760px;
+
+    margin:40px auto;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    animation:popup 0.35s ease;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* MODAL TEXT */
+
+.program-box h2{
+    color:#0a3d91;
+    margin-bottom:15px;
+    font-size:32px;
+}
+
+.program-box h3{
+    margin-top:24px;
+    margin-bottom:12px;
+
+    color:#222;
+    font-size:22px;
+}
+
+.program-box p,
+.program-box li{
+    color:#444;
+    line-height:1.9;
+    font-size:16px;
+}
+
+.program-box ul{
+    padding-left:22px;
+}
+
+/* CLOSE */
+
+.close-modal{
+    float:right;
+
+    font-size:34px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:#888;
+
+    transition:0.3s;
+}
+
+.close-modal:hover{
+    color:red;
+}
+
+.highlight-text{
+    margin-top:25px;
+
+    padding:14px 18px;
+
+    border-left:4px solid #2d8cff;
+
+    background:rgba(45,140,255,0.08);
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    border-radius:12px;
+
+    line-height:1.7;
+}
+
+/* POPUP */
+
+@keyframes popup{
+    from{
+        transform:scale(0.85);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    #programs{
+        padding:90px 16px 80px;
+    }
+
+    .section-sub{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .program-container{
+        gap:22px;
+    }
+
+    .program-card{
+        position:relative;
+        width:100%;
+        min-height:480px;
+
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+
+        display:flex;
+        align-items:flex-end;
+
+        overflow:hidden;
+
+        border-radius:24px;
+       
+    }
+
+    .program-content{
+        padding:24px;
+    }
+
+    .program-content h2{
+        font-size:34px;
+    }
+
+    .program-content p{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+    .program-btn{
+        padding:16px 20px;
+        font-size:17px;
+    }
+
+    .program-box{
+        padding:25px;
+        border-radius:20px;
+    }
+
+    .program-box h2{
+        font-size:28px;
+    }
+
+}
+
+/* SMALL PHONE */
+
+@media(max-width:480px){
+
+    .program-card{
+        min-height:440px;
+    }
+
+    .program-content h2{
+        font-size:30px;
+    }
+
+    .program-tag{
+        font-size:11px;
+        padding:9px 15px;
+    }
+
+    .program-btn{
+        font-size:16px;
+    }
+
+}
+
+
+/* CLEAN CARD */
+
+.program-card{
+    background-blend-mode:normal !important;
+    filter:none !important;
+}
+
+/* REMOVE ANY EXTRA SHADOW ELEMENT */
+
+.program-card *{
+    mix-blend-mode:normal !important;
+}
+/* CAMPUS LIFE CARD */
+
+.campus-life-card{
+    position:relative;
+
+    max-width:1200px;
+    min-height:420px;
+
+    margin:45px auto 0;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.55)),
+    url('campus-life.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.4);
+
+    transition:0.4s ease;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+     box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    0 0 30px rgba(0,140,255,.08);
+}
+
+/* HOVER */
+
+.campus-life-card:hover{
+    transform:translateY(-8px);
+}
+
+/* OVERLAY */
+
+.campus-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(24,119,242,0.18),
+    rgba(0,0,0,0.4)
+    );
+
+    z-index:1;
+}
+
+/* CONTENT */
+
+.campus-content{
+    position:relative;
+    z-index:5;
+
+    padding:40px 25px;
+
+    max-width:760px;
+}
+
+/* TAG */
+
+.campus-tag{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* TITLE */
+
+.campus-content h2{
+    font-size:clamp(34px,6vw,60px);
+
+    font-weight:900;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,0.35);
+}
+
+/* TEXT */
+
+.campus-content p{
+    color:#f1f1f1;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.campus-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #1877f2,
+    #0d5fe9
+    );
+
+    color:#fff;
+
+    font-size:17px;
+    font-weight:700;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 12px 35px rgba(24,119,242,0.35);
+}
+
+/* BUTTON HOVER */
+
+.campus-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 45px rgba(24,119,242,0.5);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.campus-life-card{
+    min-height:380px;
+    border-radius:24px;
+}
+
+.campus-content{
+    padding:30px 20px;
+}
+
+.campus-content p{
+    font-size:14px;
+    line-height:1.8;
+}
+
+.campus-btn{
+    width:100%;
+    padding:16px 20px;
+}
+
+}
+
+
+</style>
+<div class="program-container">
+
+    <!-- CARD 1 -->
+
+    <div class="program-card foundation-card">
+
+        <div class="program-content">
+
+           
+            <h2>
+    Foundation<br>
+    Program
+</h2>
+
+<p>
+    A 6-Month University Foundation Program designed for students with Old Curriculum Grade 9 completion, GED, or Grade 11 credentials.
+</p>
+
+            <a href="javascript:void(0)" class="program-btn" onclick="openProgramModal()">
+                About Program
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+
+    <div class="program-card pathway-card">
+
+        <div class="program-content">
+
+            
+
+            <h2>
+                Pathway<br>
+                Program
+            </h2>
+
+            <p>
+    A 3-Month University Pathway Program tailored for Grade 12 graduates and Bachelor's Degree holders.
+</p>
+
+            <a href="javascript:void(0)" class="program-btn" onclick="openPathwayModal()">
+                About Program
+            </a>
+
+        </div>
+        </div> 
+
+
+    <!-- CARD 3 -->
+
+    <div class="program-card study-card">
+
+        <div class="program-content">
+
+            
+
+            <h2>
+                Study &<br>
+                Work
+            </h2>
+
+          <p>
+    Internship and Work Opportunities <br> while studying at universities in Thailand.
+</p>
+
+            <a href="javascript:void(0)" class="program-btn" onclick="openStudyWorkModal()">
+                Learn More
+            </a>
+
+        </div>
+    </div>
+ </div> 
+
+
+<!-- FOUNDATION MODAL -->
+
+<div id="programModal" class="program-modal">
+
+<div class="program-box">
+
+<span class="close-modal" onclick="closeProgramModal()">&times;</span>
+
+<h2>Thonburi University 🎓</h2>
+
+<p>
+    To pursue a Bachelor's Degree while working in Bangkok:
+</p>
+
+<h3>📌 Admission Requirements</h3>
+
+<ul>
+    <li>Old Curriculum Grade 9/10 completion, GED, or New Curriculum Grade 11 completion.</li>
+    <li>Completion of the 6-Month Foundation Program.</li>
+</ul>
+
+<h3>📚 Subjects Included</h3>
+
+<ul>
+    <li>Business Management</li>
+    <li>Computer Studies</li>
+    <li>Thai Language</li>
+    <li>English Language</li>
+    <li>Mathematics</li>
+    <li>Physics</li>
+    <li>Chemistry</li>
+    <li>Biology</li>
+</ul>
+
+<p>
+    These core subjects will be delivered by experienced university professors.<br>
+    *(On-campus learning is available at our Yangon center. For students based in Thailand, flexible online recorded video classes are provided, allowing you to study at your own convenience).*
+</p>
+
+<h3>💰 Program Fees</h3>
+
+<p><strong>Total Tuition Fee: 39,500 THB</strong></p>
+<p>We provide a flexible installment plan as detailed below:</p>
+<ul>
+    <li><strong>First Installment (Enrollment):</strong> 10,000 THB</li>
+    <li><strong>Second Installment (Class Commencement):</strong> 10,000 THB</li>
+    <li><strong>Remaining Balance:</strong> 19,500 THB (Payable over the following 2 months)</li>
+</ul>
+
+<p class="highlight-text">
+    Upon successful completion of the Foundation Program, the university administration will provide comprehensive guidance and end-to-end support to assist students in securing employment while studying in Bangkok.
+</p>
+
+</div>
+
+</div>
+
+<!-- PATHWAY MODAL -->
+
+<div id="pathwayModal" class="program-modal">
+
+<div class="program-box">
+
+<span class="close-modal" onclick="closePathwayModal()">&times;</span>
+
+
+<h2>Thonburi University 🎓</h2>
+<p>
+    To pursue a Bachelor's Degree while working in Bangkok:
+</p>
+
+<h3>📌 Admission Requirements</h3>
+
+<ul>
+    <li>New Curriculum Grade 12 completion or any Bachelor's Degree credentials.</li>
+    <li>Completion of the 3-Month University Pathway Program.</li>
+</ul>
+
+<h3>📚 Subjects Included</h3>
+
+<ul>
+    <li>Business Management</li>
+    <li>Basic Computer Studies</li>
+    <li>Thai Language</li>
+    <li>English Language</li>
+    <li>Bio-Science</li>
+</ul>
+
+<p>
+    *(On-campus learning is available at our Yangon center. For students based in Thailand, flexible online recorded video classes are provided, allowing you to study at your own convenience).*
+</p>
+
+<h4>💰 Program Fees</h4>
+
+<p><strong>Total Tuition Fee: 29,500 THB</strong></p>
+<p>We provide a flexible installment plan as detailed below:</p>
+<ul>
+    <li><strong>First Installment (Enrollment):</strong> 10,000 THB</li>
+    <li><strong>Second Installment (Class Commencement):</strong> 10,000 THB</li>
+    <li><strong>Remaining Balance:</strong> 9,500 THB (Payable over the following month)</li>
+</ul>
+
+<p class="highlight-text">
+    Upon successful completion of the Pathway Program, the university administration will provide comprehensive guidance and end-to-end support to assist students in securing employment while studying in Bangkok.
+</p>
+
+</div>
+
+</div>
+
+<!-- STUDY WORK MODAL -->
+
+<div id="studyWorkModal" class="program-modal">
+
+<div class="program-box">
+
+<span class="close-modal" onclick="closeStudyWorkModal()">&times;</span>
+
+<h2>Study & Work Program</h2>
+
+<p>
+    University Internship + Bachelor's Degree Program
+</p>
+
+<h3>Now you can pursue your University Degree while doing a Full-Time Internship in Bangkok…💼</h3>
+<p>Through our flexible program (attending classes one day per week alongside a full-time internship), you will enjoy the following benefits:</p>
+<ul>
+    <li><strong>Financial Independence:</strong> Ability to fund your own tuition fees through your internship earnings.</li>
+    <li><strong>Affordable Tuition:</strong> Highly competitive fees at only 34,000 THB per semester (with two semesters per academic year).</li>
+    <li><strong>Flexible Installments:</strong> Option to pay tuition fees in installments throughout the duration of each semester.</li>
+    <li><strong>Low-Cost Housing:</strong> Affordable university dormitory rooms starting around only 500 THB per month.</li>
+    <li><strong>Official Internship Support:</strong> An official internship letter authorized by Royal Thai Immigration issued starting from the second semester of your First Year.</li>
+    <li><strong>Legal Student Status:</strong> Full University Education Visa (ED Plus Visa + Re-entry Permit) coverage.</li>
+    <li><strong>Post-Graduation Visa Extensions:</strong> A 1-year automatic visa extension upon completion of your 4-year Bachelor's degree to either pursue a Master's Degree or search for a corporate white-collar job.</li>
+    <li><strong>Competitive Internship Stipend:</strong> Initial stipend starting at a minimum of 12,000 THB per month, often including accommodation and options for overtime (OT), bonuses, and tips, with salary increments evaluated every 3 months.</li>
+    <li><strong>Bilingual Certification:</strong> A dual-language (Thai-English 50/50) curriculum, granting you professional proficiency in both languages upon graduation.</li>
+    <li><strong>Global Qualification:</strong> A recognized degree that can be utilized to build a career in Thailand or to pursue further opportunities in third countries.</li>
+    <li><strong>Intensive Language Training:</strong> Practical workplace-ready Thai language training fully delivered during your first semester.</li>
+    <li><strong>Local Essential Setup:</strong> Seamless administrative assistance in opening local bank accounts, obtaining driving licenses, and securing health insurance.</li>
+    <li><strong>Flexible Passport Types:</strong> Acceptance of multiple passport variants including PV and PE types.</li>
+    <li><strong>Comprehensive Documentation:</strong> Full, end-to-end documentation and administrative support provided directly by the university for visas and related paperwork.</li>
+</ul>
+
+<h3>3 Pathways to Securing Your Internship</h3>
+<p class="highlight-text">
+    Upon reaching the second semester of your first academic year, every student will receive an official internship endorsement letter from Thonburi University to begin interviewing with prospective employers.<br><br>
+
+    <strong>Pathway 1 (Direct Campus Interviews):</strong> HR managers and executives from companies partnering with Thonburi University under Memorandums of Understanding (MOUs) visit the campus directly to interview and recruit qualified students.<br><br>
+
+    <strong>Pathway 2 (Senior Student Network):</strong> With a strong community of nearly 200 Myanmar students introduced through MRVT College, existing seniors frequently provide direct job referrals and give hiring priority to their incoming juniors.<br><br>
+
+    <strong>Pathway 3 (Independent Walk-in Applications):</strong> Students can also independently approach corporations aligned with their career passions and apply directly utilizing their official university internship letters. This remains one of our most successful placement routes.<br><br>
+
+    *To maximize these opportunities, students are highly encouraged to build proficiency in Thai and English languages, which are essential for professional communication in the local workforce.* 🤍
+</p>
+</div>
+
+</div>
+
+<script>
+
+/* FOUNDATION */
+
+function openProgramModal(){
+    document.getElementById("programModal").style.display="block";
+}
+
+function closeProgramModal(){
+    document.getElementById("programModal").style.display="none";
+}
+
+/* PATHWAY */
+
+function openPathwayModal(){
+    document.getElementById("pathwayModal").style.display="block";
+}
+
+function closePathwayModal(){
+    document.getElementById("pathwayModal").style.display="none";
+}
+
+/* STUDY WORK */
+
+function openStudyWorkModal(){
+    document.getElementById("studyWorkModal").style.display="block";
+}
+
+function closeStudyWorkModal(){
+    document.getElementById("studyWorkModal").style.display="none";
+}
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+window.onclick=function(event){
+
+    const modals=[
+        document.getElementById("programModal"),
+        document.getElementById("pathwayModal"),
+        document.getElementById("studyWorkModal")
+    ];
+
+    modals.forEach(function(modal){
+
+        if(event.target==modal){
+            modal.style.display="none";
+        }
+
+    });
+
+}
+
+</script>
+
+</section>
+
+<style>
+    /* CAMPUS LIFE CARD */
+
+.campus-life-card{
+    position:relative;
+
+    max-width:1200px;
+    min-height:420px;
+
+    margin:45px auto 90px;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+   background:
+   linear-gradient(rgba(0,0,0,0.45),
+   rgba(0,0,0,0.55)),
+   url("image/ssss-5.jpg");
+
+   background-size:cover;
+   background-position:center;
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.4);
+
+    transition:0.4s ease;
+}
+
+/* HOVER */
+
+.campus-life-card:hover{
+    transform:translateY(-8px);
+}
+
+/* OVERLAY */
+
+.campus-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(24,119,242,0.18),
+    rgba(0,0,0,0.4)
+    );
+
+    z-index:1;
+}
+
+/* CONTENT */
+
+.campus-content{
+    position:relative;
+    z-index:5;
+
+    padding:40px 25px;
+
+    max-width:760px;
+}
+
+/* TAG */
+
+.campus-tag{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:22px;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* TITLE */
+
+.campus-content h2{
+    font-size:clamp(34px,6vw,60px);
+
+    font-weight:900;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,0.35);
+}
+
+/* TEXT */
+
+.campus-content p{
+    color:#f1f1f1;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.campus-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+    linear-gradient(
+    135deg,
+    #1877f2,
+    #0d5fe9
+    );
+
+    color:#fff;
+
+    font-size:17px;
+    font-weight:700;
+
+    transition:0.35s ease;
+
+    box-shadow:
+    0 12px 35px rgba(24,119,242,0.35);
+}
+
+/* BUTTON HOVER */
+
+.campus-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 45px rgba(24,119,242,0.5);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.campus-life-card{
+    min-height:380px;
+    border-radius:24px;
+}
+
+.campus-content{
+    padding:30px 20px;
+}
+
+.campus-content p{
+    font-size:14px;
+    line-height:1.8;
+}
+
+.campus-btn{
+    width:100%;
+    padding:16px 20px;
+}
+
+}
+</style>
+<!-- CAMPUS LIFE CARD -->
+
+<div class="campus-life-card fade">
+
+    <div class="campus-overlay"></div>
+
+    <div class="campus-content">
+
+        
+
+        <h2> 
+    TRU Campus Life
+</h2>
+
+<p>
+    Explore more about student life in Thailand, our university environment, internship activities, and firsthand campus experiences on our official Facebook Page.
+</p>
+
+        <a href="https://www.facebook.com/share/1BKnBbg8s7/?mibextid=wwXIfr"
+           target="_blank"
+           class="campus-btn">
+
+        View Facebook Page
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* YOUR CSS HERE */
+
+</style>
+
+<style>
+
+/* =========================
+   MODERN GLASS STYLE FAQ
+========================= */
+html {
+    scroll-behavior: smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 15px;
+
+}
+
+/* SEARCH BAR */
+
+.search-box{
+
+    position:sticky;
+    top:10px;
+    z-index:100;
+
+    width:100%;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 20px;
+
+    backdrop-filter:blur(14px);
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    border-radius:22px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+
+}
+
+/* ICON */
+
+.search-box i{
+
+    color:#b7c2de;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
+}
+
+/* INPUT */
+
+#searchInput{
+
+    width:100%;
+
+    padding:18px 0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+/* PLACEHOLDER */
+
+#searchInput::placeholder{
+
+    color:#b7c2de;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .search-box{
+
+        padding:0 16px;
+
+        border-radius:18px;
+
+    }
+
+    #searchInput{
+
+        font-size:15px;
+
+        padding:16px 0;
+
+    }
+
+    .search-box i{
+
+        font-size:16px;
+
+    }
+
+}
+#searchInput{
+
+    width:100%;
+
+    padding:18px 0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:16px;
+
+}
+
+#searchInput::placeholder{
+
+    color:#b7c2de;
+
+}
+
+/* =========================
+   RESULT
+========================= */
+
+#resultCount{
+
+    margin-top:14px;
+
+    text-align:center;
+
+    color:#d0daf3;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   FAQ LIST
+========================= */
+
+#faqGrid{
+
+    margin-top:25px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+/* =========================
+   CARD
+========================= */
+
+.faq-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    padding:22px;
+
+    background:
+    rgba(255,255,255,0.06);
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s ease;
+
+    animation:show .45s ease;
+
+}
+
+.faq-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:
+    rgba(255,255,255,0.2);
+
+}
+
+.faq-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    border-radius:50%;
+
+    top:-60px;
+    right:-60px;
+
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+.question{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    line-height:1.6;
+
+    margin-bottom:14px;
+
+    position:relative;
+    z-index:2;
+
+}
+
+/* =========================
+   ANSWER
+========================= */
+
+.answer{
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    color:#d7def7;
+
+    position:relative;
+    z-index:2;
+
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+#emptyState{
+
+    display:none;
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#a7b4d9;
+
+    font-size:15px;
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes show{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    body{
+        padding:14px;
+    }
+
+    #searchInput{
+
+        padding:16px 18px;
+
+        font-size:15px;
+
+        border-radius:20px;
+
+    }
+
+    .faq-card{
+
+        padding:18px;
+
+        border-radius:20px;
+
+    }
+
+    .question{
+        font-size:16px;
+    }
+
+    .answer{
+        font-size:14px;
+    }
+
+}
+#resultCount {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; 
+    margin-top: 15px;
+}
+
+#resultCount span {
+    display: block; 
+    font-size: 13px;
+    font-weight: normal;
+    color: #aaaaaa; 
+    margin-top: 5px;
+}
+
+</style>
+
+<div id="resultCount">
+   Search Study & Work Programs in Thailand 
+   <span>(Type your questions to explore opportunities for studying and working in Bangkok)</span>
+</div>
+
+<div class="search-box" id="faq" style="scroll-margin-top: 80px;">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Search Foundation..."
+    >
+
+</div>
+
+<div id="faqGrid"></div>
+
+<div id="emptyState">
+    No matching result found.
+</div>
+    
+
+</div>
+
+<script>
+
+//* =========================
+   FAQ DATA
+========================= */
+
+const faqData = [
+  {
+    question: "What is the University Foundation Program?",
+    answer: "It is a preparatory program designed for students with Old Curriculum Grade 9/10 completion, GED, or New Curriculum Grade 11 credentials to qualify for university admission."
+  },
+  { 
+    question: "What subjects are included in the University Foundation Program?",
+    answer: "To ensure students can smoothly adapt to university coursework, core subjects including Business, Computer Studies, Thai Language, English Language, Mathematics, Biology, Physics, and Chemistry are taught from the foundational level directly by experienced university professors."
+  },
+  {
+    question: "What is the duration of the University Foundation Program?",
+    answer: "The duration of the program is 6 months."    
+  },
+  {
+    question: "Can I enroll if I am currently residing in Thailand?",
+    answer: "Yes, definitely. While we offer on-campus learning in Yangon, students currently living in Thailand can attend via our online recorded video classes without disrupting their work, allowing you to study at your own convenience."
+  },
+  {
+    question: "What should I do if I do not understand the lessons?",
+    answer: "There is no need to worry. If you encounter any difficulties with your studies, you can submit a request to the school's Academic HR department to schedule a private Zoom meeting with the instructors for personalized guidance."
+  },
+  {  
+    question: "Are tuition fee installment plans available?",
+    answer: "The total fee is 39,500 THB, and we provide a flexible 4-installment plan: 10,000 THB upon enrollment, 10,000 THB on the class commencement date, 10,000 THB after the first month, and the remaining 9,500 THB after the second month."
+  },
+  {
+    question: "What opportunities are available after completing the University Foundation Program?",
+    answer: "Upon successful completion of the Foundation Program, you are eligible to directly enroll in partner universities across Thailand."
+  },
+  {
+    question: "What majors can I choose after completing the University Foundation Program?",
+    answer: "Students can choose from major fields including Information Technology (IT), Engineering, Business Administration, Digital Marketing, and Accounting."
+  },
+
+{
+    question: "How long does it take to start university after the University Foundation Program?",
+    answer: "Depending on the specific program, a Bachelor's degree takes 3 to 4 years. After completing the 6-month foundation course, you can immediately enroll in the nearest academic intake in Bangkok, with options available in January, March, June, and September."
+  },
+  {  
+    question: "Will I receive an ED Plus Visa?",
+    answer: "Yes, definitely. Enrolling at Thonburi University grants you full eligibility for the University ED Plus Visa along with a Re-entry Permit."
+  },
+  {    
+    question: "What are the benefits of obtaining a University ED Plus Visa?",
+    answer: "With a University ED Plus Visa, you will also receive a Re-entry Permit, allowing you to travel outside of Thailand and return legally without invalidating your student visa status."
+  },
+  {    
+    question: "What is the difference between a standard ED Visa and an ED Plus Visa?",
+    answer: "The ED Plus Visa offers a major professional advantage. Upon graduating from your 4-year Bachelor's degree, you will receive an automatic 1-year visa extension (Visa-Free) to either pursue a Master's degree or look for professional white-collar corporate employment in Thailand, eliminating any immediate visa concerns after graduation."
+  },
+  {
+    question: "I am concerned about the complexity of visa extensions and paperwork. How is this managed?",
+    answer: "There is absolutely no need to worry. The university handles the entire visa extension process and documentation from end to end. We assist in securing your initial 3-month visa from the embassy in Yangon before departure, followed by subsequent 6-month and annual renewals in Thailand, allowing students to focus entirely on their studies and career."
+  },
+  {    
+    question: "Will my visa be canceled if I temporarily return to Myanmar?",
+    answer: "No, it will not. Since the university facilitates your Re-entry Permit, you can travel internationally or return to Myanmar to visit family with absolute peace of mind."
+  },
+  {    
+    question: "Can individuals currently residing in Thailand transition to this student visa?",
+    answer: "The university fully supports enrollment for students currently in Thailand holding valid local identification (such as Pink Cards, CI documents, 10-year Baht cards, or various long-term visas). However, if you wish to formally convert your status to a University Education Visa, the process must be arranged through the Royal Thai Embassy in Yangon."
+  },
+  {    
+    question: "Am I legally permitted to work while studying?",
+    answer: "Yes, this is one of our program's core advantages. Starting from the second semester of your first year, the university issues an official 'Internship Endorsement Letter' recognized by Royal Thai Immigration. This allows you to attend classes just one day per week and legally engage in a full-time paid internship with expected stipends ranging from 12,000 to 15,000 THB per month."
+  },
+  {    
+    question: "What types of employment can I secure with the Internship Letter?",
+    answer: "You can apply for professional roles across various sectors including Corporate Offices, Hospitality and Hotels, Restaurants and Cafes, Customer Service, Manufacturing Management, and Healthcare Administration."
+  },
+  {    
+    question: "Is the Internship Letter effective for securing White-Collar corporate jobs?",
+    answer: "Yes, the official university internship letter serves as a crucial credential that enables you to formally apply for reputable white-collar corporate positions and enter corporate environments confidently."
+  },
+  {    
+    question: "What are the benefits of securing a Paid Internship?",
+    answer: "A paid internship legally allows you to earn a regular stipend ranging from 12,000 to 15,000 THB per month. Earning an income while studying provides substantial financial support and independence."
+  },
+  {    
+    question: "Can I secure a White-Collar corporate job through a Paid Internship?",
+    answer: "Yes, a paid internship serves as a critical gateway to securing a white-collar corporate career. Once you gain official internship placement, you can actively apply for corporate roles within established companies."
+  },
+  {
+    question: "What majors are available?",
+    answer: "We offer major fields including Information Technology (IT), Engineering, Business Administration, Digital Marketing, and Accounting."
+  },
+{    
+    question: "Are there opportunities for internships or part-time work?",
+    answer: "Yes, definitely. Numerous internship and part-time career opportunities are fully available for our students."
+  },
+  {    
+    question: "Which majors are most popular among students?",
+    answer: "The majority of our students primarily choose to enroll in Digital Marketing and Digital Business Computer Studies."
+  },
+  {    
+    question: "Why are Digital Marketing and Digital Business Computer Studies more popular?",
+    answer: "These digital-centric programs are structurally optimized for working students, balancing manageable academic workloads with practical application. The university provides state-of-the-art computer labs and hands-on training tailored to real-world corporate demands rather than traditional rote-memorization."
+  },
+  {    
+    question: "Which majors offer the best career prospects?",
+    answer: "Information Technology (IT), Business Administration, and Engineering majors are highly recommended due to high market demand."
+  },
+  {    
+    question: "How much is the tuition fee, and does it vary significantly by major?",
+    answer: "Our program offers excellent value and consistency. The tuition fee is fixed at only 34,000 THB per semester, totaling 68,000 THB per academic year (two semesters). For maximum convenience, the university allows students to pay their tuition fees in flexible installments throughout the duration of each semester."
+  },
+  {    
+    question: "Is it genuinely possible to work full-time while pursuing these majors?",
+    answer: "Yes, absolutely. During the first semester (approximately 4 months), students attend classes 5 days a week for foundational training. From the second semester onward, formal classes are held just 1 day per week. You can spend the remaining days engaging in a full-time paid internship utilizing the university's official internship letter, with stipends starting at a minimum of 12,000 THB per month."
+  },
+  {    
+    question: "How long does it take to graduate with a Bachelor's degree?",
+    answer: "Depending on the chosen program and curriculum structure, it takes approximately 3 to 4 years to complete the degree."
+  },
+  {    
+    question: "What are the advantages of obtaining this degree?",
+    answer: "Graduates receive a fully accredited Bachelor's Degree that is globally recognized, enabling you to build a successful career both in Thailand and internationally. 🎓"
+  },
+{
+    question: "Can I work while studying?",
+    answer: "Yes. Providing pathways for students to successfully earn a Bachelor's Degree while remaining employed through structured internship and part-time opportunities is the primary core objective and greatest advantage of Thonburi University."
+  },
+  {    
+    question: "Is it manageable to balance class schedules with work commitments?",
+    answer: "The program structure is highly efficient. During the first semester (approximately 4 months), students attend classes 5 days a week to build intensive language proficiency and workplace readiness. From the second semester onward, formal classes are held just 1 day per week, allowing you to fully engage in a full-time internship without interrupting your academics."
+  },
+  {    
+    question: "Is the visa setup legally secure for working in Thailand?",
+    answer: "Yes, completely. This is one of the most significant reasons to choose our university. Starting from your second semester, the university issues an official Internship Endorsement Letter authorized by Royal Thai Immigration, ensuring you can work legally and safely. Upon graduation, the ED Plus Visa automatically grants a 1-year post-study extension (Visa-Free) to either pursue a Master's degree or look for professional white-collar employment without immediate visa concerns."
+  },
+  {    
+    question: "Will the internship stipend be sufficient to cover my tuition fees?",
+    answer: "Yes, absolutely. With initial stipends starting at a minimum of 12,000 THB per month—often supplemented by accommodation, overtime (OT), bonuses, and tips—and tuition fees structured into flexible installments across each semester, students can comfortably fund their own education while building financial independence."
+  },
+  {    
+    question: "What long-term career benefits and opportunities do I get after graduation?",
+    answer: "Upon completing your Bachelor's Degree, you can utilize the ED Plus Visa's special 1-year post-graduation extension to secure a white-collar corporate career or advance to a Master's degree in Thailand. Additionally, throughout your academic journey, the university provides full administrative support for non-academic essentials, including setting up local bank accounts, driving licenses, health insurance, and all ongoing visa documentation."
+  },
+  {
+    question: "Does the university provide student accommodation or hostel arrangements?",
+    answer: "Yes, full assistance is provided. To ensure student safety, daily comfort, and complete parental peace of mind, safe, affordable, and well-equipped university dormitory housing is fully arranged and managed by our administration."
+  },
+{
+    question: "I heard that renting an apartment in Thailand can be expensive. How much does the university dormitory cost?",
+    answer: "Our university student housing is exceptionally economical. The rental rate starts at approximately 500 THB per month, making it significantly more cost-effective than renting private apartments externally."
+  },
+  {    
+    question: "Does the university assist in finding accommodation?",
+    answer: "Yes, the university provides full assistance in securing suitable accommodation for students."
+  },
+  {    
+    question: "Are dormitory facilities available?",
+    answer: "Yes, fully managed university dormitory facilities are available for all registered students."
+  },
+  {    
+    question: "For students traveling from Yangon for the first time, how do we navigate to the dormitory?",
+    answer: "We ensure a seamless and worry-free transition. The university manages your entire visa processing right from departure. Our founder, Dr. Arung Sriwattana, personally oversees coordination at the airport in Myanmar. Upon your arrival in Thailand, Thonburi University officials along with senior students will be waiting to welcome and escort you directly to your assigned dormitory, ensuring you never feel lost."
+  },
+  {    
+    question: "Will my internship stipend be enough to cover my dormitory expenses?",
+    answer: "Yes, absolutely. Starting from the second semester of your first year, you will transition to working a full-time internship with a legal endorsement letter, earning a minimum stipend of 12,000 THB per month. Since some placements include complimentary meals and housing—alongside options for overtime (OT) and bonuses—covering the dormitory fee of around 500 THB per month is highly manageable, allowing you to comfortably fund both your living expenses and tuition fees."
+  },
+  {    
+    question: "Do you help students search for rooms?",
+    answer: "Yes, our student support team fully assists in locating and arranging rooms for everyone."
+  }, 
+  {
+    question: "Can I enroll if I have successfully passed the New Curriculum Grade 12 examinations?",
+    answer: "Yes. Students holding New Curriculum Grade 12 credentials qualify for our accelerated 3-Month University Pathway Program. This pathway allows you to fast-track your academic timeline and transition into university studies 3 months sooner without needing to take the full 6-month foundation course."
+  },
+  {    
+    question: "Can I enroll with a New Curriculum Grade 11 qualification?",
+    answer: "Yes. Students who have completed New Curriculum Grade 11 can enroll directly into our 6-Month University Foundation Program to properly prepare for official university admission."
+  },
+  {    
+    question: "What specific subjects are taught during the 3-Month University Pathway Program?",
+    answer: "To guarantee that students can transition smoothly into Thonburi University's formal curriculum, essential preparatory courses including Business Management, Basic Computer Studies, Thai Language, English Language, and Bio-Science are thoroughly taught by experienced university professors."
+  },
+  {    
+    question: "What is the total tuition fee for the 3-Month Pathway Program, and what are the payment terms?",
+    answer: "The total tuition fee is 29,500 THB. We offer a flexible 3-installment payment plan for financial convenience: 10,000 THB upon initial enrollment, 10,000 THB on the class commencement date, and the final balance of 9,500 THB exactly 1 month after classes begin."
+  },
+  {    
+    question: "Once I enter university after the 3-Month Pathway Program, will I still be able to work while studying?",
+    answer: "Yes, certainly. Upon entering your first academic year, formal classes are reduced to just 1 day per week starting from the second semester. The remaining days are allocated for full-time professional internships utilizing the university's official endorsement letter, allowing you to legally earn between 12,000 and 15,000 THB per month to fully self-fund your education."
+  },
+  {
+    question: "Does the university handle the visa process required to travel to Thailand?",
+    answer: "Yes, completely. The university assumes full responsibility for your visa documentation from the very beginning, helping you secure your entry visa from the Royal Thai Embassy in Yangon, and fully arranging your University ED Plus Visa along with the necessary Re-entry Permits upon your arrival in Thailand."
+  },
+  {    
+    question: "Can I enroll if I am already residing in Thailand?",
+    answer: "Yes, definitely. While on-campus learning is conducted at our Yangon center, students currently living in Thailand can conveniently attend through our flexible online recorded video classes, enabling you to pursue your studies at your own convenience without interrupting your current employment."
+  },
+{
+    question: "Can I enroll with a Grade 11 qualification?",
+    answer: "Yes, definitely. Students who have successfully completed the New Curriculum Grade 11 examinations are fully eligible to enroll at Thonburi University and begin their pathway toward earning a Bachelor's degree."
+  },
+  {    
+    question: "If I passed Grade 11, how do I begin my studies?",
+    answer: "Students with a New Curriculum Grade 11 qualification can officially initiate their academic pathway at Thonburi University by registering for our specialized preparation courses to transition seamlessly into university life."
+  },
+  {
+    question: "Can I apply if I do not have a passport yet?",
+    answer: "Yes, you can. There is no need to worry if you do not currently possess a passport. The team at Dreams by HARRY will provide complete step-by-step guidance and assistance to ensure your enrollment process goes smoothly."
+  },
+  {    
+    question: "Can I secure my enrollment first before obtaining a passport?",
+    answer: "Yes, absolutely. You can officially enroll and begin your university pathways—either the 3-Month Pathway Program or the 6-Month Foundation Program—using your official academic transcripts and certificates without needing a passport initially."
+  },
+  {    
+    question: "What specific documents are required for enrollment?",
+    answer: "The primary requirements include your official academic certificates, passport-sized photographs, and eventually your passport. Once tuition fees are processed, the university will officially issue your formal Letter of Acceptance (LOA). Our admissions team will guide you closely through any additional documentation needed."
+  },
+  {    
+    question: "At what point will my passport become mandatory?",
+    answer: "Your physical passport book will only be required when you complete your preparatory programs and are ready to transition directly to the physical Thonburi University Campus in Thailand."
+  },
+  {    
+    question: "How will the university assist me during my passport application process?",
+    answer: "To facilitate a smooth passport application process, the university provides all necessary official institutional support letters and official documentation. Additionally, our teams in both Thailand and Myanmar will fully manage and coordinate your application to ensure you successfully secure your initial 3-month entry visa from the Royal Thai Embassy in Yangon before departure."
+  },
+  {    
+    question: "What are the options for students who are already residing in Thailand?",
+    answer: "If you are already residing in Thailand, you can still apply even if you do not have a standard passport yet. Registration is fully accepted if you possess a Pink Card, a Certificate of Identity (CI), a 10-year card, or any other legally recognized identification. Furthermore, the university will take full responsibility for assisting you in transitioning your current status into a legitimate Student Visa (ED Plus Visa + Re-entry Permit) from within the country."
+  },
+  {
+    question: "What immediate action should I take right now?",
+    answer: "We highly recommend securing your enrollment promptly to reserve your seat before classes reach maximum capacity. You can complete your preparatory studies on-campus in Yangon, or if you are currently in Thailand, you can conveniently attend via our online recorded video classes without interrupting your employment."
+  },
+  {
+    question: "How do I apply for admission?",
+    answer: "The application process is simple. You can begin your initial preparatory courses on-campus in Yangon. Alternatively, if you are currently based in Thailand, you can comfortably complete this stage through our flexible online recorded video classes, ensuring zero disruption to your daily work schedule."
+  },
+  {    
+    question: "How do I begin the learning process based on my qualifications?",
+    answer: "Students holding New Curriculum Grade 12 credentials can enter directly into our accelerated 3-Month University Pathway Program. This pathway allows you to fast-track your timeline and transition into formal university studies 3 months earlier, completely bypassing the 6-month foundation requirement."
+  },
+{
+    question: "How much is the tuition fee?",
+    answer: "The tuition fee at Thonburi University is structurally optimized to be highly affordable for Myanmar students. To alleviate financial burdens, the university fully implements a flexible installment payment system for families and students."
+  },
+  {    
+    question: "How much are the fees for the preparatory programs, such as Foundation and Pathways?",
+    answer: "The fee structure is based on your current academic qualifications. For the 3-Month University Pathway Program (designed for Grade 12 graduates or degree holders), the total cost is 29,500 THB, payable in 3 installments: 10,000 THB upon enrollment, 10,000 THB on the class commencement date, and 9,500 THB after 1 month. For the 6-Month University Foundation Program (designed for Grade 11, Grade 10, or Grade 9 students), the total cost is 39,500 THB, split into 4 installments: 10,000 THB upon enrollment, 10,000 THB on the class commencement date, 10,000 THB after 1 month, and a final payment of 9,500 THB after 2 months."
+  },
+  {    
+    question: "Is it realistic to cover my own tuition fees while working?",
+    answer: "Yes, this is one of the most advantageous features of our program. From the second semester of your first year, formal classes are held just 1 day per week. The remaining days are dedicated to full-time professional internships backed by an official university endorsement letter. With standard stipends ranging from 12,000 to 15,000 THB per month, students can comfortably fund their monthly dormitory costs (approximately 500 THB) and tuition fees independently."
+  },
+  {    
+    question: "Are there any hidden costs or extra fees for visa processing and official documentation?",
+    answer: "No. Providing transparent, continuous pathways for students to successfully earn a Bachelor's Degree while maintaining financial and legal stability through structured corporate internship opportunities is the core mission and strength of Thonburi University."
+  },
+  {
+    question: "Is a monthly payment plan option available?",
+    answer: "Yes, definitely. To ensure zero financial strain and to guarantee total peace of mind for both parents and students, our university has structured a dedicated, manageable monthly installment plan option."
+  },
+  {    
+    question: "What is the expected salary or stipend amount?",
+    answer: "Upon commencing your internship placement, you will earn a guaranteed minimum stipend of 12,000 THB per month. Depending on the employer, this package frequently includes complimentary meals and housing, alongside opportunities for overtime (OT), corporate bonuses, and performance tips. Additionally, a structured salary increment policy is active every 3 months."
+  },
+  {    
+    question: "Can I continue using the monthly installment plan once I transition into the main university program?",
+    answer: "Yes, absolutely. Once you enter the formal degree program at Thonburi University, the academic year is divided into 2 semesters. The tuition fee is fixed at 34,000 THB per semester, and you can comfortably utilize our flexible payment system to divide this amount into rolling installments throughout the duration of each semester instead of paying upfront."
+  },
+  {    
+    question: "What are the exact earnings details during employment?",
+    answer: "Students start with a base stipend of at least 12,000 THB per month, which scales higher depending on roles, plus potential coverage for housing, daily meals, overtime pay (OT), bonuses, and tips. The system also includes standard wage reviews every 3 months to support your financial independence."
+  },
+  {
+    question: "Is an airport pickup service provided upon arrival?",
+    answer: "Yes, we provide full accommodation. We offer a comprehensive VIP arrival and transfer service that assumes complete responsibility for our students from the departure terminal in Myanmar directly to the university dormitory gates in Thailand."
+  },
+  {    
+    question: "As a first-time traveler to Thailand, I am concerned about navigating the airport. How is this managed?",
+    answer: "There is absolutely no need for concern. A unique hallmark of our enrollment program is that our founder, Dr. Arung Sriwattana, personally accompanies and supervises the student delegation right from the initial departure in Myanmar straight to the university campus destination."
+  },
+  {    
+    question: "Who will receive and welcome the students at the Thai airport?",
+    answer: "Upon landing in Thailand, students will be warmly received by senior university officials and senior Myanmar student representatives. Our arrival team will assist with luggage handling and guide everyone directly to pre-arranged university transport vans for a secure, direct transfer to your dormitory rooms."
+  },
+  {    
+    question: "So we will be escorted straight to the dormitory? Also, are dormitory costs high?",
+    answer: "Yes, that is correct; you will proceed securely from the airport gates directly to your accommodation. Furthermore, our student housing rates are heavily subsidized, starting at approximately 500 THB per month. This offers unmatched safety, convenience, and financial savings compared to private residential leasing in Bangkok."
+  },
+{    
+    question: "Does the university handle the visa process prior to my departure to Thailand?",
+    answer: "Yes, completely. The university assumes full responsibility for securing your initial 3-month entry visa from the Royal Thai Embassy in Yangon. Furthermore, as your initial stay approaches its expiration date, our staff will fully manage the transition and extension to a formal Student Visa (ED Plus Visa) along with the necessary Re-entry Permits."
+  },
+  {
+    question: "Will the university assist with ongoing visa extensions while I am studying?",
+    answer: "Yes, our support goes far beyond basic assistance. The university directly manages all complex immigration paperwork and procedural extensions throughout your academic timeline. We secure your initial 3-month visa from Yangon, facilitate the subsequent 6-month extension upon arrival, and handle all rolling renewals thereafter. We also arrange your Re-entry Permits to ensure your student visa remains valid if you travel internationally, giving you complete peace of mind."
+  },
+  {
+    question: "Can I still enroll if my English language proficiency is limited?",
+    answer: "Yes, absolutely. There is no need for concern. For students who lack a strong foundational background in English, our 6-Month University Foundation Program is structured to bridge that gap. Experienced university professors provide dedicated training and formal orientations from the ground up, thoroughly preparing you to follow the formal university curriculum with total confidence."
+  },
+  {
+    question: "Is it manageable to live in Thailand if I do not speak or understand the Thai language?",
+    answer: "Yes, completely. Foundation courses specifically integrate basic Thai language modules. Furthermore, during your first official university semester (the first 4 months), you will receive intensive, workplace-focused Thai language training. This ensures you acquire the necessary professional communication skills to work legally and comfortably within Thai corporate environments."
+  },
+  {
+    question: "Does the university issue an official Internship Letter?",
+    answer: "Yes, this is one of Thonburi University's premier advantages. Upon entering the second semester of your first year, the university issues an official Internship Endorsement Letter authorized by Royal Thai Immigration. This document allows you to work legally and safely across Thailand while pursuing your degree without any regulatory complications."
+  },
+  {
+    question: "Are the internships paid, and can they support my expenses?",
+    answer: "Yes, all internships are fully compensated. Upon starting your placement, you will earn a guaranteed baseline stipend between 12,000 and 15,000 THB per month. Depending on the company, packages frequently include complimentary meals and housing, alongside opportunities for overtime pay (OT), bonuses, and tips, with wage reviews every 3 months. Since your heavily subsidized dormitory costs around 500 THB per month and tuition can be paid in installments, you can easily become completely financially independent."
+  },
+  {
+    question: "Where is the campus located? Will I be studying directly in Bangkok?",
+    answer: "Yes, that is correct. The university campus is situated in Bangkok, the geographic and commercial heart of Thailand. This location provides our students with the highest density of professional career opportunities and excellent transit access. Please note that while preparatory courses are conducted at our physical Yangon center, students already in Thailand can complete this phase via flexible online recorded video classes without interrupting their current jobs."
+  },
+  {
+    question: "Is there a BTS SkyTrain station located near the university?",
+    answer: "Yes, definitely. Thonburi University is situated near the Lak Song BTS Station, one of Bangkok's major rapid transit hubs, making daily commuting exceptionally convenient."
+  },
+  {    
+    question: "Is the commute from Lak Song BTS Station to the university distant?",
+    answer: "No, not at all. The distance between Lak Song BTS Station and the university campus is very short, allowing for an incredibly seamless and quick transfer. Once you step off the train, you can reach the campus within minutes."
+  },
+  {    
+    question: "What are the practical advantages of having a BTS SkyTrain line near the campus?",
+    answer: "It offers a massive advantage in terms of mobility and time management. It allows you to bypass Bangkok's notorious traffic congestion entirely, reaching central business districts like Siam and Sukhumvit within minutes for leisure. More importantly, it ensures you can commute to your corporate internship placements with precise punctuality while keeping travel costs minimal."
+  },
+  {    
+    question: "Are there exclusive transit discounts available for students?",
+    answer: "Yes. By using the official Student Card issued by the university, you are fully eligible to purchase BTS SkyTrain transit passes at the discounted Student Rate, allowing you to significantly cut down on your monthly transportation expenses."
+  },
+  {
+    question: "Does the university assist in finding private accommodation?",
+    answer: "Yes. For students who prefer to rent private condominiums or apartments outside of the university dormitories, our student housing team fully assists in sourcing secure, well-located, and budget-friendly residential options near convenient transit lines."
+  },
+  {
+    question: "What is the maximum age limit for enrollment?",
+    answer: "Our programs have highly flexible enrollment policies with minimal age restrictions. As long as you possess a genuine desire to learn and hold valid, verifiable legal identification and academic credentials, you are eligible to apply regardless of your age."
+  },
+  {
+    question: "Which academic majors currently yield the best career opportunities?",
+    answer: "To align with modern global job markets, Digital Marketing, Information Technology (IT), and Digital Business Computer Studies currently command the highest demand in Thailand and internationally, offering the most lucrative and stable career pathways for graduates."
+  },
+  {
+    question: "Does the university offer a dedicated Digital Marketing major?",
+    answer: "Yes, a fully accredited Digital Marketing major is actively available."
+  },
+
+{
+    question: "Does the university offer an Engineering major?",
+    answer: "Yes, a fully accredited Engineering major is actively available."
+  },
+  {
+    question: "Does the university offer a Business major?",
+    answer: "Yes, a comprehensive Business Administration major is actively available."
+  },
+  {
+    question: "Does the university offer an Accounting major?",
+    answer: "Yes, a dedicated Accounting major is actively available."
+  },
+  {
+    question: "Does the university offer an Information Technology (IT) major?",
+    answer: "Yes, a modern Information Technology major is actively available."
+  },
+  {
+    question: "Are there scholarship opportunities available?",
+    answer: "Scholarship opportunities and partial grants are periodically available depending on active seasonal promotions."
+  },
+  {
+    question: "What is the total duration of the degree programs?",
+    answer: "The duration of studies depends entirely on the specific program curriculum structure, typically spanning 3 to 4 years."
+  },
+  {
+    question: "What is the duration of the University Foundation Program?",
+    answer: "The University Foundation Program is a comprehensive 6-month preparatory course."
+  },
+  {
+    question: "What is the duration of the University Pathway Program?",
+    answer: "The University Pathway Program is an accelerated 3-month preparatory course."
+  },
+  {
+    question: "Can university degree holders or graduates apply for enrollment?",
+    answer: "Yes, university graduates and degree holders are fully eligible to apply for further studies."
+  },
+  {
+    question: "Can I still apply if I have not passed the official matriculation examinations?",
+    answer: "Yes, you can enroll by successfully completing our University Foundation Program to qualify for direct admission."
+  },
+  {
+    question: "Can I apply with an Old System Matriculation (Grade 10) qualification?",
+    answer: "Yes, students holding an Old System Grade 10 qualification are fully eligible to enroll."
+  },
+  {
+    question: "Can I apply with an Old System Grade 9 qualification?",
+    answer: "Yes, students holding an Old System Grade 9 qualification can officially apply via our foundational pathways."
+  },
+  {
+    question: "Does the university provide a legitimate Student Visa?",
+    answer: "Yes, the university provides full institutional support to ensure you receive a legal Student Visa (ED Plus Visa)."
+  },
+  {
+    question: "Am I legally permitted to work while holding an Non-Immigrant ED Visa?",
+    answer: "While standard student visas have restrictions, our students work legally through the university's officially endorsed corporate internship programs."
+  },
+  {
+    question: "Is it possible to earn an income throughout my academic timeline?",
+    answer: "Yes. The university provides extensive access to paid corporate internship opportunities, enabling you to earn a steady income while studying."
+  },
+  {
+    question: "Does the university assist with direct corporate job placements?",
+    answer: "Yes, the university officially connects students with our extensive network of corporate partners under active Memorandums of Understanding (MOU)."
+  },
+  {
+    question: "Is arrival day assistance provided for new international students?",
+    answer: "Yes, full logistical support, welcoming, and reception services are completely arranged for your arrival day."
+  },
+  {
+    question: "Is a medical check-up mandatory for the registration process?",
+    answer: "Yes, a standard medical examination is required to fulfill official university enrollment and immigration regulations."
+  },
+  {
+    question: "What primary documentation is required to initiate my application?",
+    answer: "The core requirements include a valid Passport and your official academic passing certificates or transcripts."
+  },
+  {
+    question: "Are physical photographs required for the admissions process?",
+    answer: "Yes, standard passport-sized photographs must be submitted to complete your student registration profiles."
+  },
+{
+    question: "Is it possible to submit an online application?",
+    answer: "Yes, our online application portal is fully active and accessible for all international applicants."
+  },
+  {
+    question: "Is there a registration fee required for enrollment?",
+    answer: "Yes, a nominal registration fee may apply depending on the specific program or curriculum you choose."
+  },
+  {
+    question: "How much is the mandatory enrollment deposit?",
+    answer: "The deposit amount varies depending on the specific academic program and qualification pathway."
+  },
+  {
+    question: "In which months are the official academic intakes open?",
+    answer: "Thonburi University operates four major seasonal intakes throughout the year to ensure a flexible timeline for students. Formal classes commence in January, March, June, and September (1 / 3 / 6 / 9). Applicants can select their preferred intake based on document readiness and personal availability."
+  },
+  {    
+    question: "HI မင်္ဂလာပါ?",
+    answer: "Hello and welcome! ✨ 🤍 Dreams by HARRY warmly welcomes you. We are delighted to assist you with Thonburi University's integrated work-and-study programs, designed to fast-track your Bachelor's Degree. Please feel free to inquire about our academic majors, flexible tuition installment options, paid corporate internships, secure student housing, or legal visa processing. Our support team is fully prepared to provide comprehensive details."
+  },
+  {    
+    question: "hello?",
+    answer: "Hello! 😊 ✨ Dreams by HARRY warmly welcomes you to our platform. We are here to help you discover Thonburi University's innovative work-and-study pathways, allowing you to successfully earn a Bachelor's Degree while gaining professional corporate experience. How may our support team assist you today?"
+  },
+  {
+    question: "Are there other Myanmar students currently enrolled at the university?",
+    answer: "Yes, definitely. Thonburi University hosts a vibrant, growing, and incredibly supportive community of Myanmar students. You will be welcomed into a warm, family-like student environment, ensuring you transition comfortably into university life without feeling isolated."
+  },
+  {    
+    question: "Will it be easy to integrate and make new friends upon arriving in Thailand?",
+    answer: "Yes, the integration process is seamless. The university hosts an official Orientation Day at the beginning of each intake, allowing new students to directly network with peers and connect with senior Myanmar student representatives. This closely-knit student community actively shares academic insights, work placement advice, and mutual support, creating a welcoming atmosphere that feels just like home."
+  },
+  {
+    question: "Could you briefly summarize the unique advantages of each intake season?",
+    answer: "Certainly. Each academic intake offers distinct advantages: The January Intake is ideal for those wanting to initiate their studies and employment immediately at the start of the year; the March Intake is a highly sought-after, high-demand term with limited seats; the June Intake provides extra preparation time for a smooth mid-year relocation; and the September Intake is perfect for students looking to establish their university lifestyle before the year ends."
+  },
+  {
+    question: "Will I receive an official Thai Language Certificate upon completion?",
+    answer: "Yes, an officially recognized Thai Language Certification is formally awarded to students upon completing their language training modules."
+  },
+{
+    question: "Will I receive a fully accredited Bachelor's Degree upon graduation?",
+    answer: "Yes, graduates are formally awarded a fully accredited Bachelor's Degree that is globally recognized for career and academic advancement."
+  },
+  {
+    question: "Am I eligible to pursue a Master's Degree after completing this program?",
+    answer: "Yes, definitely. Your degree qualifies you directly to pursue postgraduate or Master's Degree programs both locally and internationally."
+  },
+  {
+    question: "Are the classrooms and campus facilities modern?",
+    answer: "Yes, the university provides state-of-the-art classrooms equipped with modern academic learning facilities."
+  },
+  {
+    question: "Is high-speed Wi-Fi access available on campus?",
+    answer: "Yes, complimentary campus-wide Wi-Fi access is fully available for all students."
+  },
+  {
+    question: "Does the university have a library facility?",
+    answer: "Yes, a well-resourced university library is accessible to all students for academic research and independent study."
+  },
+  {
+    question: "Is there a mandatory university uniform policy?",
+    answer: "Yes, Thonburi University maintains a standardized, smart, and well-designed official student uniform policy that fosters professionalism and institutional pride."
+  },
+  {    
+    question: "Am I required to wear the uniform every day, and what does it entail?",
+    answer: "The official uniform is mandatory only on your designated formal class days, which is typically just one day per week."
+  },
+  {    
+    question: "On which specific days must the official uniform be worn?",
+    answer: "You are required to wear the official uniform on your specified academic class day (1 day per week). On remaining days, you will transition to work-appropriate corporate attire for your internship or wear the university's casual polo shirts during student activities."
+  },
+  {    
+    question: "Who will assist me with purchasing uniforms and arranging accommodation upon arrival?",
+    answer: "Upon your arrival in Thailand, our dedicated Student Support Team will provide close personal assistance with purchasing your uniforms, settling into our heavily subsidized dormitory (around 500 THB/month), setting up local bank accounts, and finalizing visa procedures."
+  },
+  { 
+    question: "Are there days when casual or alternative attire is permitted?",
+    answer: "Yes. During your paid corporate internship days, you will wear the specific professional attire required by your employer. For campus sports events or university extracurricular activities, students can flexibly wear the comfortable university polo shirts provided."
+  },
+  {
+    question: "Is class attendance strictly monitored and important?",
+    answer: "Yes, regular class attendance is highly critical to maintaining both your academic standing and your official student visa status."
+  },
+  {
+    question: "Are the faculty members and lecturers internationally qualified?",
+    answer: "Yes. Our curriculum is delivered by experienced, highly qualified lecturers and professors who focus on international education standards. For students concerned about initial English proficiency, our foundation courses patiently build communication skills up to professional workplace standards."
+  },
+  {
+    question: "Is the course curriculum heavily loaded with assignments?",
+    answer: "The assignment structure varies by your chosen major. However, our system values practical learning over traditional rote-memorization and heavy homework loads. Evaluation is primarily driven by light hands-on projects and professional presentation skills, ensuring maximum flexibility for working students."
+  },
+  {
+    question: "Are the university examinations exceptionally difficult to pass?",
+    answer: "Examinations are highly manageable if you remain attentive and engaged during lectures. Our faculty focuses on genuine comprehension and real-world application rather than academic stress, providing close guidance and continuous student support to ensure your success."
+  },
+  {
+    question: "Does the university accept credit transfers from prior university studies?",
+    answer: "Yes, credit transfers are possible. The team at Dreams by HARRY will carefully evaluate your official academic transcripts against the university's criteria. Transferring eligible credits can effectively shorten your overall degree duration."
+  },
+{
+    question: "Am I permitted to work legally in Thailand after graduation?",
+    answer: "Yes, extensive professional opportunities are available. Thonburi University is dedicated to fully supporting graduates in securing legal post-graduation employment and career pathways within Thailand."
+  },
+  {
+    question: "Does the mandatory university internship support my future job placement?",
+    answer: "Absolutely. Starting from your first year (second semester), the university issues an official internship letter placing you in professional environments with starting monthly allowances ranging from 12,000 to 15,000 THB. Upon graduation, you will possess up to 4 years of continuous hands-on work experience, making you a highly competitive candidate for major corporations."
+  },
+  {    
+    question: "What is the expected starting salary range for graduates?",
+    answer: "Graduates holding our globally accredited Bachelor's Degree, paired with advanced proficiency in Thai and English developed over 4 years, are exceptionally well-positioned for corporate white-collar roles. Starting salaries typically range from 25,000 to 45,000 THB per month, or higher, depending on the specific industry and corporate structure."
+  },
+  {
+    question: "Can I use this degree to apply for postgraduate studies internationally?",
+    answer: "Yes, completely. The Bachelor's Degree awarded by Thonburi University is officially accredited and globally recognized. This permits graduates to confidently apply for Master's Degree programs across Europe, the United States, Australia, or alternative Asian destinations. Furthermore, the 4 years of concurrent professional work experience will significantly strengthen your international academic applications."
+  },
+  {
+    question: "What are the average rates and options for student accommodation?",
+    answer: "Accommodation costs depend heavily on your chosen location and specific room preferences. To support financial efficiency, the university coordinates student housing options near the campus with excellent accessibility. Basic, highly affordable student accommodations are available starting from approximately 500 THB per month, depending on room types and facilities."
+  },
+  {
+    question: "Are utility and electricity bills included in the accommodation fee?",
+    answer: "Utility and electricity billing policies vary depending on the regulations of each specific residential complex. Some accommodations offer all-inclusive rates, while others calculate monthly utilities separately based on individual meter usage. Our Student Support Team actively helps students select and secure the most cost-effective housing options available."
+  },
+  {
+    question: "Is sharing a room with a roommate permitted in student housing?",
+    answer: "Yes, sharing accommodations with a roommate is fully permitted. Splitting rent and utility expenses with a peer serves as an excellent way to reduce overall living costs. This arrangement integrates seamlessly into the university's work-and-study lifestyle, allowing friends to commute to classes and corporate internships together."
+  },
+  {
+    question: "Are students permitted to cook inside their accommodation?",
+    answer: "Cooking privileges depend strictly on the safety regulations of your specific accommodation. While gas stoves are generally restricted across residential facilities to prevent fire hazards, the utilization of electric pans, microwaves, and rice cookers for light meal preparation is commonly permitted. Our support team will thoroughly verify these building guidelines during your housing selection process."
+  },
+  {
+    question: "Is the campus or student accommodation located near a BTS Skytrain station?",
+    answer: "Yes, transit access is exceptionally convenient. To ensure smooth commuting, the university's partner accommodations are located strategically near Lak Song BTS Station (the primary Bangkok rapid transit line). This enables students to travel directly into central business districts like Siam and Sukhumvit within minutes, avoiding road traffic."
+  },
+{
+    question: "How secure is the campus and surrounding student environment?",
+    answer: "Safety is our utmost priority, especially for parents' peace of mind. The residential areas allocated for our students are located in a highly peaceful, secure, and academically optimal student environment, ensuring comprehensive safety. Additionally, our dedicated Student Support Team is always available on-site to provide immediate personal assistance whenever required."
+  },
+  {
+    question: "Is there a 24-hour security system active at the student housing?",
+    answer: "Yes, absolutely. Depending on the specific partner accommodation selected, facilities are equipped with 24-hour professional security personnel, continuous CCTV surveillance networks, and secure electronic key-card access control systems at all entry and exit points to guarantee round-the-clock safety."
+  },
+  {
+    question: "Does the university campus have a dedicated food court facility?",
+    answer: "Yes, the campus features an excellent food court that is significantly more budget-friendly than standard external dining options. Nutritious traditional Thai dishes, stir-fries, seafood, fresh fruits, and assorted beverages are widely available starting at only 30 to 40 THB per meal, allowing students to efficiently minimize their daily living expenses."
+  },
+  {
+    question: "Are Halal food options available within the campus dining areas?",
+    answer: "Yes, definitely. To comfortably accommodate our international Muslim student community, Thonburi University's campus food court features dedicated, certified Halal food stalls, ensuring seamless dietary dining options on campus."
+  },
+  {
+    question: "Can students easily access authentic Myanmar cuisine in the area?",
+    answer: "Yes. Authentic Myanmar cuisine and traditional restaurants are widely and conveniently accessible throughout various major districts across Bangkok."
+  },
+  {
+    question: "Is the public transportation system around the university efficient?",
+    answer: "Yes, public transportation access is exceptionally efficient, linking the campus seamlessly with Bangkok's main transit networks and rapid skytrain extensions."
+  },
+  {
+    question: "Will students be issued an official institutional Student Card?",
+    answer: "Yes, all officially registered students are issued an authorized university Student Card, which grants access to campus facilities and qualifies holders for exclusive student discounts on regional transit and public services."
+  },
+
+{
+    question: "Does the university host an official Orientation Day for new students?",
+    answer: "Yes, absolutely. To ensure that incoming students acclimate smoothly to their new academic environment, a comprehensive Orientation Day is systematically organized. During this event, university faculty, senior professors, and senior student representatives warmly welcome you and provide detailed guidance on campus regulations, lecture schedules, and the paid internship placements commencing in your second semester."
+  },
+  {
+    question: "Is there an official Graduation Ceremony upon completion of the degree?",
+    answer: "Yes, this represents a milestone achievement. Upon successful completion of your program, a formal and grand Graduation Ceremony is hosted in Thailand. Families are invited to attend as graduates don their official academic gowns and proudly receive their globally accredited Bachelor's Degrees, celebrating four years of successful study and concurrent professional employment."
+  },
+  {
+    question: "Are there extracurricular student activities organized on campus?",
+    answer: "Yes, the university provides a vibrant array of structured student activities. From welcome receptions and cultural festivals to music events and academic competitions, these activities are designed to offer a dynamic and enriching international campus life while fostering global networking among peers."
+  },
+  {
+    question: "Does the university offer structured student clubs?",
+    answer: "Yes. To cultivate talent and personal interests, the university hosts a diverse selection of student-led clubs. Ranging from technology, business, and language groups to arts and entertainment circles, these clubs offer an excellent platform to collaborate and innovate with peers who share similar passions."
+  },
+  {
+    question: "Are there dedicated sports facilities and athletic activities available?",
+    answer: "Yes, definitely. The university consistently hosts sports tournaments and athletic activities to promote physical wellness and student community engagement. Students can participate in football, basketball, and badminton, and enjoy complimentary access to fully equipped, modern on-campus gymnasium facilities."
+  },
+  {
+    question: "Does the university campus feature modern Computer Laboratories?",
+    answer: "Yes, this is a core asset of our infrastructure. Thonburi University provides advanced, high-performance Computer Laboratories. These high-tech facilities are integrated with campus-wide high-speed Wi-Fi, enabling students to gain hands-on experience in software development, graphic design, and the application of cutting-edge AI tools."
+  },
+  {
+    question: "Is practical software coding integrated into the curriculum?",
+    answer: "Yes, absolutely. Students enrolled in our Information Technology (IT) and Digital Business Computer majors receive systematic training in modern programming languages from the foundational level up. The curriculum emphasizes hands-on corporate projects to ensure graduates can transition confidently into the technology sector."
+  },
+  {    
+    question: "Does the curriculum include specialized training in Data Analysis?",
+    answer: "Yes. Our Information Technology (IT) and Digital Business Computer programs provide comprehensive instruction on modern data analytics tools. Students engage in practical projects modeled after real-world industry demands, establishing a strong foundation for a career in data analytics."
+  },
+  {    
+    question: "Is Project Management taught as part of the academic program?",
+    answer: "Yes. The Business Management curriculum covers essential modern project management frameworks and tools from the ground up. By blending theoretical lectures with practical corporate projects, the university effectively prepares students for professional managerial roles."
+  },
+  {    
+    question: "Does the curriculum offer comprehensive modules on Financial Analysis?",
+    answer: "Yes. Our Accounting major provides rigorous training in contemporary financial analysis tools and methodologies. Students work directly on practical case studies and financial modeling projects, ensuring they are fully equipped for corporate finance sectors."
+  },
+  {    
+    question: "Is Business Communication professionally taught within the curriculum?",
+    answer: "Yes, absolutely. The Business Management program delivers systematic training in modern corporate communication tools and strategies. Emphasizing professional presentations and corporate case projects, it ensures students possess strong communication skills for global business environments."
+  },
+  {    
+    question: "Does the Digital Marketing major cover modern marketing tools?",
+    answer: "Yes. Our Digital Marketing major provides intensive training in modern digital marketing platforms, software, and analytical tools. The integration of practical marketing campaigns and industry projects prepares students to enter the digital advertising workforce with confidence."
+  },
+  {    
+    question: "Are essential IT Tools thoroughly covered within the technology courses?",
+    answer: "Yes. Within our Information Technology (IT) and Digital Business Computer majors, students are systematically trained in a wide suite of modern IT utilities and software platforms. Through practical, hands-on lab projects, graduates ensure total technical readiness for corporate workspaces."
+  },
+{
+    question: "Does the curriculum cover essential Computer Software?",
+    answer: "Yes, absolutely. Our Information Technology (IT) and Digital Business Computer majors provide systematic instruction on modern computer software from the foundational level. The curriculum balances theoretical knowledge with hands-on corporate projects, enabling students to enter the technology sector with absolute confidence."
+  },
+  {
+    question: "Is training provided for specialized Business Software?",
+    answer: "Yes, definitely. The Business Management curriculum integrates systematic training in contemporary industry-standard business software. By combining core concepts with practical application, students are fully prepared to navigate digital modern corporate workflows."
+  },
+  {
+    question: "Does the university teach specialized Accounting Software?",
+    answer: "Yes. Students enrolled in our Accounting major receive thorough, systematic training in modern accounting software and financial systems. The integration of practical case studies ensures graduates transition smoothly into professional corporate finance roles."
+  },
+  {
+    question: "What core concepts are covered in the Digital Business Computer major?",
+    answer: "The Digital Business Computer major delivers systematic instruction on contemporary digital enterprise tools from the ground up. The curriculum features hands-on corporate projects alongside theoretical lectures, allowing students to step confidently into the evolving digital economy."
+  },
+  {
+    question: "Could you briefly explain what I will study in the Digital Business Computer major?",
+    answer: "Certainly. The Digital Business Computer major focuses on equipping students with a thorough understanding of contemporary digital business tools from the foundational level. You will engage in practical corporate projects that bridge theoretical learning with workplace requirements, confidently preparing you for the digital business landscape."
+  },
+  {
+    question: "How does the Digital Business Computer major differ from a traditional Business degree?",
+    answer: "While a traditional business program primarily focuses on core administration and management principles, the Digital Business Computer major uniquely bridges the gap between foundational business acumen and modern technological tools, data metrics, and digital assets. You will study how to optimize business operations using modern digital ecosystems, making you a highly sought-after professional across top industries."
+  },
+  {
+    question: "What types of paid internship placements are available for Digital Business Computer majors?",
+    answer: "This is one of the premier features of our program. Starting from your first year (second semester), you will undertake a formal corporate internship with a university endorsement letter, earning a guaranteed monthly stipend ranging from 12,000 to 15,000 THB. Placements are heavily available across digital corporate operations, e-commerce management, data entry analytics, and business analysis departments."
+  },
+  {
+    question: "What are the future career prospects for Digital Business Computer graduates?",
+    answer: "Graduates possess highly extensive career pathways. You will be fully prepared for roles such as E-commerce Manager, Digital Business Analyst, and Project Coordinator, or for launching your own digital startup. Because you graduate with an accredited Bachelor's Degree alongside up to 4 years of concurrent corporate work experience, you maintain a highly competitive advantage in the employment market."
+  },
+  {
+    question: "What is the structural difference between the IT Major and the Digital Business Computer Major?",
+    answer: "The Information Technology (IT) major focuses deeply on the engineering and systematic deployment of technical infrastructure, whereas the Digital Business Computer major specifically synthesizes these technical tools for business optimization and management. Both fields deliver systematic, hands-on project training to ensure students transition into the professional technology sector with confidence."
+  },
+  {
+    question: "Does the program include comprehensive coursework in Business Management?",
+    answer: "Yes, comprehensive business management modules are actively integrated within both the Digital Business Computer and IT Business pathways."
+  },
+  {
+    question: "Is Marketing specifically taught within the academic offerings?",
+    answer: "Yes, a dedicated and fully accredited Digital Marketing major is actively available for students wishing to specialize in that domain."
+  },
+  {
+    question: "Are practical learning applications integrated into the Engineering major?",
+    answer: "Yes, our Engineering curriculum heavily prioritizes extensive hands-on practical training and laboratory application."
+  },
+  {
+    question: "Does the university teach modern accounting software tools?",
+    answer: "Yes, practical instruction in standard accounting software is fully incorporated into the relevant financial curricula."
+  },
+  {
+    question: "Is Graphic Design integrated into the academic modules?",
+    answer: "Yes. Depending on your chosen academic pathway—specifically within our Digital Marketing or Digital Media tracks—graphic design principles are thoroughly covered. The coursework teaches content creation, visual layout software, and the strategic integration of art and corporate technology."
+  },
+  {
+    question: "Does the university curriculum integrate modern AI Technology?",
+    answer: "Yes, absolutely. To remain at the absolute forefront of industrial trends, our modern technology courses directly incorporate advanced AI tools and artificial intelligence principles, teaching students how to efficiently leverage AI applications within corporate workspaces."
+  },
+  {
+    question: "Will my professional Presentation Skills improve through this program?",
+    answer: "Yes, significantly. While experiencing initial public speaking anxiety is entirely natural, our curriculum includes continuous interactive classroom presentations and activities. Under the close guidance of faculty members, students systematically build public speaking confidence, graduating with the ability to articulate business strategies with absolute eloquence."
+  },
+  {
+    question: "Does the learning environment actively build Teamwork Skills?",
+    answer: "Yes. Our academic methodology shifts away from isolated rote-memorization toward extensive collaborative group projects. Working alongside international peers from diverse cultural backgrounds to solve corporate case studies ensures you fully develop professional teamwork and cross-cultural communication skills."
+  },
+  {
+    question: "Are there opportunities to develop essential Leadership Skills?",
+    answer: "Yes, absolutely. Students are heavily encouraged to take on leadership and project coordinator roles within collaborative group assignments, university clubs, and campus-wide extracurricular activities. These hands-on management experiences directly refine your strategic decision-making and operational leadership capabilities."
+  },
+  {
+    question: "Will this academic path improve my personal and professional Confidence?",
+    answer: "Yes, dramatically. Our supportive and progressive learning environment encourages independent thought and experiential growth. By moving to Bangkok, managing a structured work-and-study lifestyle, and earning your own financial independent stipend, you will undergo a comprehensive personal transformation into a highly resilient, confident professional."
+  },
+  {
+    question: "Is this specific program structure advantageous for my Future Career?",
+    answer: "Yes, this unique integration is the foundational pillar of Thonburi University. Unlike traditional models where work experience is pursued post-graduation, our students earn a globally accredited Bachelor's Degree concurrently with up to 4 years of verified corporate work experience. Furthermore, graduates benefit from a 1-year post-study job search visa extension (ED Plus Visa), ensuring maximum security for your future career."
+  },
+  {
+    question: "What is the quality of Student Life in Thailand?",
+    answer: "Student life at Thonburi University is incredibly meaningful, dynamic, and well-balanced.
+  },
+{
+    question: "Will my Thai language proficiency improve during the program?",
+    answer: "Yes, significantly. Thonburi University is located in Bangkok, the dynamic commercial center of Thailand. Immersion in this professional and cultural environment ensures that you naturally and rapidly acquire practical Thai language skills through daily life and workplace interactions."
+  },
+  {
+    question: "Is it manageable if I have absolutely no prior foundational knowledge of the Thai language?",
+    answer: "Yes, completely. Our University Foundation Program explicitly integrates foundational Thai language modules. Furthermore, during your first official semester (the first 4 months), you will receive intensive, professional Thai language training tailored to corporate environments, ensuring you can work legally and communicate efficiently."
+  },
+  {
+    question: "Will the corporate internship placement accelerate my Thai communication skills?",
+    answer: "Undoubtedly. Starting from your first year (second semester), you will engage in an officially endorsed corporate internship with a starting monthly stipend between 12,000 and 15,000 THB. Working daily alongside Thai professionals and corporate managers provides an immersive environment that develops fluent spoken Thai and practical business communication skills."
+  },
+  {
+    question: "Will I graduate with both a formal degree and professional multilingual proficiency?",
+    answer: "Yes. Upon completing your Bachelor's Degree, you will emerge as a highly proficient bilingual professional fluent in both Thai and English. This linguistic capability, paired with your academic credentials, effectively secures a definitive advantage when applying for competitive white-collar corporate roles globally."
+  },
+  {
+    question: "Does the university guarantee professional work experience upon graduation?",
+    answer: "Yes, graduates secure extensive, verified corporate experience through our integrated and structured internship pathways."
+  },
+  {
+    question: "Are the corporate internships fully authorized and legally structured?",
+    answer: "Yes, absolutely. All internship placements are officially structured, approved by Royal Thai Immigration, and managed under active university corporate programs."
+  },
+  {
+    question: "Who can I rely on for emergency assistance, relocation adjustments, or medical situations?",
+    answer: "The university's Student Support Team provides comprehensive, dedicated emergency and personal care. Our staff coordinates everything from hospital accompaniment and health insurance processing to private, professional student counseling. We ensure that international students navigate personal or academic adjustments with complete peace of mind."
+  },
+  {
+    question: "Does the university provide assistance with opening local bank accounts and purchasing SIM cards?",
+    answer: "Yes, full operational guidance is provided from day one. Upon arrival, our support team directly manages all procedural documentation and on-site accompaniment required for securing local mobile SIM cards, opening official Thai bank accounts, and applying for local driving licenses."
+  },
+  {
+    question: "Is there a dedicated institutional Student Support Team available on campus?",
+    answer: "Yes. From your initial departure framework in Yangon to your structural relocation across Bangkok, our professional Student Support Team is continuously active on-site to resolve any operational or personal student challenges."
+  },
+  {
+    question: "Does the Student Support Team manage student housing allocations and immigration visas?",
+    answer: "Yes, entirely. The support team assumes full administrative responsibility for arranging heavily subsidized housing (approx. 500 THB/month), coordinating airport reception transfers, and managing all administrative renewals for student visas (ED Plus Visa) and Re-entry Permits without extra overhead costs."
+  },
+  {
+    question: "Who should I contact if I encounter general operational or personal difficulties?",
+    answer: "For any personal, administrative, or academic challenges, students can directly contact the university's Student Support Team for immediate guidance."
+  },
+  {
+    question: "Who should I contact in the event of an urgent or medical emergency?",
+    answer: "In the event of an urgent situation or medical emergency, students should immediately contact our dedicated Student Support Team for priority care."
+  },
+  {
+    question: "Who should I contact regarding residential or accommodation issues?",
+    answer: "For all queries, maintenance requests, or updates regarding student accommodation, please contact the Student Support Team directly."
+  },
+  {
+    question: "What specific types of challenges can the Student Support Team help me resolve?",
+    answer: "The Student Support Team is fully equipped to assist with medical and health issues, personal adjustment or mental wellness counseling, housing allocations, immigration and visa extensions, and any day-to-day administrative adjustments required during your study."
+  }
+];
+
+
+{
+    question: "Is there active institutional Emergency Support available for students?",
+    answer: "Yes, our dedicated Student Support Team is continuously available to handle and assist with any urgent or emergency situations."
+  },
+  {
+    question: "Is the official university application process complicated?",
+    answer: "Not at all. The team provides comprehensive, step-by-step guidance throughout the entire admissions and registration timeline."
+  },
+  {
+    question: "Will I be issued an official University Offer Letter upon evaluation?",
+    answer: "Yes, qualified applicants will formally receive an official institutional Letter of Offer to confirm enrollment eligibility."
+  },
+  {
+    question: "Is the student visa approval process efficient and manageable?",
+    answer: "Yes, provided all standard requirements are fulfilled, the student visa acquisition process is highly seamless. The team at Dreams by HARRY assumes full administrative responsibility for preparing and thoroughly validating all official institutional documentation required to secure your approval without complications."
+  },
+  {    
+    question: "What specific visa documentation and support does the university provide?",
+    answer: "Thonburi University officially issues all primary compliance credentials required by the Royal Thai Immigration Department. This includes your official Letter of Admission (Offer Letter) alongside fully verified institutional certifications, ensuring an exceptionally high visa approval rating."
+  },
+  {    
+    question: "What are the structural visa steps required when relocating from Myanmar?",
+    answer: "The pathway is highly structured. Prior to departure, the university coordinates all compliance documentation to secure your initial 3-month entry visa from the Royal Thai Embassy in Yangon. Upon arrival in Thailand, the university manages the conversion and extensions into a valid University Non-Immigrant ED Plus Visa and processes the necessary Re-entry Permits systematically."
+  },
+  {
+    question: "Is the overall cost of living high for international students in Thailand?",
+    answer: "The overall living expenses remain highly affordable, though final costs depend strictly on an individual student's lifestyle and personal spending choices."
+  },
+  {
+    question: "Are international students eligible for localized Student Discounts?",
+    answer: "Yes, definitely. Upon formal enrollment at Thonburi University, you are issued an authorized institutional Student Card. This grants access to extensive student discounts and exclusive educational rates across various sectors throughout Thailand."
+  },
+  {    
+    question: "In what primary areas can I utilize the Student Card for transport discounts?",
+    answer: "The most impactful advantage is within public urban transit. Presenting your valid student card grants you access to heavily subsidized student rates across Bangkok's rapid rail transit networks, including the nearby Lak Song BTS Station, effectively minimizing your monthly commuting budget."
+  },
+  {    
+    question: "Can the Student Card be utilized for lifestyle, dining, and retail discounts?",
+    answer: "Yes, extensively. Students qualify for specialized educational pricing at major cinema chains like Major Cineplex and SF Cinema. Additionally, exclusive student discounts and seasonal educational promotions are widely available at major shopping malls, selected dining establishments, franchise cafes, and authorized tech retailers like the Apple Store."
+  },
+  {    
+    question: "Does the Student Card hold significant utility value throughout Thailand?",
+    answer: "Absolutely. The student identification card provides vast practical utility. It grants heavily discounted or entirely complimentary admission fees at national museums, amusement parks, zoological facilities, and world-renowned historical heritage sites across Bangkok and regional provinces."
+  },
+  {
+    question: "Does the university offer flexible tuition payment options?",
+    answer: "Yes. To ensure financial constraints do not hinder your academic journey, the university coordinates highly flexible tuition installment structures tailored to assist student financial planning."
+  },
+  { 
+    question: "Could you clarify the exact structure and flexibility of the tuition installment plan?",
+    answer: "The financial structure is highly manageable. Thonburi University's Bachelor's Degree programs feature two standard academic semesters per year, with a highly affordable tuition fee of 34,000 THB per semester. Rather than requiring an upfront lump-sum payment, the university offers a flexible plan allowing you to divide and settle this fee progressively throughout the duration of each semester."
+  }
+];
+
+/* =========================
+   DOM
+========================= */
+
+const searchInput =
+document.getElementById("searchInput");
+
+const faqGrid =
+document.getElementById("faqGrid");
+
+const resultCount =
+document.getElementById("resultCount");
+
+const emptyState =
+document.getElementById("emptyState");
+
+/* =========================
+   RENDER
+========================= */
+
+function renderFAQ(data){
+
+    faqGrid.innerHTML = "";
+
+    if(data.length === 0){
+
+        emptyState.style.display = "block";
+
+        resultCount.innerHTML =
+        "0 Results Found";
+
+        return;
+    }
+
+    emptyState.style.display = "none";
+
+    resultCount.innerHTML =
+    `${data.length} Results Found`;
+
+    data.forEach(item=>{
+
+        faqGrid.innerHTML += `
+
+        <div class="faq-card">
+
+            <div class="question">
+                ${item.question}
+            </div>
+
+            <div class="answer">
+                ${item.answer}
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+searchInput.addEventListener("input",function(){
+
+    const value =
+    this.value.toLowerCase().trim();
+
+    if(value === ""){
+
+        faqGrid.innerHTML = "";
+
+        resultCount.innerHTML =
+        "Search anything about Thailand Study";
+
+        emptyState.style.display = "none";
+
+        return;
+    }
+
+    const filtered = faqData.filter(item => {
+
+        return (
+
+            item.question
+            .toLowerCase()
+            .includes(value)
+
+            ||
+
+            item.answer
+            .toLowerCase()
+            .includes(value)
+
+        );
+
+    });
+
+    renderFAQ(filtered);
+
+});
+
+/* =========================
+   PLACEHOLDER EFFECT
+========================= */
+
+const placeholders = [
+    "Search Visa...",
+    "Search Internship...",
+    "Search Foundation...",
+    "Search Major...",
+    "Search Bangkok...",
+    "Search Passport...",
+    "Search Intake...",         
+    "Search Dormitory...",       
+    "Search Tuition Fee...",     
+    "Search BTS...",            
+    "Search Student Card...",   
+    "Search Community...",       
+    "Search Career...",         
+    "Search Telegram..."        
+];
+let current = 0;
+
+setInterval(()=>{
+
+    searchInput.placeholder =
+    placeholders[current];
+
+    current++;
+
+    if(current >= placeholders.length){
+        current = 0;
+    }
+
+},2500);
+
+</script>
+<br><br>
+
+<style>
+.click-text{
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    color:#fff;
+    padding:4px 14px;
+    border-radius:10px;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.5px;
+    box-shadow:0 4px 15px rgba(0,114,255,.3);
+    margin-left:10px;
+    display:inline-block;
+}
+</style>
+
+
+
+
+<section id="contact">
+
+<div class="cta-card fade">
+
+    <h2>Work and Study Opportunity in Bangkok</h2>
+
+    <p>
+  <strong>University • Internship • Career • Future Opportunity</strong><br>
+  To strictly maintain the highest standards of classroom quality and individual attention, enrollment is strictly capped at only 15 selected candidates per intake. Secure your academic and professional future by enrolling today before seats are fully completed.
+</p>
+
+    <a href="https://t.me/dreambyharry" class="cta-btn">
+        Enroll Now
+    </a>
+
+</div>
+
+</section>
+
+<style>
+.cta-card{
+    width:90%;
+    max-width:1000px;
+    min-height:380px;
+
+    margin:80px auto;
+    padding:70px 50px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
+    url("image/ssss-9.jpg") center/cover no-repeat;
+
+    position:relative;
+    overflow:hidden;
+
+    text-align:center;
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    backdrop-filter:blur(10px);
+}
+
+/* DARK OVERLAY (VERY IMPORTANT) */
+.cta-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:1;
+}
+
+/* CONTENT ABOVE OVERLAY */
+.cta-card h2,
+.cta-card p,
+.cta-btn{
+    position: relative;
+    z-index: 2;
+}
+
+/* TITLE */
+.cta-card h2{
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ffffff;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+}
+
+/* TEXT */
+.cta-card p{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #f1f5f9;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* BUTTON */
+.cta-btn{
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    color: #fff;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,114,255,0.4);
+    transition: 0.3s;
+}
+
+.cta-btn:hover{
+    transform: translateY(-3px) scale(1.05);
+}
+.call-center-box{
+display:flex;
+align-items:center;
+gap:12px;
+background:rgba(255,255,255,.08);
+padding:12px 18px;
+border-radius:50px;
+width:fit-content;
+margin:auto;
+}
+
+.call-icon{
+width:55px;
+height:55px;
+background:#86aed6;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.call-icon i{
+color:#fff;
+font-size:24px;
+}
+
+.online-dot{
+position:absolute;
+top:4px;
+right:4px;
+width:12px;
+height:12px;
+background:#09e939;
+border-radius:50%;
+}
+
+.support-title{
+display:block;
+color:#fff;
+font-weight:700;
+}
+
+.support-subtitle{
+display:block;
+color:#ddd;
+font-size:12px;
+}
+
+.telegram-btn {
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999 !important;
+}
+@media (max-width: 768px) {
+    .call-center-box {
+        flex-direction: column !important; 
+        align-items: center !important;
+        text-align: center !important;
+        padding: 10px 14px !important;   
+        gap: 6px !important;             
+        border-radius: 20px !important;   
+    }
+
+    .call-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support-title {
+        font-size: 11px !important;       
+    }
+
+    .support-subtitle {
+        font-size: 9px !important;
+    }
+}
+
+.call-center-box {
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 210, 255, 0.3); 
+    animation: wavePulse 2s infinite ease-in-out;
+}
+
+@keyframes wavePulse {
+    0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 8px 25px rgba(0, 210, 255, 0.3), 0 0 0 0 rgba(0, 210, 255, 0.4);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(0, 210, 255, 0.5), 0 0 0 15px rgba(0, 210, 255, 0);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 8px 25px rgba(0, 210, 255, 0.3), 0 0 0 0 rgba(0, 210, 255, 0);
+    }
+}
+</style>
+
+<div class="telegram-btn">
+
+<a href="https://t.me/dreambyharry" target="_blank">
+
+<div class="call-center-box">
+
+<div class="call-icon">
+<i class="fa-solid fa-headset"></i>
+<span class="online-dot"></span>
+</div>
+
+<div class="call-text">
+<span class="support-title">Support Team</span>
+<span class="support-subtitle">Chat With Us Now</span>
+</div>
+
+</div>
+
+</a>
+
+</div>
+<!-- FOOTER -->
+
+<footer>
+© 2026 Dreams by Harry • Educational Consultant | Study & Career Guidance in Thailand
+</footer>
+
+<script>
+
+/* FAQ */
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+const btn = item.querySelector(".faq-question");
+
+btn.addEventListener("click", () => {
+
+item.classList.toggle("active");
+
+});
+
+});
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{threshold:0.15});
+
+document.querySelectorAll(".fade").forEach((el)=>{
+observer.observe(el);
+});
+
+</script>
+<script>
+
+const intro=document.getElementById("intro-screen");
+const enterBtn=document.getElementById("enter-btn");
+const skipBtn=document.getElementById("skip-btn");
+
+function closeIntro(){
+intro.classList.add("intro-hide");
+
+setTimeout(()=>{
+intro.remove();
+},1000);
+}
+
+enterBtn.addEventListener("click",closeIntro);
+skipBtn.addEventListener("click",closeIntro);
+
+setTimeout(()=>{
+closeIntro();
+},7000);
+
+
+
+</script>
+<script>
+const video = document.getElementById("introVideo");
+
+video.onended = function() {
+    document.getElementById("intro").style.display = "none";
+};
+</script>
+</body>
+</html>
