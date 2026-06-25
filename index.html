@@ -3484,7 +3484,7 @@ searchInput.addEventListener("input", (e) => {
 });
 
 
-renderFAQ(faqData);
+
 
 
 /* =========================
@@ -3531,48 +3531,24 @@ function renderFAQ(data){
     });
 
 }
-
 /* =========================
-   SEARCH
+   SEARCH LOGIC 
 ========================= */
-
-searchInput.addEventListener("input",function(){
-
-    const value =
-    this.value.toLowerCase().trim();
-
-    if(value === ""){
-
+searchInput.addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase().trim();
+    if (searchTerm === "") {
         faqGrid.innerHTML = "";
-
-        resultCount.innerHTML =
-        "Search anything about Thailand Study";
-
         emptyState.style.display = "none";
-
+        resultCount.innerHTML = "";
         return;
     }
 
-    const filtered = faqData.filter(item => {
-
-        return (
-
-            item.question
-            .toLowerCase()
-            .includes(value)
-
-            ||
-
-            item.answer
-            .toLowerCase()
-            .includes(value)
-
-        );
-
+    const filteredData = faqData.filter(item => {
+        return item.question.toLowerCase().includes(searchTerm) || 
+               item.answer.toLowerCase().includes(searchTerm);
     });
 
-    renderFAQ(filtered);
-
+    renderFAQ(filteredData);
 });
 
 /* =========================
