@@ -1904,27 +1904,57 @@ University Internship + Bachelor Degree Program
 </div>
 
 <script>
-// Modal ကိုဖွင့်တဲ့ Function (ID ကို Parameter အနေနဲ့ ထည့်ပေးရပါမယ်)
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
+
+/* FOUNDATION */
+
+function openProgramModal(){
+    document.getElementById("programModal").style.display="block";
 }
 
-// Modal ကိုပိတ်တဲ့ Function
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
+function closeProgramModal(){
+    document.getElementById("programModal").style.display="none";
 }
 
-// အပြင်ကို ကလစ်နှိပ်ရင် ပိတ်သွားအောင် (ID တွေကို array ထဲမှာ ထည့်ပေးပါ)
-window.onclick = function(event) {
-    const modalIds = ["programModal", "pathwayModal", "studyWorkModal"];
-    
-    modalIds.forEach(function(id) {
-        const modal = document.getElementById(id);
-        if (event.target === modal) {
-            modal.style.display = "none";
+/* PATHWAY */
+
+function openPathwayModal(){
+    document.getElementById("pathwayModal").style.display="block";
+}
+
+function closePathwayModal(){
+    document.getElementById("pathwayModal").style.display="none";
+}
+
+/* STUDY WORK */
+
+function openStudyWorkModal(){
+    document.getElementById("studyWorkModal").style.display="block";
+}
+
+function closeStudyWorkModal(){
+    document.getElementById("studyWorkModal").style.display="none";
+}
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+window.onclick=function(event){
+
+    const modals=[
+        document.getElementById("programModal"),
+        document.getElementById("pathwayModal"),
+        document.getElementById("studyWorkModal")
+    ];
+
+    modals.forEach(function(modal){
+
+        if(event.target==modal){
+            modal.style.display="none";
         }
+
     });
+
 }
+
 </script>
 
 </section>
